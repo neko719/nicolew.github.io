@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+  // Show/hide button
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+  });
+  // Smooth scroll to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="projects.html">← Back to Projects</a>
+    </div>
+  </header>
+
+<!-- Photography Section -->
+<section id="photography" class="photography-section">
+  <h2>Photography</h2>
+  <p class="photography-subtitle">
+    Capturing genuine moments and turning them into compelling stories.
+  </p>
+  
+  <div class="photography-cards">
+    <div class="photography-card">
+      <img src="image/imageedit_3_6698335143.jpg" alt="Photography Project 1">
+      <div class="photography-text-content">
+        <h3>Urban Coastline</h3>
+        <p>
+          The city embodies industry, innovation and constant movement, while the water symbolizes timelessness, tranquility and depth.
+        </p>
+      </div>
+    </div>
+
+    <div class="photography-card">
+      <img src="image/Image_20241110015321.jpg" alt="Photography Project 2">
+      <div class="photography-text-content">
+        <h3>Dock at Sunset</h3>
+        <p>
+          The silence of the pier contrasts with the warm colors of the sunset, conveying a sense of loneliness yet peacefulness.
+        </p>
+      </div>
+    </div>
+
+    <div class="photography-card">
+      <img src="image/Image_20241110015306.jpg" alt="Photography Project 3">
+      <div class="photography-text-content">
+        <h3>Towering Echo</h3>
+        <p>
+          Cool tones and hard lines evoke a calm feeling for the city, giving it unique character and authenticity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="complex-gallery">
+  <h2>Featured Photography</h2>
+  <div class="complex-gallery__container">
+    <!-- Left vertical image -->
+    <div class="complex-gallery__vertical">
+      <img src="image/Action.jpg" alt="Vertical Photo Left">
+    </div>
+
+    <!-- Center grid of six horizontals -->
+    <div class="complex-gallery__middle">
+      <img src="image/Fashion.jpg" alt="Horizontal Photo 1">
+      <img src="image/Macro.jpg" alt="Horizontal Photo 2">
+      <img src="image/Protrait2.jpg" alt="Horizontal Photo 3">
+      <img src="image/Portrait1.jpg" alt="Horizontal Photo 4">
+      <img src="image/Pet.jpg" alt="Horizontal Photo 5">
+      <img src="image/Narrative.jpg" alt="Horizontal Photo 6">
+    </div>
+
+    <!-- Right vertical image -->
+    <div class="complex-gallery__vertical">
+      <img src="image/Landscape.jpg" alt="Vertical Photo Right">
+    </div>
+  </div>
+</section>
+
+<div class="video-card">
+  <h3>Antique in Times</h3>
+  <video controls poster="image/antique-poster.jpg">
+    <source src="image/Final Cut.mp4" type="video/mp4">
+  </video>
+
+  <button class="know-more-btn" onclick="toggleDetails('video-info-1')">KNOW MORE</button>
+
+  <div id="video-info-1" class="collapsible-content" style="display: none;">
+    <div class="video-details-grid">
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Assignment Context</h4>
+          <p>Digital Media Production Coursework. A documentary project focused on cultural heritage and visual storytelling.</p>
+        </div>
+        <div class="detail-item">
+          <h4>My Role</h4>
+          <p>Director, Cinematographer, Interviewer, Scriptwriter, and Lead Editor (Visual & Audio).</p>
+        </div>
+      </div>
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Problem & Objective</h4>
+          <p>The challenge was to capture the "soul" of inanimate objects. The goal was to weave historical facts with personal narratives.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Impact & Reflection</h4>
+          <p>Mastered the balance between ambient sound and interview clarity. Significantly improved my ability to structure long-form content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <h3>Premier Protein Rebrand Advertising</h3>
+  <video src="image/pp ad.mp4" controls></video>
+
+  <button class="know-more-btn" onclick="toggleDetails('video-info-2')">KNOW MORE</button>
+
+  <div id="video-info-2" class="collapsible-content" style="display: none;">
+    <div class="video-details-grid">
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Assignment Context</h4>
+          <p>Marketing Design Project. Creating a modern commercial for a protein brand's new visual identity.</p>
+        </div>
+        <div class="detail-item">
+          <h4>My Role</h4>
+          <p>Cinematographer, Concept Creator (Storyboard), and Post-production Editor.</p>
+        </div>
+      </div>
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Problem & Objective</h4>
+          <p>The original brand felt dated. Objective was to create a high-energy ad appealing to a younger, health-conscious demographic.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Impact & Reflection</h4>
+          <p>Learned "rhythmic editing"—matching cuts to audio beats to maintain viewer engagement in a short-form format.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="video-card">
+  <h3>A Silent Portrait</h3>
+  <video src="image/cream factory.mp4" controls></video>
+
+  <button class="know-more-btn" onclick="toggleDetails('video-info-3')">KNOW MORE</button>
+
+  <div id="video-info-3" class="collapsible-content" style="display: none;">
+    <div class="video-details-grid">
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Assignment Context</h4>
+          <p>Personal Creative Project. An experimental short film exploring atmosphere and visual rhythm without dialogue.</p>
+        </div>
+        <div class="detail-item">
+          <h4>My Role</h4>
+          <p>Independent Creator (Full production: Concept, Filming, Lighting, Editing, and Sound Design).</p>
+        </div>
+      </div>
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Problem & Objective</h4>
+          <p>To tell a compelling story using only visual cues. The objective was to evoke emotion through cinematography rather than words.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Impact & Reflection</h4>
+          <p>Deep dive into color grading and lighting control. Proved my ability to manage the entire production pipeline independently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="product-photography" class="media-photography-section">
+  <h2>Product Photography</h2>
+  <p class="media-photography-subtitle">
+    Showcasing products with clarity, style, and market appeal.
+  </p>
+  
+  <div class="media-product-gallery">
+    
+    <div class="media-product-item">
+      <div class="media-images-flex-wrapper">
+        <img src="image/product3.2.jpg" alt="Mabe Pearl Earrings Left">
+        <img src="image/product3.1.jpg" alt="Mabe Pearl Earrings Right">
+      </div>
+      <h3>Mabe Earrings</h3>
+    </div>
+
+    <div class="media-product-item">
+      <div class="media-images-flex-wrapper">
+        <img src="image/product2.1.jpg" alt="South Sea White Pendant Left">
+        <img src="image/product2.2.jpg" alt="South Sea White Pendant Right">
+      </div>
+      <h3>South Sea White Pendant</h3>
+    </div>
+
+    <div class="media-product-item">
+      <div class="media-images-flex-wrapper">
+        <img src="image/product1.2.jpg" alt="Tahiti Pendant Left">
+        <img src="image/product1.1.jpg" alt="Tahiti Pendant Right">
+      </div>
+      <h3>Tahiti Pendant</h3>
+    </div>
+
+  </div>
+</section>
+
+    </div>
+</section>
+
+<footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>
+
+<script>
+function toggleDetails(id) {
+    var content = document.getElementById(id);
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
+</script>

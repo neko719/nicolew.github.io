@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Jewelry Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+  <style>
+    /* 针对横向照片的补丁样式，确保不裁切 */
+    .phase-img {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #1a1615;
+    }
+    .phase-img img {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+    }
+
+    /* Lightbox 灯箱样式 */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        cursor: zoom-out;
+    }
+    .lightbox-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 85vh;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 30px rgba(193, 164, 129, 0.2);
+    }
+    .close-lightbox {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        color: #C1A481;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 2001;
+    }
+  </style>
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="projects.html">← Back to Projects</a>
+    </div>
+  </header>
+
+  <section class="jewelry-work-block">
+    <div class="work-header">
+      <span class="work-number">Project 01</span>
+      <h3>Tulip</h3>
+    </div>
+    <div class="phase-container">
+      <div class="phase-card my-work" onclick="openLightbox('image/sketch1.png')">
+        <div class="phase-badge">Step 01: Sketch (My Part)</div>
+        <div class="phase-img"><img src="image/sketch1.png" alt="Sketch"></div>
+        <p>Initial hand-drawn concepts focusing on organic curves.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/郁金香2.png')">
+        <div class="phase-badge">Step 02: 3D Model</div>
+        <div class="phase-img"><img src="image/郁金香2.png" alt="3D Model"></div>
+        <p>Technical 3D modeling for factory casting preparation.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/郁金香3.jpg')">
+        <div class="phase-badge">Step 03: Final Piece</div>
+        <div class="phase-img"><img src="image/郁金香3.jpg" alt="Final Piece"></div>
+        <p>The physical manifestation of the original vision.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jewelry-work-block">
+    <div class="work-header">
+      <span class="work-number">Project 02</span>
+      <h3>Noodle</h3>
+    </div>
+    <div class="phase-container">
+      <div class="phase-card my-work" onclick="openLightbox('image/sketch1.png')">
+        <div class="phase-badge">Step 01: Sketch (My Part)</div>
+        <div class="phase-img"><img src="image/sketch1.png" alt="Sketch"></div>
+        <p>Initial hand-drawn concepts focusing on organic curves.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/泡面2.jpg')">
+        <div class="phase-badge">Step 02: 3D Model</div>
+        <div class="phase-img"><img src="image/泡面2.jpg" alt="3D Model"></div>
+        <p>Technical 3D modeling for factory casting preparation.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/泡面3.jpg')">
+        <div class="phase-badge">Step 03: Final Piece</div>
+        <div class="phase-img"><img src="image/泡面3.jpg" alt="Final Piece"></div>
+        <p>The physical manifestation of the original vision.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jewelry-work-block">
+    <div class="work-header">
+      <span class="work-number">Project 03</span>
+      <h3>Lemon Tea</h3>
+    </div>
+    <div class="phase-container">
+      <div class="phase-card my-work" onclick="openLightbox('image/柠檬茶1.jpg')">
+        <div class="phase-badge">Step 01: Sketch (My Part)</div>
+        <div class="phase-img"><img src="image/柠檬茶1.jpg" alt="Sketch"></div>
+        <p>Initial hand-drawn concepts focusing on organic curves.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/柠檬茶2.png')">
+        <div class="phase-badge">Step 02: 3D Model</div>
+        <div class="phase-img"><img src="image/柠檬茶2.png" alt="3D Model"></div>
+        <p>Technical 3D modeling for factory casting preparation.</p>
+      </div>
+      <div class="phase-card" onclick="openLightbox('image/柠檬茶3.jpg')">
+        <div class="phase-badge">Step 03: Final Piece</div>
+        <div class="phase-img"><img src="image/柠檬茶3.jpg" alt="Final Piece"></div>
+        <p>The physical manifestation of the original vision.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="work-divider">
+
+  <div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="fullImage">
+  </div>
+
+  <footer>
+    <div class="footer-cta">
+      <h2>Thanks for your viewing</h2>
+      <p>Thank you for taking the time to review my portfolio. Looking forward to connecting with you next time!</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/nicoc0.0" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@nicolew7543" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="get-in-touch-text">GET IN TOUCH</p>
+    </div>
+  </footer>
+
+  <script>
+    // 返回顶部脚本
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Lightbox 脚本
+    function openLightbox(src) {
+      document.getElementById("fullImage").src = src;
+      document.getElementById("imageLightbox").style.display = "block";
+      document.body.style.overflow = "hidden"; // 禁用背景滚动
+    }
+
+    function closeLightbox() {
+      document.getElementById("imageLightbox").style.display = "none";
+      document.body.style.overflow = "auto"; // 恢复背景滚动
+    }
+  </script>
+</body>
+</html>

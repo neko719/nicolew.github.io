@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+  // Show/hide button
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+  });
+  // Smooth scroll to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+  <header>
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo">
+      </div>
+     <nav class="header-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li> 
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+      <div class="header-cta">
+        <a href="contact.html">Let's Talk</a>
+      </div>
+    </header>
+    
+<body>
+  <section class="about-me-section" id="about">
+    <div class="about-me-content">
+      <div class="about-me-text">
+        <h2>About Me</h2>
+        <h3>Internship / Junior Designer / Graphic Design Assistant</h3>
+        <p>
+          I am a student at the University of Waterloo, studying Global Business and Digital Arts.
+          I am passionate about design, technology, and constantly seeking opportunities to learn and grow.
+        </p>
+      </div>
+      <div class="about-me-photo">
+        <img src="image/me with camera.png" alt="About Me Photo">
+      </div>
+    </div>
+  </section>  
+
+    <section class="goals" id="goals">
+      <h2>Future Goals for Life Development</h2>
+      <div class="goals-container">
+        <div class="goals-column">
+          <h3>Short-term</h3>
+          <div class="goal-category">
+            <h4>Learn</h4>
+            <ul>
+              <li>Conduct a skills gap analysis</li>
+              <li>Define my artist style</li>
+            </ul>
+          </div>
+          <div class="goal-category">
+            <h4>Life</h4>
+            <ul>
+              <li>Drink at least one bottle of water a day</li>
+              <li>Get at least 7 hrs sleep everyday</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="goals-column">
+          <h3>Long-term</h3>
+          <div class="goal-category">
+            <h4>Career</h4>
+            <ul>
+              <li>Build professional network</li>
+              <li>Learn how to use C4D</li>
+            </ul>
+          </div>
+          <div class="goal-category">
+            <h4>Life</h4>
+            <ul>
+              <li>Improve work-life balance</li>
+              <li>Become fluent in Japanese</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="language" id="language">
+  <h2>Language</h2>
+  <ul class="language-list">
+    <li>English</li>
+    <li>Mandarin</li>
+    <li>Cantonese</li>
+  </ul>
+
+  <h3>Currently Learning</h3>
+  <ul class="language-list">
+    <li>Korean</li>
+    <li>Japanese</li>
+    <li>French</li>
+  </ul>
+</section>
+
+<section class="experience" id="experience">
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <!-- Video Editor -->
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>CICS Immigrant Youth Centre | Video Editor</h3>
+        <span class="date">Jun 2021 – Aug 2021</span>
+        <p>Edited promotional videos to support youth programs and community outreach initiatives.</p>
+        <ul>
+          <li>Collaborated with staff to shape visual narratives that reflected CICS’s mission and values.</li>
+          <li>Organized raw footage, applied transitions and effects, and optimized content for web and social platforms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Summer Camp Counselor -->
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>CICS Immigrant Youth Centre | Summer Camp Counselor</h3>
+        <span class="date">Jul 2022 – Aug 2022</span>
+        <p>Assisted in organizing and facilitating youth programs and activities that promoted community engagement, leadership, and personal development.</p>
+        <ul>
+          <li>Coordinated events and supervised participants to ensure a safe, inclusive environment for immigrant youth.</li>
+          <li>Collaborated with program staff on schedule planning, materials preparation, and on-site support.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Year Book -->
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>High School Yearbook | Designer & Photographer</h3>
+        <span class="date">Oct 2022 – May 2023</span>
+        <p>Contributed to the creative production of the annual yearbook, capturing school spirit and preserving memories through visual storytelling.</p>
+        <ul>
+      <li>Designed creative and cohesive page layouts using design software to document school milestones.</li>
+      <li>Captured high-quality photographs of school events, sports, and student life for publication.</li>
+      <li>Collaborated with the creative team to meet strict printing deadlines and ensure visual consistency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SILKYO -->
+    <div class="timeline-item">
+      <div class="timeline-icon"></div>
+      <div class="timeline-content">
+        <h3>SILKYO | Live Product Host, Web Manager, Visual Content Creator</h3>
+        <span class="date">Sept 2024 – Present</span>
+        <p>Drove e-commerce growth and brand presence by integrating live stream sales, compelling visual content creation (photo/video/design), and optimizing end-to-end digital operations.</p>
+        <ul>
+          <li>Championed product promotion via live streaming, delivering persuasive presentations that drove significant sales growth and enhanced customer loyalty.</li>
+          <li>Spearheaded comprehensive e-commerce operations, optimizing digital storefront performance and implementing data-driven strategies to maximize conversion.</li>
+          <li>Created high-impact, cohesive visual content—spanning photography, videography, and graphic design  to strengthen brand identity across all digital and social platforms.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<section id="resume-section" class="resume-section">
+  <h2>My Resume</h2>
+  
+  <div class="resume-previews-container">
+    <div class="resume-preview-item">
+      <img 
+        src="image/Nicole_Wu_Resume-1.png" 
+        alt="Nicole's Resume Page 1 Preview" 
+        class="resume-preview-image"
+      >
+      <p class="page-label">Page 1</p>
+    </div>
+
+    <div class="resume-preview-item">
+      <img 
+        src="image/Nicole_Wu_Resume-2.png" 
+        alt="Nicole's Resume Page 2 Preview" 
+        class="resume-preview-image"
+      >
+      <p class="page-label">Page 2</p>
+    </div>
+
+  </div>
+
+  <a href="image/Nicole_Wu_Resume.pdf" target="_blank" class="resume-download-btn">
+      View Full Resume (PDF) →
+  </a>
+</section>
+
+<footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>

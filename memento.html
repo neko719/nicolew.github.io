@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+  // Show/hide button
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+  });
+  // Smooth scroll to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="ux design.html">← Back to Web Design/Development</a>
+    </div>
+  </header>
+
+<section class="memento-hero">
+  <div class="memento-text">
+    <h2>Capture Moments with Meaning</h2>
+    <p>Memento is a digital memory archive designed to help users document personal experiences through visual storytelling and mindful reflection.</p>
+    <a href="https://www.figma.com/design/QkSLqTvitEsLWTuHp328X3/BET-350---Mementos?node-id=75-11" class="memento-button">Try Memento</a>
+  </div>
+  <div class="memento-image">
+    <img src="image/memento home page.png" alt="Memento App Preview">
+  </div>
+</section>
+
+<section class="memento-details-section">
+  <div class="memento-details-grid">
+    
+    <div class="details-column">
+      <div class="detail-block">
+        <h3>Assignment Context</h3>
+        <p>BET 350 - Technology Entrepreneurship. Focused on identifying market gaps and building a tech-based solution.</p>
+      </div>
+      <div class="detail-block">
+        <h3>My Role</h3>
+        <p>UX/UI Designer & Researcher. Responsible for user persona development, journey mapping, and high-fidelity prototyping in Figma.</p>
+      </div>
+    </div>
+
+    <div class="details-column">
+      <div class="detail-block">
+        <h3>Problem & Objective</h3>
+        <p>In a fast-paced digital world, people often "collect" photos but rarely "reflect" on them. Memento aims to turn passive digital clutter into a mindful archive for personal growth.</p>
+      </div>
+      <div class="detail-block">
+        <h3>Impact & Reflection</h3>
+        <p>Successfully validated the product-market fit through user interviews. I learned how to balance aesthetic minimalism with the complex functional needs of a digital archive.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="memento-journey">
+  <h3>Customer Profile</h3>
+  <p>
+  The customer profile outlines Memento’s target users, including their motivations, behaviors, and needs. It helps inform design decisions to better meet user expectations.
+  </p>
+  <img src="image/Customer Profile-1.png" alt="Customer Profile" class="journey-image">
+</section>
+
+<section class="memento-journey">
+  <h3>Customer Journey</h3>
+  <p>
+    This journey maps out the key stages users experience when engaging with Memento — from discovering the app to reflecting on their personal growth. It highlights emotional touchpoints, usability priorities, and engagement opportunities.
+  </p>
+  <img src="image/Customer Journey.png" alt="Customer Journey Map" class="journey-image">
+</section>
+
+<footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body style="background-color: #1a1615;"> <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html">Let's Talk</a>
+    </div>
+  </header>
+
+  <section class="profile" id="profile">
+  <div id="vanta-particles-bg"></div>
+    <div class="profile-content">
+        <div class="avatar-wrapper">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div> <img src="image/selfie.jpg" alt="Profile" class="profile-image">
+        </div>
+      <h1 class="profile-title"> 
+        Nicole Wu
+        <span class="profile-subtitle">Portfolio</span> 
+      </h1> 
+      <p class="profile-description">University of Waterloo - Global Business and Digital Arts</p> 
+    </div>
+  </section>   
+
+  <section style="background-color: #1a1615; padding: 20px 0;">
+    <table class="education-table">
+      <thead>
+        <tr>
+          <th>Education</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OSSD</td>
+          <td>2019 - 2023</td>
+        </tr>
+        <tr>
+          <td>Bachelor of Global Business and Digital Arts</td>
+          <td>2023 - Current</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="personal-identity">
+    <h2>Personal Identity</h2>
+    <div class="identity-content">
+      <div class="identity-left">
+        <h3>Crafting Visuals that Drive Impact and Inspire Connection!</h3>
+      </div>
+      <div class="identity-right">
+        <p>
+          As a creative and business-minded GBDA student with hands-on experience 
+          in different types of design, business, and product marketing, 
+          I specialize in translating concepts into impactful visual solutions. 
+        </p>
+        <p>
+          By leveraging a solid foundation in Adobe Suite and other platforms, 
+          I hope to contribute to creative projects by leveraging digital media production, 
+          marketing design, and multitasking skills in a dynamic environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+  <script>
+    // 初始化无连线、有呼吸感的粒子背景
+    VANTA.NET({
+      el: "#vanta-particles-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xc1a481,        // 金色粒子
+      backgroundColor: 0x1a1615, // 深褐色背景
+      points: 25.00,
+      maxDistance: 0.00, 
+      spacing: 15.00,
+      showDots: true
+    })
+
+    // 返回顶部按钮逻辑
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>

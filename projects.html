@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li> 
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html">Let's Talk</a>
+    </div>
+  </header>
+
+<section class="projects-bento-section" id="projects">
+  <div class="bento-header">
+    <h2>Selected Works</h2>
+    <p>A collection of creative explorations across different digital disciplines.</p>
+  </div>
+
+  <div class="bento-grid-container">
+    <div class="bento-item bento-tall">
+      <div class="bento-card-inner">
+        <span class="bento-tag">Brand & Visual</span>
+        <h3>Graphic Design</h3>
+        <p class="bento-desc">Blending strategy and creativity to turn big ideas into visuals that truly connect with people.</p>
+        <a href="graphic design.html" class="bento-link">Explore Works →</a>
+      </div>
+    </div>
+    
+    <div class="bento-item bento-standard">
+      <div class="bento-card-inner">
+        <span class="bento-tag">UI / UX</span>
+        <h3>Web Design & Dev</h3>
+        <p class="bento-desc">Intuitive and polished web experiences that balance form and function.</p>
+        <a href="ux design.html" class="bento-link">View Projects →</a>
+      </div>
+    </div>
+    
+    <div class="bento-item bento-standard">
+      <div class="bento-card-inner">
+        <span class="bento-tag">Multimedia</span>
+        <h3>Media Production</h3>
+        <p class="bento-desc">Showcasing photography, video storytelling, and interactive digital content.</p>
+        <a href="media.html" class="bento-link">See Media →</a>
+      </div>
+    </div>
+
+    <div class="bento-item bento-wide">
+      <div class="bento-card-inner">
+        <span class="bento-tag">Craftsmanship</span>
+        <h3>Jewelry Design</h3>
+        <p class="bento-desc">From organic inspiration to technical drafts, showcasing the intricate process of hand-rendered jewelry concepts.</p>
+        <a href="jewelry design.html" class="bento-link">View Collection →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="footer-cta">
+      <h2>Thanks for your viewing</h2>
+      <p>
+        Thank you for taking the time to review my portfolio.
+        Looking forward to connecting with you next time!
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <p class="get-in-touch-text">GET IN TOUCH</p>
+    </div>
+  </footer>
+</body>
+</html>

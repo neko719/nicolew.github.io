@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Graphic Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">
+</head>
+<body>
+<script>
+function toggleDetails(id) {
+    var content = document.getElementById(id);
+    // 检查当前状态，如果是隐藏或没有设置，则显示
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block"; // 使用 block 展开容器
+    } else {
+        content.style.display = "none"; // 再次点击隐藏
+    }
+}
+</script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="projects.html">← Back to Projects</a>
+    </div>
+  </header>
+
+  <!-- Graphic Design Section -->
+  <section id="graphic-design" class="graphic-design-section">
+    <h2>Graphic Design</h2>
+    <p class="graphic-design-subtitle">
+      Art and practice of combining text, images, and ideas to communicate visually 
+      and solve problems through effective layout and design.
+    </p>
+  
+    <div class="poster-zine"> 
+  <h3>Personal Practice</h3>
+  <div class="graphic-design-images">
+    <img src="/image/pos4.png" alt="Graphic Design Work 1">
+    <img src="/image/pos3.png" alt="Graphic Design Work 2">
+    <img src="/image/pos2.png" alt="Graphic Design Work 3">
+  </div>
+
+<div class="magazine-design">
+  <h3>Magazine Design</h3>
+
+  <div class="magazine-gallery">
+    <div class="magazine-row">
+      <div class="magazine-page">
+        <img src="image/A4.png" alt="Magazine Page 1">
+        <p class="magazine-label">Page 1</p>
+      </div>
+      <div class="magazine-page">
+        <img src="image/A4.1.png" alt="Magazine Page 2">
+        <p class="magazine-label">Page 2</p>
+      </div>
+    </div>
+
+    <div class="magazine-row">
+      <div class="magazine-page">
+        <img src="image/A4.4.png" alt="Magazine Page 3">
+        <p class="magazine-label">Page 3</p>
+      </div>
+      <div class="magazine-page">
+        <img src="image/A4.2.png" alt="Magazine Page 4">
+        <p class="magazine-label">Page 4</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="know-more-btn" onclick="toggleDetails('magazine-info')">KNOW MORE</button>
+
+  <div id="magazine-info" class="collapsible-content">
+    <div class="video-details-grid">
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Assignment Context</h4>
+          <p>GBDA 101 - Digital Media Production. A layout design project focusing on typography and grid systems.</p>
+        </div>
+        <div class="detail-item">
+          <h4>My Role</h4>
+          <p>Full Production: Responsible for visual research, asset creation, and final multi-page layout.</p>
+        </div>
+      </div>
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Problem & Objective</h4>
+          <p>Organizing dense information into a cohesive visual flow without overwhelming the reader.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Impact & Reflection</h4>
+          <p>Mastered typographic hierarchy and improved efficiency in Adobe InDesign.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr style="border: 0.5px solid rgba(193, 164, 129, 0.1); width: 80%; margin: 40px auto;">
+
+<div class="poster-zine"> 
+  <h3>Poster Zine</h3>
+  <div class="zine-box">
+    <div class="zine-page" id="zine1"><img src="image/Nicole_Wu_Project1-1.png" alt="Poster 1"></div>
+    <div class="zine-page" id="zine2"><img src="image/Nicole_Wu_Project1-2.png" alt="Poster 2"></div>
+    <div class="zine-page" id="zine3"><img src="image/Nicole_Wu_Project1-3.png" alt="Poster 3"></div>
+    <div class="zine-page" id="zine4"><img src="image/Nicole_Wu_Project1-4.png" alt="Poster 4"></div>
+    <button class="nav-btn prev-btn" id="prev-zine">◀</button>
+    <button class="nav-btn next-btn" id="next-zine">▶</button>
+  </div>
+
+  <button class="know-more-btn" onclick="toggleDetails('zine-info')">KNOW MORE</button>
+
+  <div id="zine-info" class="collapsible-content">
+    <div class="video-details-grid">
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Assignment Context</h4>
+          <p>GBDA 201 - Visual Exploration. An experimental zine combining poster aesthetics with storytelling.</p>
+        </div>
+        <div class="detail-item">
+          <h4>My Role</h4>
+          <p>Full Production: Handled conceptualization, digital illustration, and print formatting.</p>
+        </div>
+      </div>
+      <div class="video-details-col">
+        <div class="detail-item">
+          <h4>Problem & Objective</h4>
+          <p>Testing unconventional layouts while maintaining legibility across multiple panels.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Impact & Reflection</h4>
+          <p>Learned to bridge the gap between digital design and physical print output.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.zine-page');
+  let idx = 0;
+  function showPage(i) {
+    pages.forEach((p, j) => p.style.display = j === i ? 'block' : 'none');
+  }
+  document.getElementById('prev-zine').onclick = () => {
+    idx = (idx - 1 + pages.length) % pages.length;
+    showPage(idx);
+  };
+  document.getElementById('next-zine').onclick = () => {
+    idx = (idx + 1) % pages.length;
+    showPage(idx);
+  };
+  showPage(idx);
+</script>
+
+    <!-- Logo Design Block -->
+    <div class="logo-design">
+      <h3>Logo Design</h3>
+      <div class="logo-design-box">
+        <div class="logo-block">
+          <img src="image/GBDA 202 Final logo.png" alt="Logo Design 1">
+          <p class="logo-description">
+            Premier Protein's bold red logo, featuring a powerful “P” with a flexed bicep, exudes strength and energy.
+          </p>
+        </div>
+        <div class="logo-block">
+          <img src="image/Image_20250405153314.png" alt="Logo Design 2">
+          <p class="logo-description">
+            SILKYO's sleek black design, highlighted by a flowing “S” with silk shape, radiates modern urban sophistication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Portfolio - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="n.styles.css">  
+</head>
+<body>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+<script>
+  // Show/hide button
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+  });
+  // Smooth scroll to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="ux design.html">← Back to Web Design/Development</a>
+    </div>
+  </header>
+
+<section class="cantalk-hero">
+  <div class="cantalk-text">
+    <h2>Find The Best Way to Learn Languages</h2>
+    <p>CanTalk is a user-friendly language learning app with intuitive design and smooth interactions that enhance your communication experience.</p>
+    <a href="https://www.figma.com/proto/dIOZMxhIneCquwTWyfRGYf/Wu_Nicole_M3Figma?node-id=6-413&t=EIGbVxaFRBOERPog-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A411&starting-point-node-id=6%3A413&show-proto-sidebar=1" class="cantalk-button">Try CanTalk</a>
+  </div>
+  <div class="cantalk-image">
+    <img src="image/Cantalk.png" alt="CanTalk App Preview">
+  </div>
+</section>
+
+<section class="project-details-minimal">
+  <div class="details-grid">
+    
+    <div class="details-col">
+      <div class="detail-item">
+        <h3>Assignment Context</h3>
+        <p>GBDA 210 - Introduction to User Experience Design. A comprehensive project focused on solving real-world communication barriers through mobile app design.</p>
+      </div>
+      <div class="detail-item">
+        <h3>My Role</h3>
+        <p>UX Designer & Prototyper. Managed the end-to-end design process, from initial user research and wireframing to creating an interactive high-fidelity prototype.</p>
+      </div>
+    </div>
+
+    <div class="details-col">
+      <div class="detail-item">
+        <h3>Problem & Objective</h3>
+        <p>Many language learners struggle with the gap between vocabulary apps and real-life conversation. CanTalk's objective is to bridge this gap through scenario-based learning and intuitive community interactions.</p>
+      </div>
+      <div class="detail-item">
+        <h3>Impact & Reflection</h3>
+        <p>The final prototype received high praise for its smooth navigation. I gained a deep understanding of the iterative design process—testing low-fi sketches before committing to high-fi visuals.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ux-extras">
+  <div class="ux-scenario">
+    <h3>Scenario Examples</h3>
+    <div class="ux-extras__images">
+      <div class="ux-image-block">
+        <img src="image/scenario.png" alt="Scenario 1">
+        <p class="ux-caption">Practice for an upcoming interview, building confidence through simulated conversations.</p>
+      </div>
+      <div class="ux-image-block">
+        <img src="image/scenario2.png" alt="Scenario 2">
+        <p class="ux-caption">Discover local events and language exchange meetups, help connect with new people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ux-lowfi">
+<h3 class="lowfi-heading">Low-Fidelity Prototype</h3>
+  <div class="ux-extras__images-lowfi">
+    <div class="ux-image-block">
+      <img src="image/low-fide.png" alt="Wireframe 1">
+      <p class="ux-caption">
+Outlines the core user flow and key features of the language learning app</p>
+    </div>
+  </div>
+</div>
+
+<section class="presentation-viewer">
+  <h2 class="slide-title">Presentation of High Fidelity</h2>
+  <button class="arrow left-arrow" onclick="changeSlide(-1)"></button>
+  <img id="slideImage" src="image/210 presentation/Wu_Nicole_Presentation-01.png" alt="Slide 1" class="slide-image">
+  <button class="arrow right-arrow" onclick="changeSlide(1)"></button>
+</section>
+
+<script>
+  const totalSlides = 16;
+  let currentSlide = 1;
+
+  function changeSlide(direction) {
+    currentSlide += direction;
+
+    if (currentSlide > totalSlides) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = totalSlides;
+
+    const slideNum = currentSlide.toString().padStart(2, '0');
+
+    document.getElementById("slideImage").src = `image/210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
+    document.getElementById("slideImage").alt = `Slide ${currentSlide}`;
+  }
+</script>
+
+<footer>
+  <div class="footer-cta">
+    <h2>Thanks for your viewing</h2>
+    <p>
+      Thank you for taking the time to review my portfolio.
+      Looking forward to connecting with you next time!
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="get-in-touch-text">GET IN TOUCH</p>
+  </div>
+</footer>
