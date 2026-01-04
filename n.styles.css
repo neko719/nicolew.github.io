@@ -1923,7 +1923,6 @@ footer {
   align-items: center;
 }
 
-/* vertical columns */
 .complex-gallery__vertical img {
   width: 100%;
   height: auto;
@@ -1932,7 +1931,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* middle grid */
 .complex-gallery__middle {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1942,13 +1940,13 @@ footer {
 
 .complex-gallery__middle img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2; 
+  object-fit: cover; 
   display: block;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* 视频卡片基础容器 */
 .video-card {
     background-color: #1A1615;
     padding: 60px 20px;
@@ -1971,14 +1969,13 @@ footer {
     margin-bottom: 40px;
 }
 
-/* 四件套文字区域布局 */
 .video-details-grid {
     display: flex;
     justify-content: center;
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    text-align: left; /* 文字左对齐更有专业感 */
+    text-align: left;
 }
 
 .video-details-col {
@@ -2756,3 +2753,4 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
+
