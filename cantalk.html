@@ -15,7 +15,7 @@
 
   <header class="main-header">
     <div class="header-logo">
-      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+      <img src="logo.png" alt="Nicole Portfolio Logo">
     </div>
     <nav class="header-nav">
       <ul>
@@ -39,7 +39,7 @@
       <a href="https://www.figma.com/proto/dIOZMxhIneCquwTWyfRGYf/Wu_Nicole_M3Figma?node-id=6-413&t=EIGbVxaFRBOERPog-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A411&starting-point-node-id=6%3A413&show-proto-sidebar=1" class="cantalk-button" target="_blank">Try Interactive Prototype</a>
     </div>
     <div class="ux-hero__image">
-      <img src="image/Cantalk.png" alt="CanTalk App Preview">
+      <img src="Cantalk.png" alt="CanTalk App Preview">
     </div>
   </section>
 
@@ -72,13 +72,13 @@
     <h3 class="section-title">Scenario Examples</h3>
     <div class="ux-bento-grid">
       <div class="ux-bento-item">
-        <img src="image/scenario.png" alt="Scenario 1">
+        <img src="scenario.png" alt="Scenario 1">
         <div class="ux-caption-box">
           <p>Practice for upcoming interviews and build confidence through simulated conversations.</p>
         </div>
       </div>
       <div class="ux-bento-item">
-        <img src="image/scenario2.png" alt="Scenario 2">
+        <img src="scenario2.png" alt="Scenario 2">
         <div class="ux-caption-box">
           <p>Discover local events and language exchange meetups to connect with new people.</p>
         </div>
@@ -89,7 +89,7 @@
   <section class="ux-visual-section lowfi-bg">
     <h3 class="section-title">Low-Fidelity Prototype</h3>
     <div class="ux-full-image-block">
-      <img src="image/low-fide.png" alt="Wireframe" class="low-fi-img">
+      <img src="low-fide.png" alt="Wireframe" class="low-fi-img">
       <div class="ux-caption-box centered">
         <p>Outlining core user flows and information architecture to validate features early.</p>
       </div>
@@ -101,7 +101,7 @@
     <div class="slider-container">
       <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
       <div class="slide-frame">
-        <img id="slideImage" src="image/210 presentation/Wu_Nicole_Presentation-01.png" alt="Slide 1">
+        <img id="slideImage" src="Wu_Nicole_Presentation-01.png" alt="Slide 1">
       </div>
       <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
     </div>
@@ -144,7 +144,7 @@
       if (currentSlide > totalSlides) currentSlide = 1;
       if (currentSlide < 1) currentSlide = totalSlides;
       const slideNum = currentSlide.toString().padStart(2, '0');
-      document.getElementById("slideImage").src = `image/210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
+      document.getElementById("slideImage").src = `Wu_Nicole_Presentation-${slideNum}.png`;
       document.getElementById("currentNum").innerText = slideNum;
     }
 
