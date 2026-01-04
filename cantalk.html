@@ -101,7 +101,7 @@
     <div class="slider-container">
       <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
       <div class="slide-frame">
-        <img id="slideImage" src="210 presentation/Wu_Nicole_Presentation-01.png" alt="Slide 1">
+        <img id="slideImage" src="Wu_Nicole_Presentation-01.png" alt="Slide 1">
       </div>
       <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
     </div>
@@ -141,7 +141,9 @@
       if (currentSlide > totalSlides) currentSlide = 1;
       if (currentSlide < 1) currentSlide = totalSlides;
       const slideNum = currentSlide.toString().padStart(2, '0');
-      document.getElementById("slideImage").src = `210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
+      
+      // 已在脚本逻辑中去掉前缀
+      document.getElementById("slideImage").src = `Wu_Nicole_Presentation-${slideNum}.png`;
       document.getElementById("currentNum").innerText = slideNum;
     }
 
@@ -155,4 +157,3 @@
   </script>
 </body>
 </html>
-
