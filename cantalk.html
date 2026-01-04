@@ -26,7 +26,7 @@
 
   <header class="main-header">
     <div class="header-logo">
-      <img src="image/logo.png" alt="Nicole Portfolio Logo">
+      <img src="logo.png" alt="Nicole Portfolio Logo">
     </div>
     <nav class="header-nav">
       <ul>
@@ -49,7 +49,7 @@
     <a href="https://www.figma.com/proto/dIOZMxhIneCquwTWyfRGYf/Wu_Nicole_M3Figma?node-id=6-413&t=EIGbVxaFRBOERPog-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A411&starting-point-node-id=6%3A413&show-proto-sidebar=1" class="cantalk-button">Try CanTalk</a>
   </div>
   <div class="cantalk-image">
-    <img src="image/Cantalk.png" alt="CanTalk App Preview">
+    <img src="Cantalk.png" alt="CanTalk App Preview">
   </div>
 </section>
 
@@ -86,11 +86,11 @@
     <h3>Scenario Examples</h3>
     <div class="ux-extras__images">
       <div class="ux-image-block">
-        <img src="image/scenario.png" alt="Scenario 1">
+        <img src="scenario.png" alt="Scenario 1">
         <p class="ux-caption">Practice for an upcoming interview, building confidence through simulated conversations.</p>
       </div>
       <div class="ux-image-block">
-        <img src="image/scenario2.png" alt="Scenario 2">
+        <img src="scenario2.png" alt="Scenario 2">
         <p class="ux-caption">Discover local events and language exchange meetups, help connect with new people.</p>
       </div>
     </div>
@@ -101,7 +101,7 @@
 <h3 class="lowfi-heading">Low-Fidelity Prototype</h3>
   <div class="ux-extras__images-lowfi">
     <div class="ux-image-block">
-      <img src="image/low-fide.png" alt="Wireframe 1">
+      <img src="low-fide.png" alt="Wireframe 1">
       <p class="ux-caption">
 Outlines the core user flow and key features of the language learning app</p>
     </div>
@@ -111,7 +111,7 @@ Outlines the core user flow and key features of the language learning app</p>
 <section class="presentation-viewer">
   <h2 class="slide-title">Presentation of High Fidelity</h2>
   <button class="arrow left-arrow" onclick="changeSlide(-1)"></button>
-  <img id="slideImage" src="image/210 presentation/Wu_Nicole_Presentation-01.png" alt="Slide 1" class="slide-image">
+  <img id="slideImage" src="Wu_Nicole_Presentation-01.png" alt="Slide 1" class="slide-image">
   <button class="arrow right-arrow" onclick="changeSlide(1)"></button>
 </section>
 
@@ -127,7 +127,8 @@ Outlines the core user flow and key features of the language learning app</p>
 
     const slideNum = currentSlide.toString().padStart(2, '0');
 
-    document.getElementById("slideImage").src = `image/210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
+    // 修改点：脚本内部的路径也去掉 image/ 210 presentation/
+    document.getElementById("slideImage").src = `Wu_Nicole_Presentation-${slideNum}.png`;
     document.getElementById("slideImage").alt = `Slide ${currentSlide}`;
   }
 </script>
