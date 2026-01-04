@@ -1441,92 +1441,232 @@ footer {
   max-width: 600px;
 }
 
-.ux-extras {
-  max-width: 1400px;
-  margin: 60px auto;
-  display: grid;
-  gap: 40px;
+/* --- CanTalk Case Study - Bento Style --- */
+
+/* Hero Section */
+.ux-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 10% 80px;
+    background: radial-gradient(circle at top right, #24201e, #1a1615);
+    gap: 60px;
 }
 
-.ux-extras > div {
-  background-color: #2A2625;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-align: center;
+.ux-category {
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    letter-spacing: 3px;
+    font-size: 13px;
 }
 
-.ux-extras h3,
-.lowfi-heading {
-  font-family: 'Cormorant', serif;
-  text-align: center;
-  font-size: 26px;
-  color: #C1A481;
-  margin-bottom: 16px;
+.ux-hero__text h2 {
+    font-family: 'Cormorant', serif;
+    font-size: 4rem;
+    color: #E2CCA8;
+    line-height: 1.1;
+    margin: 20px 0;
 }
 
-.ux-extras__images {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+.ux-hero__text p {
+    font-family: 'Inconsolata', monospace;
+    color: #E2CCA8;
+    max-width: 500px;
+    opacity: 0.8;
+    margin-bottom: 40px;
 }
 
-.ux-extras__images img {
-  width: auto;
-  height: 300px;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+.cantalk-button {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1px solid #C1A481;
+    color: #C1A481;
+    text-decoration: none;
+    font-family: 'Inconsolata', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.cantalk-button:hover {
+    background: #C1A481;
+    color: #1a1615;
+}
+
+.ux-hero__image img {
+    max-width: 450px;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+}
+
+/* Bento Details Section */
+.ux-details-section {
+    padding: 80px 10%;
+    background-color: #1a1615;
+}
+
+.ux-details-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.ux-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+
+.ux-detail-block {
+    background: #26211e;
+    padding: 40px;
+    border: 1px solid rgba(193, 164, 129, 0.1);
+    border-radius: 20px;
+}
+
+.ux-detail-block h3 {
+    font-family: 'Cormorant', serif;
+    color: #C1A481;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.ux-detail-block p {
+    font-family: 'Inconsolata', monospace;
+    color: #E2CCA8;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Visual Section (Scenarios & Low-fi) */
+.ux-visual-section {
+    padding: 80px 10%;
+    background-color: #1a1615;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant', serif;
+    font-size: 32px;
+    color: #C1A481;
+    margin-bottom: 50px;
+}
+
+.ux-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.ux-bento-item {
+    background: #26211e;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(193, 164, 129, 0.1);
+}
+
+.ux-bento-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    padding: 40px;
+}
+
+.ux-caption-box {
+    padding: 30px;
+    border-top: 1px solid rgba(193, 164, 129, 0.1);
+    font-family: 'Inconsolata', monospace;
+    color: #E2CCA8;
+    font-size: 14px;
+}
+
+.ux-full-image-block {
+    background: #26211e;
+    border-radius: 20px;
+    border: 1px solid rgba(193, 164, 129, 0.1);
+    overflow: hidden;
+}
+
+.low-fi-img {
+    width: 100%;
+    padding: 60px;
 }
 
 .presentation-viewer {
-  margin-top: 40px;
-  background-color: #1f1a18;
-  padding: 30px 0 40px; 
-  text-align: center;
-  position: relative;
+    padding: 100px 10%;
+    background: #1a1615;
+    text-align: center;
 }
 
-.slide-title {
-  font-family: 'Cormorant', serif;
-  font-size: 28px;
-  color: #C1A481;
-  margin-bottom: 16px; 
-  text-align: center;
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
 }
 
-.slide-image {
-  max-width: 60%;
-  height: auto;
-  border-radius: 4px;
-  transition: opacity 0.3s ease-in-out;
-  display: block;
-  margin: 0 auto; 
+.slide-frame {
+    max-width: 900px;
+    border: 1px solid rgba(193, 164, 129, 0.2);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
 
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  background: none;
-  cursor: pointer;
-  z-index: 10;
+.slide-frame img { width: 100%; display: block; }
+
+.slider-arrow {
+    background: none;
+    border: 1px solid #C1A481;
+    color: #C1A481;
+    width: 50px; 
+    height: 50px;
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+    padding: 0;
+    line-height: 1;
 }
 
-.left-arrow {
-  left: 100px;
-  border-width: 18px 22px 18px 0;
-  border-color: transparent #EAD9B7 transparent transparent;
+.slider-arrow:hover {
+    background: #C1A481;
+    color: #1a1615;
 }
 
-.right-arrow {
-  right: 100px;
-  border-width: 18px 0 18px 22px;
-  border-color: transparent transparent transparent #EAD9B7;
+.slide-counter {
+    margin-top: 30px;
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    font-size: 14px;
 }
 
+.ux-hero__image img {
+    max-width: 450px;
+    animation: floatingApp 3s ease-in-out infinite;
+    
+    filter: drop-shadow(0 30px 20px rgba(0,0,0,0.4));
+    transition: filter 0.3s ease;
+}
+
+@keyframes floatingApp {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* 向上漂浮20像素 */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* 响应式适配 */
+@media (max-width: 1024px) {
+    .ux-hero { flex-direction: column; text-align: center; }
+    .ux-hero__image img { max-width: 100%; }
+    .ux-details-grid, .ux-bento-grid { grid-template-columns: 1fr; flex-direction: column; }
+    .slider-container { gap: 15px; }
+    .slider-arrow { width: 40px; height: 40px; }
+}
 
 .memento-hero {
   display: flex;
@@ -1947,6 +2087,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* 视频卡片基础容器 */
 .video-card {
     background-color: #1A1615;
     padding: 60px 20px;
@@ -1969,13 +2110,14 @@ footer {
     margin-bottom: 40px;
 }
 
+/* 四件套文字区域布局 */
 .video-details-grid {
     display: flex;
     justify-content: center;
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    text-align: left;
+    text-align: left; /* 文字左对齐更有专业感 */
 }
 
 .video-details-col {
@@ -2753,4 +2895,3 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
-
