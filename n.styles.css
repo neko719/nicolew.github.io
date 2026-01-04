@@ -80,26 +80,88 @@ footer {
   color: #1A1615;
 }
 
-/* ==================================== */
-/* 8. Navigation Active State Highlighting */
-/* ==================================== */
-
-/* 活动链接的样式：使用强调色，并添加下划线/边框 */
 .header-nav a.active {
     color: #C1A481; /* 您的强调色 */
-    
-    /* 增加一个微妙的下边框作为高光 */
     border-bottom: 2px solid #C1A481;
     padding-bottom: 2px;
     
-    /* 确保活动状态下鼠标悬停不会有额外的视觉变化 */
     cursor: default; 
 }
 
-/* 确保活动链接在鼠标悬停时保持活动样式，不触发普通悬停效果 */
 .header-nav a.active:hover {
     color: #C1A481; /* 保持强调色 */
     background-color: transparent; /* 确保没有背景色变化 */
+}
+
+/* --- Global Project Navigation --- */
+.project-nav-container {
+    padding: 60px 8% 20px;
+    background-color: #1a1615;
+    text-align: center;
+}
+
+.nav-title {
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+.nav-links-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    flex: 1;
+    background-color: #26211e;
+    border: 1px solid rgba(193, 164, 129, 0.15);
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.nav-label {
+    font-family: 'Inconsolata', monospace;
+    font-size: 11px;
+    color: #C1A481;
+    margin-bottom: 8px;
+}
+
+.nav-text {
+    font-family: 'Cormorant', serif;
+    font-size: 18px;
+    color: #E2CCA8;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    border-color: #C1A481;
+    background-color: #2d2723;
+    transform: translateY(-5px);
+}
+
+.nav-item:hover .nav-text {
+    color: #C1A481;
+}
+
+@media (max-width: 768px) {
+    .nav-links-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .nav-text {
+        font-size: 16px;
+    }
 }
 
 footer {
@@ -2577,4 +2639,120 @@ footer {
     opacity: 0.6;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+/* --- Next Page Navigation (Bento & Starry Style) --- */
+.next-page-nav {
+    padding: 80px 10% 40px;
+    background-color: #1a1615;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 模拟首页配套的微弱星光背景 */
+.next-page-nav::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 20px),
+        radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 30px);
+    background-size: 400px 400px, 250px 250px;
+    opacity: 0.2;
+    animation: starsMoving 80s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes starsMoving {
+    from { background-position: 0 0; }
+    to { background-position: 500px 500px; }
+}
+
+.nav-hint {
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+/* 核心 Bento 按钮 */
+.next-page-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #26211e;
+    border: 1px solid rgba(193, 164, 129, 0.15);
+    border-radius: 20px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 悬停时的流光效果 */
+.next-page-box::after {
+    content: "";
+    position: absolute;
+    top: -50%; left: -100%;
+    width: 30%; height: 200%;
+    background: linear-gradient(to right, transparent, rgba(193, 164, 129, 0.2), transparent);
+    transform: rotate(30deg);
+}
+
+.next-page-box:hover::after {
+    left: 150%;
+    transition: all 1s ease;
+}
+
+.next-page-box:hover {
+    border-color: #C1A481;
+    background-color: #2d2723;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.next-num {
+    display: block;
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.next-title {
+    font-family: 'Cormorant', serif;
+    color: #E2CCA8;
+    font-size: 36px;
+    display: block;
+}
+
+.next-arrow {
+    font-family: 'Inconsolata', monospace;
+    color: #C1A481;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.next-page-box:hover .next-arrow {
+    transform: translateX(10px);
+    color: #fff;
+}
+
+/* 响应式：手机端垂直堆叠 */
+@media (max-width: 768px) {
+    .next-page-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .next-num { text-align: center; }
+    .next-arrow { margin-top: 20px; }
 }
