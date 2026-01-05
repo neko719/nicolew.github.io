@@ -14,11 +14,10 @@
 <script>
 function toggleDetails(id) {
     var content = document.getElementById(id);
-    // 检查当前状态，如果是隐藏或没有设置，则显示
     if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block"; // 使用 block 展开容器
+        content.style.display = "block"; 
     } else {
-        content.style.display = "none"; // 再次点击隐藏
+        content.style.display = "none"; 
     }
 }
 </script>
@@ -90,7 +89,7 @@ function toggleDetails(id) {
       <div class="video-details-col">
         <div class="detail-item">
           <h4>Assignment Context</h4>
-          <p>GBDA 101 - Digital Media Production. A layout design project focusing on typography and grid systems.</p>
+          <p>GBDA 101 - Introduction to Digital Media Design. A comprehensive editorial project synthesizing four semester-long design works into a cohesive, professional magazine format.</p>
         </div>
         <div class="detail-item">
           <h4>My Role</h4>
@@ -100,8 +99,7 @@ function toggleDetails(id) {
       <div class="video-details-col">
         <div class="detail-item">
           <h4>Problem & Objective</h4>
-          <p>Organizing dense information into a cohesive visual flow without overwhelming the reader.</p>
-        </div>
+<p>The challenge was to unify diverse projects under a singular aesthetic. The objective focused on mastering <b>grid systems</b> and <b>typographic hierarchy</b> to ensure seamless navigation and visual balance across pages.</p>        </div>
         <div class="detail-item">
           <h4>Impact & Reflection</h4>
           <p>Mastered typographic hierarchy and improved efficiency in Adobe InDesign.</p>
@@ -131,7 +129,7 @@ function toggleDetails(id) {
       <div class="video-details-col">
         <div class="detail-item">
           <h4>Assignment Context</h4>
-          <p>GBDA 201 - Visual Exploration. An experimental zine combining poster aesthetics with storytelling.</p>
+          <p>GBDA 202 - Digital Media Project 2. A conceptual design zine exploring the philosophy of "Good Design" and personal creative identity, merging abstract theory with visual storytelling.</p>
         </div>
         <div class="detail-item">
           <h4>My Role</h4>
@@ -169,25 +167,29 @@ function toggleDetails(id) {
   showPage(idx);
 </script>
 
-    <div class="logo-design">
-      <h3>Logo Design</h3>
-      <div class="logo-design-box">
-        <div class="logo-block">
-          <img src="GBDA 202 Final logo.png" alt="Logo Design 1">
-          <p class="logo-description">
-            Premier Protein's bold red logo, featuring a powerful “P” with a flexed bicep, exudes strength and energy.
-          </p>
-        </div>
-        <div class="logo-block">
-          <img src="Image_20250405153314.png" alt="Logo Design 2">
-          <p class="logo-description">
-            SILKYO's sleek black design, highlighted by a flowing “S” with silk shape, radiates modern urban sophistication.
-          </p>
-        </div>
+<div class="logo-design">
+  <h3>Logo Design</h3>
+  <div class="logo-design-grid">
+    <div class="logo-item">
+      <div class="logo-img-wrapper">
+        <img src="GBDA 202 Final logo.png" alt="Premier Protein">
       </div>
+      <p class="logo-description">
+        Premier Protein's bold red logo, featuring a powerful “P” with a flexed bicep, exudes strength and energy.
+      </p>
     </div>
-  </section>
-
+    
+    <div class="logo-item">
+      <div class="logo-img-wrapper">
+        <img src="Image_20250405153314.png" alt="SILKYO">
+      </div>
+      <p class="logo-description">
+        SILKYO's sleek black design, highlighted by a flowing “S” with silk shape, radiates modern urban sophistication.
+      </p>
+    </div>
+  </div>
+</div>
+      
 <nav class="project-nav-container">
   <div class="nav-title">VIEW MORE PROJECTS</div>
   <div class="nav-links-grid">
@@ -236,3 +238,4 @@ function toggleDetails(id) {
     <p class="get-in-touch-text">GET IN TOUCH</p>
   </div>
 </footer>
+
