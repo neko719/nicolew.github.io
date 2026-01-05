@@ -2906,6 +2906,63 @@ footer {
     .next-arrow { margin-top: 20px; }
 }
 
+/* 全局容器设置 */
+.graphic-design-gallery {
+  max-width: 1000px; /* 限制整体宽度，防止图片过大 */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* 每一组之间的间距 */
+}
 
+/* 基础图片样式 */
+.design-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px; /* 轻微圆角更现代 */
+  transition: transform 0.3s ease;
+}
 
+.design-item:hover img {
+  transform: scale(1.02); /* 鼠标悬停微调 */
+}
 
+.gallery-single {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.gallery-single img {
+  max-height: 450px;
+  object-fit: cover; /* 裁剪成一致高度 */
+}
+
+.gallery-pair-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.gallery-pair-horizontal img {
+  max-height: 300px; /* 横向图片不需要太高 */
+  object-fit: cover;
+}
+
+.gallery-pair-vertical {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.gallery-pair-vertical img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .gallery-single, 
+  .gallery-pair-horizontal, 
+  .gallery-pair-vertical {
+    grid-template-columns: 1fr;
+  }
+}
