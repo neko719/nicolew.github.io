@@ -1285,51 +1285,17 @@ footer {
     .magazine-row { flex-direction: column; align-items: center; }
 }
 
+/* 移除背景色，改用透明或与大网页背景一致的颜色 */
 .logo-design {
-  text-align: center;
-  background-color: #2A2625;
-  padding: 20px;
-  border-radius: 4px;
-  margin: 0 auto 40px;
-  max-width: 1200px;
-  background-color: transparent !important; 
+  background-color: transparent !important; /* 强制去除背景块 */
   padding: 40px 0 !important;
 }
 
-.logo-design-box {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.logo-block {
-  background-color: #1A1615;
-  padding: 16px;
-  border-radius: 4px;
-  width: 300px;       /* fixed width per block */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-.logo-block img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 12px;
-}
-
-.logo-description {
-  font-size: 16px;
-  font-family: 'Inconsolata', monospace;
-  color: #E2CCA8;
-  line-height: 1.4;
-}
-
+/* 布局容器：使用间隔更宽的 Flex */
 .logo-design-grid {
   display: flex;
   justify-content: center;
-  gap: 60px; 
+  gap: 60px; /* 增加两个 logo 之间的空隙，更有呼吸感 */
   flex-wrap: wrap;
 }
 
@@ -1339,9 +1305,10 @@ footer {
   min-width: 300px;
 }
 
+/* 高级感核心：为图片容器增加深色边框或微弱的阴影 */
 .logo-img-wrapper {
-  background-color: #2A2625; 
-  border: 1px solid #3d3836;
+  background-color: #2A2625; /* 与文字颜色形成微弱对比 */
+  border: 1px solid #3d3836; /* 极细的深色边框 */
   padding: 50px;
   margin-bottom: 20px;
   transition: all 0.3s ease;
@@ -1350,16 +1317,18 @@ footer {
   justify-content: center;
 }
 
+/* 鼠标悬停微调，增加互动高级感 */
 .logo-img-wrapper:hover {
-  border-color: #C1A481; 
+  border-color: #C1A481; /* 悬停时边框颜色变为标题金 */
 }
 
 .logo-img-wrapper img {
   max-width: 100%;
   height: auto;
-  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3)); /* 增加 logo 悬浮感 */
 }
 
+/* 调整描述文字：更轻薄、字间距稍大 */
 .logo-description {
   color: #C1A481;
   font-family: 'Cormorant', serif;
@@ -2943,4 +2912,5 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
+
 
