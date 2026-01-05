@@ -1259,9 +1259,8 @@ footer {
     color: #1A1615;
 }
 
-/* 解决“四件套”自动出现的问题 */
 .collapsible-content {
-    display: none; /* 必须是 none，且不能在其他地方被 flex 覆盖 */
+    display: none;
     overflow: hidden;
     margin-top: 20px;
     padding: 40px 10%;
@@ -1270,7 +1269,7 @@ footer {
 }
 
 .video-details-grid {
-    display: flex; /* 内部依然用 flex，但外层用 display: none 隐藏 */
+    display: flex; 
     justify-content: space-between;
     gap: 40px;
     text-align: left;
@@ -1293,6 +1292,8 @@ footer {
   border-radius: 4px;
   margin: 0 auto 40px;
   max-width: 1200px;
+  background-color: transparent !important; 
+  padding: 40px 0 !important;
 }
 
 .logo-design-box {
@@ -1323,6 +1324,53 @@ footer {
   font-family: 'Inconsolata', monospace;
   color: #E2CCA8;
   line-height: 1.4;
+}
+
+.logo-design-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px; 
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  flex: 1;
+  max-width: 450px;
+  min-width: 300px;
+}
+
+.logo-img-wrapper {
+  background-color: #2A2625; 
+  border: 1px solid #3d3836;
+  padding: 50px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img-wrapper:hover {
+  border-color: #C1A481; 
+}
+
+.logo-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
+}
+
+.logo-description {
+  color: #C1A481;
+  font-family: 'Cormorant', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0.8;
+  text-align: left; /* 靠左对齐比居中更具现代感 */
+  padding: 0 10px;
+  border-left: 2px solid #C1A481; /* 左侧金线，增加仪式感 */
+  margin-left: 5px;
 }
 
 .ux-ui {
@@ -2895,3 +2943,4 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
+
