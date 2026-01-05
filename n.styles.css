@@ -1328,18 +1328,11 @@ footer {
   filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3)); /* 增加 logo 悬浮感 */
 }
 
-/* 调整描述文字：更轻薄、字间距稍大 */
 .logo-description {
-  color: #C1A481;
+  font-size: 16px;
   font-family: 'Inconsolata', monospace;
-  font-size: 1.1rem;
-  font-style: italic;
-  line-height: 1.6;
-  opacity: 0.8;
-  text-align: left; /* 靠左对齐比居中更具现代感 */
-  padding: 0 10px;
-  border-left: 2px solid #C1A481; /* 左侧金线，增加仪式感 */
-  margin-left: 5px;
+  color: #E2CCA8;
+  line-height: 1.4;
 }
 
 .ux-ui {
@@ -2912,6 +2905,7 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
+
 
 
 
