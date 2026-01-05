@@ -54,38 +54,46 @@
 <section class="faq">
   <h2>Common Questions</h2>
 
-<div class="faq-item">
-  <div class="faq-header">
-    <h3>How can I be friends with you?</h3>
-  </div>
-  <p>Send a message to me!</p>
-</div>
-
-<div class="faq-item">
-  <div class="faq-header">
-    <h3>What was the goal of this portfolio?</h3>
-  </div>
-  <p>
-    I hope to create a space of my own and collect works with my personal style, 
-    so that more people can see my abilities!
-  </p>
-</div>
-
-  <div class="faq-item">
+  <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-header">
-      <h3>What inspired your color palette, typography, and layout decisions?</h3>
+      <h3>How can I be friends with you?</h3>
+      <i class="fas fa-plus faq-icon"></i>
     </div>
-    <p>My color schemes often come from the style of work I want to create, and finding the most appropriate colors to show its personality. 
-      The same goes for layout and typography. But if I'm making my own work 
-      I tend to choose a minimalist style that I'm best at. But sometimes I want to try other styles~</p>
+    <div class="faq-answer">
+      <p>Send a message to me below! I'm always open to networking and making new friends in the creative industry.</p>
+    </div>
   </div>
 
-<div class="faq-item">
-  <div class="faq-header">
-    <h3>What tools or software did you use for graphic design?</h3>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-header">
+      <h3>What was the goal of this portfolio?</h3>
+      <i class="fas fa-plus faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>I hope to create a space of my own and collect works with my personal style, so that more people can see my abilities!</p>
+    </div>
   </div>
-  <p>Mostly using Indesign or Illustrator and Procreate</p>
-</div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-header">
+      <h3>What inspired your design decisions?</h3>
+      <i class="fas fa-plus faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>My color schemes often come from the style of work I want to create. I tend to choose a minimalist style, but I love adding texture and depth through interaction.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-header">
+      <h3>What tools or software did you use?</h3>
+      <i class="fas fa-plus faq-icon"></i>
+    </div>
+    <div class="faq-answer">
+      <p>Mostly using Adobe Creative Suite (InDesign, Illustrator) and Procreate. For web, I use Figma and VS Code.</p>
+    </div>
+  </div>
+</section>
 
 <section id="contact" class="contact">
   <h2>Let's Get in Touch</h2>
@@ -104,6 +112,9 @@
 </section>
 
 <script>
+function toggleFaq(element) {
+    element.classList.toggle("active");
+}
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = encodeURIComponent(this['visitor-name'].value);
@@ -141,3 +152,4 @@
     <p class="get-in-touch-text">GET IN TOUCH</p>
   </div>
 </footer>
+
