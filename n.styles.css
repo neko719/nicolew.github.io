@@ -465,23 +465,33 @@ footer {
     display: flex;
     flex-direction: column;
     position: relative; 
-    overflow: hidden; /* 防止图标超出 */
+    overflow: hidden; /* 防止图标太大超出格子 */
 }
 
 .skill-bg-icon {
     position: absolute;
     bottom: -20px;
     right: -20px;
-    font-size: 100px; /* 图标巨大 */
+    font-size: 120px; /* 图标尺寸 */
     color: #C1A481;
-    opacity: 0.05; /* 非常淡，若隐若现 */
-    transform: rotate(-15deg); /*稍微倾斜 */
-    transition: all 0.5s ease;
+    opacity: 0.05; /* 透明度，0.05 很淡，很有高级感 */
+    transform: rotate(-15deg); /* 默认微倾斜 */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none; /* 鼠标点穿，不影响阅读 */
+    z-index: 0;
 }
 
 .skill-bento-card:hover .skill-bg-icon {
-    opacity: 0.1;
-    transform: rotate(0deg) scale(1.1);
+    opacity: 0.12; /* 稍微变亮 */
+    transform: rotate(0deg) scale(1.1) translateY(-10px); /* 回正并上浮 */
+    color: #E2CCA8;
+}
+
+.skill-bento-card h3,
+.skill-bento-card ul,
+.skill-bento-card p {
+    position: relative;
+    z-index: 1;
 }
 
 /* 悬停效果 */
@@ -2984,4 +2994,5 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
