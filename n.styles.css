@@ -93,6 +93,32 @@ footer {
     background-color: transparent; /* 确保没有背景色变化 */
 }
 
+/* 打字机光标闪烁效果 */
+.cursor {
+    display: inline-block;
+    color: #C1A481;
+    animation: blink 1s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.typing-text {
+    color: #E2CCA8;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+}
+
+.profile-school {
+    margin-top: 10px;
+    opacity: 0.6;
+    font-size: 14px;
+    font-family: 'Inconsolata', monospace;
+}
+
 /* --- Global Project Navigation --- */
 .project-nav-container {
     padding: 60px 8% 20px;
@@ -2994,5 +3020,6 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
 
