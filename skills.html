@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
+  <title>Nicole Portfolio - Skills</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
@@ -12,133 +12,139 @@
 </head>
 <body>
   <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  // Show/hide button
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  // Smooth scroll to top
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-  <header>
-    <header class="main-header">
-      <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo">
-      </div>
+  <script>
+    // Show/hide button
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
+    // Smooth scroll to top
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <header class="main-header">
+    <div class="header-logo">
+      <img src="logo.png" alt="Nicole Portfolio Logo">
+    </div>
     <nav class="header-nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html" class="active">Skills</a></li> 
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-      <div class="header-cta">
-        <a href="contact.html">Let's Talk</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li> 
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html">Let's Talk</a>
+    </div>
+  </header>
+
+  <section class="skills-section" id="skills">
+    <h2>What are my Skills</h2>
+  
+    <div class="skills-bento-grid">
+      
+      <div class="skill-bento-card">
+        <h3>Proficient Software</h3>
+        <ul>
+          <li>Adobe Creative Suite</li>
+          <li>Procreate</li>
+          <li>Microsoft 365</li>
+          <li>Visual Studio</li>
+          <li>Canvas</li>
+          <li>Capcut</li>
+        </ul>
+        <i class="fa-solid fa-layer-group skill-bg-icon"></i>
       </div>
-    </header>
-
-<section class="skills-section" id="skills">
-  <h2>What are my Skills</h2>
-
-  <div class="skills-bento-grid">
-    
-    <div class="skill-bento-card">
-      <h3>Proficient Software</h3>
-      <ul>
-        <li>Adobe Creative Suite</li>
-        <li>Procreate</li>
-        <li>Microsoft 365</li>
-        <li>Visual Studio</li>
-        <li>Canvas</li>
-        <li>Capcut</li>
-      </ul>
+  
+      <div class="skill-bento-card skill-wide">
+        <h3>Business</h3>
+        <p>
+          My academic background in Global Business and Digital Arts provides a strong foundation in marketing, digital strategy, project management, and economics.
+        </p>
+        <i class="fa-solid fa-chart-line skill-bg-icon"></i>
+      </div>
+  
+      <div class="skill-bento-card">
+        <h3>Web Dev Tools</h3>
+        <ul>
+          <li>Figma</li>
+          <li>Squarespace</li>
+          <li>Framer</li>
+          <li>HTML / CSS</li>
+        </ul>
+        <i class="fa-solid fa-code skill-bg-icon"></i>
+      </div>
+  
+      <div class="skill-bento-card skill-tall">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Project Management</li>
+          <li>Feedback Interpretation</li>
+          <li>Time Management</li>
+          <li>Collaboration</li>
+          <li>User Behavior Analysis</li>
+          <li>Visual Storytelling</li>
+          <li>Content Creation</li>
+          <li>Conflict Resolution</li>
+        </ul>
+        <i class="fa-solid fa-comments skill-bg-icon"></i>
+      </div>
+  
+      <div class="skill-bento-card">
+        <h3>Specialized Design</h3>
+        <ul>
+          <li>Design Principles</li>
+          <li>Color Harmonies</li>
+          <li>Typography Hierarchy</li>
+          <li>Layout Composition</li>
+          <li>Storyboarding</li>
+        </ul>
+        <i class="fa-solid fa-pen-nib skill-bg-icon"></i>
+      </div>
+  
     </div>
+  </section>
 
-    <div class="skill-bento-card skill-wide">
-      <h3>Business</h3>
+  <nav class="next-page-nav">
+    <div class="nav-hint">VIEW MY WORK</div>
+    <a href="projects.html" class="next-page-box">
+      <div class="next-content">
+        <span class="next-num">04</span>
+        <span class="next-title">Portfolio Projects</span>
+      </div>
+      <div class="next-arrow">NEXT PAGE →</div>
+    </a>
+  </nav>
+
+  <footer>
+    <div class="footer-cta">
+      <h2>Thanks for your viewing</h2>
       <p>
-        My academic background in Global Business and Digital Arts provides a strong foundation in marketing, digital strategy, project management, and economics.
+        Thank you for taking the time to review my portfolio.
+        Looking forward to connecting with you next time!
       </p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <p class="get-in-touch-text">GET IN TOUCH</p>
     </div>
-
-    <div class="skill-bento-card">
-      <h3>Web Dev Tools</h3>
-      <ul>
-        <li>Figma</li>
-        <li>Squarespace</li>
-        <li>Framer</li>
-        <li>HTML / CSS</li>
-      </ul>
-    </div>
-
-    <div class="skill-bento-card skill-tall">
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Project Management</li>
-        <li>Feedback Interpretation</li>
-        <li>Time Management</li>
-        <li>Collaboration</li>
-        <li>User Behavior Analysis</li>
-        <li>Visual Storytelling</li>
-        <li>Content Creation</li>
-        <li>Conflict Resolution</li>
-      </ul>
-    </div>
-
-    <div class="skill-bento-card">
-      <h3>Specialized Design</h3>
-      <ul>
-        <li>Design Principles</li>
-        <li>Color Harmonies</li>
-        <li>Typography Hierarchy</li>
-        <li>Layout Composition</li>
-        <li>Storyboarding</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<nav class="next-page-nav">
-  <div class="nav-hint">VIEW MY</div>
-  <a href="projects.html" class="next-page-box">
-    <div class="next-content">
-      <span class="next-num">04</span>
-      <span class="next-title">Portfolio Projects</span>
-    </div>
-    <div class="next-arrow">NEXT PAGE →</div>
-  </a>
-</nav>
-
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
-
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
-
+  </footer>
+</body>
+</html>
