@@ -1331,7 +1331,7 @@ footer {
 /* 调整描述文字：更轻薄、字间距稍大 */
 .logo-description {
   color: #C1A481;
-  font-family: 'Cormorant', serif;
+  font-family: 'Inconsolata', monospace;
   font-size: 1.1rem;
   font-style: italic;
   line-height: 1.6;
@@ -2912,5 +2912,6 @@ footer {
     .next-num { text-align: center; }
     .next-arrow { margin-top: 20px; }
 }
+
 
 
