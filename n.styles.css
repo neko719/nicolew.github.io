@@ -2343,46 +2343,68 @@ footer {
   transform: translateY(0) scale(1);
 }
   
-.faq {
-  background-color: #1A1615;
-  color: #E2CCA8;
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-family: 'Cormorant', serif;
-  color: #C1A481;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
+/* 保持您原有的盒子布局，但增加点击手型 */
 .faq-item {
-  background-color: #2A2625;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 4px;
+    background: #26211e; /* 维持深色背景 */
+    border: 1px solid rgba(193, 164, 129, 0.15); /* 淡淡的金色边框 */
+    border-radius: 12px;
+    margin-bottom: 20px; /* 保持间距 */
+    padding: 0; /* padding 移交给内部元素，以便控制折叠 */
+    cursor: pointer;
+    overflow: hidden; /* 关键：隐藏溢出的内容 */
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #C1A481; /* 悬停变亮 */
 }
 
 .faq-header {
-  margin-bottom: 10px;
+    padding: 25px; /* 原本的内边距放这里 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .faq-header h3 {
-  font-size: 20px;
-  margin: 0;
-  font-family: 'Cormorant', serif;
-  color: #C1A481;
+    margin: 0;
+    font-family: 'Cormorant', serif;
+    font-size: 20px;
+    color: #C1A481;
 }
 
-.faq-item p {
-  font-family: 'Inconsolata', monospace;
-  font-size: 16px;
-  margin-top: 10px;
-  color: #E2CCA8;
+.faq-icon {
+    font-size: 18px;
+    color: #C1A481;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0; /* 核心：高度为0 */
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 25px; /* 左右留边距，上下由 max-height 动画控制 */
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    background-color: #26211e; /* 与盒子同色 */
+}
+
+.faq-answer p {
+    margin-bottom: 25px; /* 只有展开时这个 margin 才会生效 */
+    font-family: 'Inconsolata', monospace;
+    color: #E2CCA8;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* --- 激活状态 (Active) --- */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* 给一个足够大的高度让文字显示 */
+    opacity: 1;
+    padding-bottom: 10px; /* 展开后底部留白 */
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); 
 }
 
 .education-table {
@@ -3020,6 +3042,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
