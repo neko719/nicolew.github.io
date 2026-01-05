@@ -39,11 +39,15 @@
             <div class="ring ring-3"></div> 
             <img src="selfie.jpg" alt="Profile" class="profile-image">
         </div>
-      <h1 class="profile-title"> 
-        Nicole Wu
-        <span class="profile-subtitle">Portfolio</span> 
-      </h1> 
-      <p class="profile-description">University of Waterloo - Global Business and Digital Arts</p> 
+<h1 class="profile-title"> 
+  Nicole Wu
+  <span class="profile-subtitle">Portfolio</span> 
+</h1> 
+
+<p class="profile-description">
+  I am a <span class="typing-text"></span><span class="cursor">|</span>
+</p>
+<p class="profile-school">University of Waterloo - Global Business and Digital Arts</p>
     </div>
   </section>    
 
@@ -130,6 +134,39 @@
       showDots: true
     })
 
+// 打字机特效脚本
+const textElement = document.querySelector(".typing-text");
+const words = ["Designer", "Web Developer", "Visual Storyteller", "Creative Thinker"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+        textElement.textContent = currentWord.substring(0, charIndex--);
+    } else {
+        textElement.textContent = currentWord.substring(0, charIndex++);
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typeSpeed = 2000; // 打完一个词后停顿 2秒
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+
+// 页面加载后启动
+document.addEventListener('DOMContentLoaded', typeEffect);
+    
     // 返回顶部按钮逻辑
     const btn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
@@ -160,3 +197,4 @@
     <p class="get-in-touch-text">GET IN TOUCH</p>
   </div>
 </footer>
+
