@@ -1,222 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Jewelry Design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-  <style>
-    /* 针对横向照片的补丁样式，确保不裁切 */
-    .phase-img {
-        cursor: pointer;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Jewelry Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+    <style>
+      /* 针对横向照片的补丁样式 */
+      .phase-img {
+        cursor: zoom-in;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #1a1615;
-    }
-    .phase-img img {
+        /* 去掉原本的背景色，改用透明或统一背景 */
+        background: transparent;
+        height: 250px; /* 固定高度，确保对齐 */
+      }
+      .phase-img img {
         width: auto !important;
         height: auto !important;
         max-width: 100% !important;
         max-height: 100% !important;
         object-fit: contain !important;
-    }
+      }
+    </style>
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-    /* Lightbox 灯箱样式 */
-    .lightbox {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        cursor: zoom-out;
-    }
-    .lightbox-content {
-        margin: auto;
-        display: block;
-        max-width: 90%;
-        max-height: 85vh;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        box-shadow: 0 0 30px rgba(193, 164, 129, 0.2);
-    }
-    .close-lightbox {
-        position: absolute;
-        top: 30px;
-        right: 40px;
-        color: #C1A481;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 2001;
-    }
-  </style>
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="projects.html">← Back to Projects</a>
+      </div>
+    </header>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
+    <section class="jewelry-hero-section">
+      <div class="project-hero">
+        <h2 class="project-title">JEWELRY<br />DESIGN</h2>
+        <p class="project-subtitle">
+          From organic inspiration to technical drafts, showcasing the intricate
+          process of hand-rendered jewelry concepts.
+        </p>
+      </div>
+
+      <div class="jewelry-work-block">
+        <div class="work-header">
+          <span class="work-number">PROJECT 01</span>
+          <h3>18K White Gold Tahiti Keshi Tulip Pendant</h3>
+        </div>
+        <div class="phase-container">
+          <div class="phase-card my-work" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 01: SKETCH</span>
+              <span class="my-role-tag">MY ROLE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/郁金香1.jpg" alt="Sketch" />
+            </div>
+            <p class="phase-desc">
+              Initial hand-drawn concepts focusing on organic curves.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 02: 3D MODEL</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/郁金香2.png" alt="3D Model" />
+            </div>
+            <p class="phase-desc">
+              Technical 3D modeling for factory casting preparation.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 03: FINAL PIECE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/郁金香3.jpg" alt="Final Piece" />
+            </div>
+            <p class="phase-desc">
+              The physical manifestation of the original vision.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="jewelry-work-block">
+        <div class="work-header">
+          <span class="work-number">PROJECT 02</span>
+          <h3>18K White Gold Tahiti Keshi Noodle Pendant</h3>
+        </div>
+        <div class="phase-container">
+          <div class="phase-card my-work" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 01: SKETCH</span>
+              <span class="my-role-tag">MY ROLE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/泡面1.jpg" alt="Sketch" />
+            </div>
+            <p class="phase-desc">
+              Initial hand-drawn concepts focusing on organic curves.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 02: 3D MODEL</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/泡面2.jpg" alt="3D Model" />
+            </div>
+            <p class="phase-desc">
+              Technical 3D modeling for factory casting preparation.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 03: FINAL PIECE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/泡面3.jpg" alt="Final Piece" />
+            </div>
+            <p class="phase-desc">
+              The physical manifestation of the original vision.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="jewelry-work-block">
+        <div class="work-header">
+          <span class="work-number">PROJECT 03</span>
+          <h3>18K White Gold Tahiti Keshi Lemon Tea Pendant</h3>
+        </div>
+        <div class="phase-container">
+          <div class="phase-card my-work" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 01: SKETCH</span>
+              <span class="my-role-tag">MY ROLE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/柠檬茶1.jpg" alt="Sketch" />
+            </div>
+            <p class="phase-desc">
+              Initial hand-drawn concepts focusing on organic curves.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 02: 3D MODEL</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/柠檬茶2.png" alt="3D Model" />
+            </div>
+            <p class="phase-desc">
+              Technical 3D modeling for factory casting preparation.
+            </p>
+          </div>
+          <div class="phase-card" onclick="openLightbox(this)">
+            <div class="phase-header">
+              <span class="phase-badge">STEP 03: FINAL PIECE</span>
+            </div>
+            <div class="phase-img">
+              <img src="image/柠檬茶3.jpg" alt="Final Piece" />
+            </div>
+            <p class="phase-desc">
+              The physical manifestation of the original vision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+
+    <nav class="project-nav-container">
+      <div class="nav-title">VIEW MORE PROJECTS</div>
+      <div class="nav-links-grid">
+        <a href="graphic design.html" class="nav-item">
+          <span class="nav-label">01</span>
+          <span class="nav-text">Graphic Design</span>
+        </a>
+        <a href="ux design.html" class="nav-item">
+          <span class="nav-label">02</span>
+          <span class="nav-text">Web Design & Dev</span>
+        </a>
+        <a href="media.html" class="nav-item">
+          <span class="nav-label">03</span>
+          <span class="nav-text">Media Production</span>
+        </a>
+        <a href="jewelry design.html" class="nav-item active">
+          <span class="nav-label">04</span>
+          <span class="nav-text">Jewelry Design</span>
+        </a>
+      </div>
     </nav>
-    <div class="header-cta">
-      <a href="projects.html">← Back to Projects</a>
-    </div>
-  </header>
 
-  <section class="jewelry-work-block">
-    <div class="work-header">
-      <span class="work-number">Project 01</span>
-      <h3>18K White Gold Tahiti Keshi Tulip Pendant/Brooch</h3>
-    </div>
-    <div class="phase-container">
-      <div class="phase-card my-work" onclick="openLightbox('郁金香1.jpg')">
-        <div class="phase-badge">Step 01: Sketch (My Part)</div>
-        <div class="phase-img"><img src="郁金香1.jpg" alt="Sketch"></div>
-        <p>Initial hand-drawn concepts focusing on organic curves.</p>
-      </div>
-      <div class="phase-card" onclick="openLightbox('郁金香2.png')">
-        <div class="phase-badge">Step 02: 3D Model</div>
-        <div class="phase-img"><img src="郁金香2.png" alt="3D Model"></div>
-        <p>Technical 3D modeling for factory casting preparation.</p>
-      </div>
-      <div class="phase-card" onclick="openLightbox('郁金香3.jpg')">
-        <div class="phase-badge">Step 03: Final Piece</div>
-        <div class="phase-img"><img src="郁金香3.jpg" alt="Final Piece"></div>
-        <p>The physical manifestation of the original vision.</p>
-      </div>
-    </div>
-  </section>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
 
-  <section class="jewelry-work-block">
-    <div class="work-header">
-      <span class="work-number">Project 02</span>
-      <h3>18K White Gold Tahiti Keshi Noodle Pendant</h3>
-    </div>
-    <div class="phase-container">
-      <div class="phase-card my-work" onclick="openLightbox('泡面1.jpg')">
-        <div class="phase-badge">Step 01: Sketch (My Part)</div>
-        <div class="phase-img"><img src="泡面1.jpg" alt="Sketch"></div>
-        <p>Initial hand-drawn concepts focusing on organic curves.</p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <p class="get-in-touch-text">GET IN TOUCH</p>
       </div>
-      <div class="phase-card" onclick="openLightbox('泡面2.jpg')">
-        <div class="phase-badge">Step 02: 3D Model</div>
-        <div class="phase-img"><img src="泡面2.jpg" alt="3D Model"></div>
-        <p>Technical 3D modeling for factory casting preparation.</p>
-      </div>
-      <div class="phase-card" onclick="openLightbox('泡面3.jpg')">
-        <div class="phase-badge">Step 03: Final Piece</div>
-        <div class="phase-img"><img src="泡面3.jpg" alt="Final Piece"></div>
-        <p>The physical manifestation of the original vision.</p>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section class="jewelry-work-block">
-    <div class="work-header">
-      <span class="work-number">Project 03</span>
-      <h3>18K White Gold Tahiti Keshi Lemon Tea Pendant</h3>
-    </div>
-    <div class="phase-container">
-      <div class="phase-card my-work" onclick="openLightbox('柠檬茶1.jpg')">
-        <div class="phase-badge">Step 01: Sketch (My Part)</div>
-        <div class="phase-img"><img src="柠檬茶1.jpg" alt="Sketch"></div>
-        <p>Initial hand-drawn concepts focusing on organic curves.</p>
-      </div>
-      <div class="phase-card" onclick="openLightbox('柠檬茶2.png')">
-        <div class="phase-badge">Step 02: 3D Model</div>
-        <div class="phase-img"><img src="柠檬茶2.png" alt="3D Model"></div>
-        <p>Technical 3D modeling for factory casting preparation.</p>
-      </div>
-      <div class="phase-card" onclick="openLightbox('柠檬茶3.jpg')">
-        <div class="phase-badge">Step 03: Final Piece</div>
-        <div class="phase-img"><img src="柠檬茶3.jpg" alt="Final Piece"></div>
-        <p>The physical manifestation of the original vision.</p>
-      </div>
-    </div>
-  </section>
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
 
-  <hr class="work-divider">
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
 
-  <div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close-lightbox">&times;</span>
-    <img class="lightbox-content" id="fullImage">
-  </div>
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-<nav class="project-nav-container">
-  <div class="nav-title">VIEW MORE PROJECTS</div>
-  <div class="nav-links-grid">
-    <a href="graphic design.html" class="nav-item">
-      <span class="nav-label">01</span>
-      <span class="nav-text">Graphic Design</span>
-    </a>
-    <a href="ux design.html" class="nav-item">
-      <span class="nav-label">02</span>
-      <span class="nav-text">Web Design & Dev</span>
-    </a>
-    <a href="media.html" class="nav-item">
-      <span class="nav-label">03</span>
-      <span class="nav-text">Media Production</span>
-    </a>
-    <a href="jewelry design.html" class="nav-item">
-      <span class="nav-label">04</span>
-      <span class="nav-text">Jewelry Design</span>
-    </a>
-  </div>
-</nav>
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-  <footer>
-    <div class="footer-cta">
-      <h2>Thanks for your viewing</h2>
-      <p>Thank you for taking the time to review my portfolio. Looking forward to connecting with you next time!</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/nicoc0.0" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@nicolew7543" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
-      </div>
-      <p class="get-in-touch-text">GET IN TOUCH</p>
-    </div>
-  </footer>
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
 
-  <script>
-    // 返回顶部脚本
-    const btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-    });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
 
-    // Lightbox 脚本
-    function openLightbox(src) {
-      document.getElementById("fullImage").src = src;
-      document.getElementById("imageLightbox").style.display = "block";
-      document.body.style.overflow = "hidden"; // 禁用背景滚动
-    }
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
 
-    function closeLightbox() {
-      document.getElementById("imageLightbox").style.display = "none";
-      document.body.style.overflow = "auto"; // 恢复背景滚动
-    }
-  </script>
-</body>
+      /* --- Lightbox Logic --- */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+
+        // 查找点击元素内的 img 标签
+        const img = element.querySelector("img");
+
+        if (img) {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+          captionText.innerHTML = img.alt;
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        const modal = document.getElementById("lightbox-modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      /* --- Scroll to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
