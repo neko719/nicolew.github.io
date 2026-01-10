@@ -1,155 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  // Show/hide button
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  // Smooth scroll to top
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-  <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
-     <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li> 
-      </ul>
-    </nav>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
       <div class="header-cta">
         <a href="contact.html">Let's Talk</a>
       </div>
     </header>
 
+    <section class="contact-hero">
+      <h1 class="contact-title">
+        LET'S START A<br />
+        <span class="title-highlight">CONVERSATION.</span>
+      </h1>
+    </section>
 
-  <section class="contact-info">
-    <h2>Contact</h2>
-    <p><strong>Name:</strong> Nicole Wu</p>
-    <p><strong>Phone Number:</strong> +1 416 828 3222</p>
-    <p><strong>Email:</strong> <a href="mailto:n9wu@uwaterloo.ca">n9wu@uwaterloo.ca /</a><a href="mailto:annnswu26@gmail.com"> annnswu26@gmail.com</a></p> 
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicole-wu-4948b8252/" target="_blank">Connect with Me</a></p>
-  </section>
+    <section class="faq-section">
+      <div class="faq-label">COMMON QUESTIONS</div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>How can I be friends with you?</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Send a message to me! I love connecting with new people.</p>
+          </div>
+        </div>
 
-<section class="faq">
-  <h2>Common Questions</h2>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>What was the goal of this portfolio?</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              I hope to create a space of my own and collect works with my
+              personal style, so that more people can see my abilities!
+            </p>
+          </div>
+        </div>
 
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-header">
-      <h3>How can I be friends with you?</h3>
-      <i class="fas fa-plus faq-icon"></i>
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>What inspired your design decisions?</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              My color schemes often come from the style of work I want to
+              create. I tend to choose a minimalist style, but I love adding
+              texture and depth through interaction.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <h3>What tools or software did you use?</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Mostly using Adobe Creative Suite (InDesign, Illustrator) and
+              Procreate. For web, I use Figma and VS Code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-split-section" id="contact">
+      <div class="contact-left">
+        <div class="info-group">
+          <span class="info-label">EMAIL</span>
+          <a href="mailto:n9wu@uwaterloo.ca" class="info-link"
+            >n9wu@uwaterloo.ca</a
+          >
+          <a href="mailto:annnswu26@gmail.com" class="info-link"
+            >annnswu26@gmail.com</a
+          >
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">PHONE</span>
+          <p class="info-text">+1 416 828 3222</p>
+        </div>
+
+        <div class="info-group">
+          <span class="info-label">SOCIALS</span>
+          <div class="social-text-links">
+            <a
+              href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+              target="_blank"
+              >LinkedIn ↗</a
+            >
+            <a href="https://www.instagram.com/nicoc0.0" target="_blank"
+              >Instagram ↗</a
+            >
+            <a href="https://www.youtube.com/@nicolew7543" target="_blank"
+              >YouTube ↗</a
+            >
+          </div>
+        </div>
+
+        <div class="availability-badge">
+          <span class="dot"></span> OPEN TO WORK
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <form id="contact-form" class="minimal-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="visitor-name"
+              name="visitor-name"
+              placeholder=" "
+              required
+            />
+            <label for="visitor-name">Your Name</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="visitor-email"
+              name="visitor-email"
+              placeholder=" "
+              required
+            />
+            <label for="visitor-email">Your Email</label>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="visitor-message"
+              name="visitor-message"
+              rows="4"
+              placeholder=" "
+              required
+            ></textarea>
+            <label for="visitor-message">Your Message</label>
+          </div>
+
+          <button type="submit" class="btn-minimal-submit">
+            SEND MESSAGE <span class="arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span>TALK WITH ME • OPEN TO WORK • CONTACT ME •</span>
+        <span>TALK WITH ME • OPEN TO WORK • CONTACT ME •</span>
+        <span>TALK WITH ME • OPEN TO WORK • CONTACT ME •</span>
+        <span>TALK WITH ME • OPEN TO WORK • CONTACT ME •</span>
+      </div>
     </div>
-    <div class="faq-answer">
-      <p>Send a message to me below! I'm always open to networking and making new friends in the creative industry.</p>
-    </div>
-  </div>
 
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-header">
-      <h3>What was the goal of this portfolio?</h3>
-      <i class="fas fa-plus faq-icon"></i>
-    </div>
-    <div class="faq-answer">
-      <p>I hope to create a space of my own and collect works with my personal style, so that more people can see my abilities!</p>
-    </div>
-  </div>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/nicoc0.0" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@nicolew7543" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
 
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-header">
-      <h3>What inspired your design decisions?</h3>
-      <i class="fas fa-plus faq-icon"></i>
-    </div>
-    <div class="faq-answer">
-      <p>My color schemes often come from the style of work I want to create. I tend to choose a minimalist style, but I love adding texture and depth through interaction.</p>
-    </div>
-  </div>
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
 
-  <div class="faq-item" onclick="toggleFaq(this)">
-    <div class="faq-header">
-      <h3>What tools or software did you use?</h3>
-      <i class="fas fa-plus faq-icon"></i>
-    </div>
-    <div class="faq-answer">
-      <p>Mostly using Adobe Creative Suite (InDesign, Illustrator) and Procreate. For web, I use Figma and VS Code.</p>
-    </div>
-  </div>
-</section>
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
 
-<section id="contact" class="contact">
-  <h2>Let's Get in Touch</h2>
-  <form id="contact-form">
-    <label for="visitor-name">Name</label>
-    <input type="text" id="visitor-name" name="visitor-name" placeholder="Your name..." required>
-    
-    <label for="visitor-email">Email</label>
-    <input type="email" id="visitor-email" name="visitor-email" placeholder="Your email..." required>
-    
-    <label for="visitor-message">Message</label>
-    <textarea id="visitor-message" name="visitor-message" rows="5" placeholder="Type your message..." required></textarea>
-    
-    <button type="submit" class="btn-submit">Send to Nicole ✉️</button>
-  </form>
-</section>
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-<script>
-function toggleFaq(element) {
-    element.classList.toggle("active");
-}
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = encodeURIComponent(this['visitor-name'].value);
-    const email = encodeURIComponent(this['visitor-email'].value);
-    const message = encodeURIComponent(this['visitor-message'].value);
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:n9wu@uwaterloo.ca?subject=${subject}&body=${body}`;
-  });
-</script>
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
 
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
 
+      // FAQ Logic
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            if (other !== item) other.classList.remove("active");
+          });
+          item.classList.toggle("active");
+        });
+      });
+
+      // Contact Form Logic
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = encodeURIComponent(this["visitor-name"].value);
+          const email = encodeURIComponent(this["visitor-email"].value);
+          const message = encodeURIComponent(this["visitor-message"].value);
+          const subject = encodeURIComponent(`Portfolio message from ${name}`);
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\n${message}`
+          );
+          window.location.href = `mailto:n9wu@uwaterloo.ca?subject=${subject}&body=${body}`;
+        });
+
+      // Scroll Top
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
