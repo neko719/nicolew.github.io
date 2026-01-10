@@ -1,150 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Skills</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-  <script>
-    // Show/hide button
-    const btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-    });
-    // Smooth scroll to top
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
-    </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html" class="active">Skills</a></li> 
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      <a href="contact.html">Let's Talk</a>
-    </div>
-  </header>
-
-  <section class="skills-section" id="skills">
-    <h2>What are my Skills</h2>
-  
-    <div class="skills-bento-grid">
-      
-      <div class="skill-bento-card">
-        <h3>Proficient Software</h3>
-        <ul>
-          <li>Adobe Creative Suite</li>
-          <li>Procreate</li>
-          <li>Microsoft 365</li>
-          <li>Visual Studio</li>
-          <li>Canvas</li>
-          <li>Capcut</li>
-        </ul>
-        <i class="fa-solid fa-layer-group skill-bg-icon"></i>
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
-  
-      <div class="skill-bento-card skill-wide">
-        <h3>Business</h3>
-        <p>
-          My academic background in Global Business and Digital Arts provides a strong foundation in marketing, digital strategy, project management, and economics.
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html" class="active">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html">Let's Talk</a>
+      </div>
+    </header>
+
+    <section class="skills-section" id="skills">
+      <div class="skills-header">
+        <h2 class="skills-title">Skillset &<br />Expertise</h2>
+        <p class="skills-subtitle">
+          A collection of tools and methodologies I use to create digital
+          experiences.
         </p>
-        <i class="fa-solid fa-chart-line skill-bg-icon"></i>
-      </div>
-  
-      <div class="skill-bento-card">
-        <h3>Web Dev Tools</h3>
-        <ul>
-          <li>Figma</li>
-          <li>Squarespace</li>
-          <li>Framer</li>
-          <li>HTML / CSS</li>
-        </ul>
-        <i class="fa-solid fa-code skill-bg-icon"></i>
-      </div>
-  
-      <div class="skill-bento-card skill-tall">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Project Management</li>
-          <li>Feedback Interpretation</li>
-          <li>Time Management</li>
-          <li>Collaboration</li>
-          <li>User Behavior Analysis</li>
-          <li>Visual Storytelling</li>
-          <li>Content Creation</li>
-          <li>Conflict Resolution</li>
-        </ul>
-        <i class="fa-solid fa-comments skill-bg-icon"></i>
-      </div>
-  
-      <div class="skill-bento-card">
-        <h3>Specialized Design</h3>
-        <ul>
-          <li>Design Principles</li>
-          <li>Color Harmonies</li>
-          <li>Typography Hierarchy</li>
-          <li>Layout Composition</li>
-          <li>Storyboarding</li>
-        </ul>
-        <i class="fa-solid fa-pen-nib skill-bg-icon"></i>
-      </div>
-  
-    </div>
-  </section>
-
-  <nav class="next-page-nav">
-    <div class="nav-hint">VIEW MY WORK</div>
-    <a href="projects.html" class="next-page-box">
-      <div class="next-content">
-        <span class="next-num">04</span>
-        <span class="next-title">Portfolio Projects</span>
-      </div>
-      <div class="next-arrow">NEXT PAGE →</div>
-    </a>
-  </nav>
-
-  <footer>
-    <div class="footer-cta">
-      <h2>Thanks for your viewing</h2>
-      <p>
-        Thank you for taking the time to review my portfolio.
-        Looking forward to connecting with you next time!
-      </p>
-
-      <div class="social-links">
-        <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-          <i class="fas fa-envelope"></i>
-        </a>
       </div>
 
-      <p class="get-in-touch-text">GET IN TOUCH</p>
-    </div>
-  </footer>
-</body>
+      <div class="skills-bento-grid">
+        <div class="skill-bento-card">
+          <h3>Proficient Software</h3>
+          <ul>
+            <li>Adobe Creative Suite</li>
+            <li>Procreate</li>
+            <li>Microsoft 365</li>
+            <li>Visual Studio</li>
+            <li>Canvas</li>
+            <li>Capcut</li>
+          </ul>
+          <i class="fa-solid fa-layer-group skill-bg-icon"></i>
+        </div>
+
+        <div class="skill-bento-card skill-wide">
+          <h3>Business Acumen</h3>
+          <p>
+            My academic background in Global Business and Digital Arts provides
+            a strong foundation in marketing, digital strategy, project
+            management, and economics.
+          </p>
+          <i class="fa-solid fa-chart-line skill-bg-icon"></i>
+        </div>
+
+        <div class="skill-bento-card">
+          <h3>Web Dev Tools</h3>
+          <ul>
+            <li>Figma</li>
+            <li>Squarespace</li>
+            <li>Framer</li>
+            <li>HTML / CSS</li>
+          </ul>
+          <i class="fa-solid fa-code skill-bg-icon"></i>
+        </div>
+
+        <div class="skill-bento-card skill-tall">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Project Management</li>
+            <li>Feedback Interpretation</li>
+            <li>Time Management</li>
+            <li>Collaboration</li>
+            <li>User Behavior Analysis</li>
+            <li>Visual Storytelling</li>
+            <li>Content Creation</li>
+            <li>Conflict Resolution</li>
+          </ul>
+          <i class="fa-solid fa-comments skill-bg-icon"></i>
+        </div>
+
+        <div class="skill-bento-card">
+          <h3>Specialized Design</h3>
+          <ul>
+            <li>Design Principles</li>
+            <li>Color Harmonies</li>
+            <li>Typography Hierarchy</li>
+            <li>Layout Composition</li>
+            <li>Storyboarding</li>
+          </ul>
+          <i class="fa-solid fa-pen-nib skill-bg-icon"></i>
+        </div>
+      </div>
+    </section>
+
+    <nav class="next-page-nav">
+      <div class="nav-hint">VIEW MY WORK</div>
+      <a href="projects.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">04</span>
+          <span class="next-title">Portfolio Projects</span>
+        </div>
+        <div class="next-arrow">NEXT PAGE →</div>
+      </a>
+    </nav>
+
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
+
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
+
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
+    <script>
+      // 初始化 3D 倾斜效果
+      VanillaTilt.init(
+        document.querySelectorAll(
+          ".bento-item, .skill-bento-card, .next-page-box"
+        ),
+        {
+          max: 5, // 最大倾斜角度，越小越高级 (建议 3-5)
+          speed: 400, // 动画速度
+          glare: true, // 开启反光
+          "max-glare": 0.2, // 反光强度 (0-1)，0.2 比较低调
+          scale: 1.02, // 悬停时稍微放大一点点
+        }
+      );
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
