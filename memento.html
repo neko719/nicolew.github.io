@@ -1,145 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Memento UX Case Study</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  // Show/hide button
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  // Smooth scroll to top
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Memento Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="ux design.html">← Back to Web Design & Dev</a>
+      </div>
+    </header>
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-split">
+        <div class="cs-hero-text">
+          <span class="cs-category">UX / UI DESIGN CASE STUDY</span>
+          <h1 class="cs-title">CAPTURE MOMENTS<br />WITH MEANING</h1>
+          <p class="cs-subtitle">
+            Memento is a digital memory archive designed to help users document
+            personal experiences through visual storytelling and mindful
+            reflection.
+          </p>
+          <a
+            href="https://www.figma.com/design/QkSLqTvitEsLWTuHp328X3/BET-350---Mementos?node-id=75-11"
+            class="btn-live-site"
+            target="_blank"
+          >
+            TRY PROTOTYPE ↗
+          </a>
+        </div>
+
+        <div class="cs-hero-image">
+          <div class="img-frame">
+            <img src="image/memento home page.png" alt="Memento App Preview" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-details-section">
+      <div class="cs-details-grid">
+        <div class="cs-detail-box">
+          <h4>ASSIGNMENT CONTEXT</h4>
+          <p>
+            BET 350 - Technology Entrepreneurship. Focused on identifying market
+            gaps and building a tech-based solution through entrepreneurial
+            thinking.
+          </p>
+        </div>
+
+        <div class="cs-detail-box">
+          <h4>MY ROLE</h4>
+          <p>
+            UX/UI Designer & Researcher. Responsible for user persona
+            development, journey mapping, and creating high-fidelity interactive
+            prototypes.
+          </p>
+        </div>
+
+        <div class="cs-detail-box">
+          <h4>PROBLEM & OBJECTIVE</h4>
+          <p>
+            In a fast-paced world, people "collect" photos but rarely "reflect"
+            on them. Memento turns digital clutter into a mindful archive for
+            growth.
+          </p>
+        </div>
+
+        <div class="cs-detail-box">
+          <h4>IMPACT & REFLECTION</h4>
+          <p>
+            Validated product-market fit through interviews. I learned to
+            balance aesthetic minimalism with complex functional needs of a
+            digital archive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-visual-section">
+      <h3 class="cs-section-title">User Insights & Journey</h3>
+
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/Customer Profile-1.png" alt="Customer Profile" />
+          </div>
+          <div class="cs-caption">
+            <h3>Customer Profile</h3>
+            <p>
+              Outlining target users' motivations and behaviors to inform
+              empathetic design decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/Customer Journey.png" alt="Customer Journey" />
+          </div>
+          <div class="cs-caption">
+            <h3>Customer Journey</h3>
+            <p>
+              Mapping emotional touchpoints and usability priorities from
+              discovery to long-term engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+
+    <nav class="next-page-nav">
+      <div class="nav-hint">VIEW NEXT PROJECT</div>
+      <a href="cantalk.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">02</span>
+          <span class="next-title">CanTalk App</span>
+        </div>
+        <div class="next-arrow">NEXT CASE STUDY →</div>
+      </a>
     </nav>
-    <div class="header-cta">
-      <a href="ux design.html">← Back to Web Design/Development</a>
-    </div>
-  </header>
 
-<section class="ux-hero">
-  <div class="ux-hero__text">
-    <span class="ux-category">UX / UI DESIGN CASE STUDY</span>
-    <h2>Capture Moments <br>with Meaning</h2>
-    <p>Memento is a digital memory archive designed to help users document personal experiences through visual storytelling and mindful reflection.</p>
-    <a href="https://www.figma.com/design/QkSLqTvitEsLWTuHp328X3/BET-350---Mementos?node-id=75-11" class="cantalk-button" target="_blank">Try Memento Prototype</a>
-  </div>
-  <div class="ux-hero__image memento-floating">
-    <img src="memento home page.png" alt="Memento App Preview">
-  </div>
-</section>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
 
-<section class="ux-details-section">
-  <div class="ux-details-grid">
-    <div class="ux-col">
-      <div class="ux-detail-block">
-        <h3>Assignment Context</h3>
-        <p>BET 350 - Customer Experience Design. Focused on identifying market gaps and building a tech-based solution through entrepreneurial thinking.</p>
-      </div>
-      <div class="ux-detail-block">
-        <h3>My Role</h3>
-        <p>UX/UI Designer & Researcher. Responsible for user persona development, journey mapping, and creating high-fidelity interactive prototypes.</p>
-      </div>
-    </div>
-    <div class="ux-col">
-      <div class="ux-detail-block">
-        <h3>Problem & Objective</h3>
-        <p>In a fast-paced world, people "collect" photos but rarely "reflect" on them. Memento turns digital clutter into a mindful archive for growth.</p>
-      </div>
-      <div class="ux-detail-block">
-        <h3>Impact & Reflection</h3>
-        <p>Validated product-market fit through interviews. I learned to balance aesthetic minimalism with complex functional needs of a digital archive.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
 
-<section class="ux-visual-section">
-  <h3 class="section-title">User Insights & Journey</h3>
-  <div class="ux-bento-grid">
-    <div class="ux-bento-item">
-      <div class="ux-img-container white-bg">
-        <img src="Customer Profile-1.png" alt="Customer Profile">
+        <p class="get-in-touch-text">GET IN TOUCH</p>
       </div>
-      <div class="ux-caption-box">
-        <h3>Customer Profile</h3>
-        <p>Outlining target users' motivations and behaviors to inform empathetic design decisions.</p>
-      </div>
-    </div>
-    <div class="ux-bento-item">
-      <div class="ux-img-container white-bg">
-        <img src="Customer Journey.png" alt="Customer Journey">
-      </div>
-      <div class="ux-caption-box">
-        <h3>Customer Journey</h3>
-        <p>Mapping emotional touchpoints and usability priorities from discovery to long-term engagement.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<nav class="next-page-nav">
-  <div class="nav-hint">VIEW NEXT PROJECT</div>
-  <a href="cantalk.html" class="next-page-box">
-    <div class="next-content">
-      <span class="next-num">02</span>
-      <span class="next-title">CanTalk App</span>
-    </div>
-    <div class="next-arrow">NEXT CASE STUDY →</div>
-  </a>
-</nav>
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
 
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
-</body>
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
+      /* --- Lightbox Logic --- */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+
+        const img = element.querySelector("img");
+
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        const modal = document.getElementById("lightbox-modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      /* --- Scroll to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
-
