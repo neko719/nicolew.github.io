@@ -1,148 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Web Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="projects.html">← Back to Projects</a>
+      </div>
+    </header>
+
+    <section class="web-design-section">
+      <div class="project-hero">
+        <h2 class="project-title">WEB DESIGN<br />& DEV</h2>
+        <p class="project-subtitle">
+          Attention to detail and aesthetics to create visually stunning and
+          user-centric web designs.
+        </p>
+      </div>
+
+      <div class="design-block">
+        <h3 class="block-title">01 / Academic Projects</h3>
+
+        <div class="web-grid">
+          <div class="web-card">
+            <div class="web-card-content">
+              <span class="web-tag">PHOTO APP</span>
+              <h3>Memento</h3>
+              <p>
+                A digital memory archive that transforms personal experiences
+                into visual stories using elegant UI design.
+              </p>
+              <a href="memento.html" class="web-link">View Case Study →</a>
+            </div>
+            <div class="web-bg-num">01</div>
+          </div>
+
+          <div class="web-card">
+            <div class="web-card-content">
+              <span class="web-tag">LANGUAGE LEARNING APP</span>
+              <h3>CanTalk</h3>
+              <p>
+                A language learning app with intuitive design and smooth user
+                interactions, making communication accessible.
+              </p>
+              <a href="cantalk.html" class="web-link">View Case Study →</a>
+            </div>
+            <div class="web-bg-num">02</div>
+          </div>
+
+          <div class="web-card">
+            <div class="web-card-content">
+              <span class="web-tag">VISUAL IDENTITY & WEB</span>
+              <h3>Charmed Flower</h3>
+              <p>
+                A comprehensive visual identity and website redesign for a local
+                boutique florist, focusing on organic aesthetics.
+              </p>
+              <a
+                href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="web-link"
+                >View Prototype →</a
+              >
+            </div>
+            <div class="web-bg-num">03</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="design-block">
+        <h3 class="block-title">02 / Work Experience</h3>
+
+        <div class="work-showcase">
+          <div class="work-info">
+            <h3>Silkyo Website</h3>
+            <p>
+              The official website for Silkyo. I led the front-end development
+              and UI design, focusing on creating a seamless e-commerce
+              experience that reflects the brand's modern urban aesthetic.
+            </p>
+            <a
+              href="https://silkyo.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-live-site"
+            >
+              VISIT LIVE SITE ↗
+            </a>
+          </div>
+
+          <div class="work-preview">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img
+                src="image/silkyopreview.png"
+                alt="Preview of Silkyo.ca Website Homepage"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+
+    <nav class="project-nav-container">
+      <div class="nav-title">VIEW MORE PROJECTS</div>
+      <div class="nav-links-grid">
+        <a href="graphic design.html" class="nav-item">
+          <span class="nav-label">01</span>
+          <span class="nav-text">Graphic Design</span>
+        </a>
+        <a href="ux design.html" class="nav-item active">
+          <span class="nav-label">02</span>
+          <span class="nav-text">Web Design & Dev</span>
+        </a>
+        <a href="media.html" class="nav-item">
+          <span class="nav-label">03</span>
+          <span class="nav-text">Media Production</span>
+        </a>
+        <a href="jewelry design.html" class="nav-item">
+          <span class="nav-label">04</span>
+          <span class="nav-text">Jewelry Design</span>
+        </a>
+      </div>
     </nav>
-    <div class="header-cta">
-      <a href="projects.html">← Back to Projects</a>
-    </div>
-  </header>
 
-<section id="ux-ui" class="ux-ui">
-  <h2 class="uiux-heading">Web Design/Development</h2>
-  <p class="uxui-design-subtitle">
-    Attention to detail and aesthetics to create visually stunning and user-centric web designs.
-  </p>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
 
-<section class="sub-projects-container">
-  <div class="sub-projects-grid">
-    
-    <div class="bento-sub-card">
-      <div>
-        <h3>Memento</h3>
-        <p>A digital memory archive that transforms personal experiences into visual stories using elegant UI design.</p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <p class="get-in-touch-text">GET IN TOUCH</p>
       </div>
-      <a href="memento.html" class="bento-sub-link">Go to Memento →</a>
-    </div>
+    </footer>
 
-    <div class="bento-sub-card">
-      <div>
-        <h3>CanTalk</h3>
-        <p>A language learning app with intuitive design and smooth user interactions, making communication accessible.</p>
-      </div>
-      <a href="cantalk.html" class="bento-sub-link">Go to CanTalk →</a>
-    </div>
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
 
-<div class="bento-sub-card">
-  <div>
-    <h3>Florist Rebrand</h3>
-    <p>A comprehensive visual identity and website redesign for a local boutique florist, focusing on organic aesthetics.</p>
-  </div>
-  <a href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582" 
-     class="bento-sub-link" 
-     target="_blank" 
-     rel="noopener noreferrer">
-     Go to Charmed Flower →
-  </a>
-</div>
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
 
-  </div>
-</section>
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-<section id="work-website" class="ux-ui">
-  <h2 class="uiux-heading">Work Experience Project</h2>
-  <p class="uxui-design-subtitle">
-    The official website for Silkyo, where I applied my design and front-end skills.
-  </p>
-  
-  <div class="project-container">
-    <div class="project-card work-website-card">
-      <h3>Silkyo Website</h3>
-      <img src="silkyopreview.png" alt="Preview of Silkyo.ca Website Homepage">
-      <a href="https://silkyo.ca" target="_blank" rel="noopener noreferrer" class="btn-live-site">
-          Go to Website →
-      </a>
-    </div>
-  </div>
-</section>
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-<nav class="project-nav-container">
-  <div class="nav-title">VIEW MORE PROJECTS</div>
-  <div class="nav-links-grid">
-    <a href="graphic design.html" class="nav-item">
-      <span class="nav-label">01</span>
-      <span class="nav-text">Graphic Design</span>
-    </a>
-    <a href="ux design.html" class="nav-item">
-      <span class="nav-label">02</span>
-      <span class="nav-text">Web Design & Dev</span>
-    </a>
-    <a href="media.html" class="nav-item">
-      <span class="nav-label">03</span>
-      <span class="nav-text">Media Production</span>
-    </a>
-    <a href="jewelry design.html" class="nav-item">
-      <span class="nav-label">04</span>
-      <span class="nav-text">Jewelry Design</span>
-    </a>
-  </div>
-</nav>
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
 
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
 
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
+      /* --- Lightbox Logic --- */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+        const img = element.querySelector("img");
+
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        const modal = document.getElementById("lightbox-modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      /* --- Scroll to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
