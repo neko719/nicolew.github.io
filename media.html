@@ -1,301 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  // Show/hide button
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  // Smooth scroll to top
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="projects.html">← Back to Projects</a>
+      </div>
+    </header>
+
+    <section class="media-section">
+      <div class="project-hero">
+        <h2 class="project-title">MEDIA<br />PRODUCTION</h2>
+        <p class="project-subtitle">
+          Capturing genuine moments and turning them into compelling stories.
+        </p>
+      </div>
+
+      <div class="media-block">
+        <h3 class="block-title">01 / Featured Photography</h3>
+
+        <div class="photo-cards-grid">
+          <div class="photo-card">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img
+                src="image/imageedit_3_6698335143.jpg"
+                alt="Urban Coastline"
+              />
+            </div>
+            <div class="photo-text">
+              <h3>Urban Coastline</h3>
+              <p>
+                The city embodies industry, innovation and constant movement,
+                while the water symbolizes timelessness, tranquility and depth.
+              </p>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Image_20241110015321.jpg" alt="Dock at Sunset" />
+            </div>
+            <div class="photo-text">
+              <h3>Dock at Sunset</h3>
+              <p>
+                The silence of the pier contrasts with the warm colors of the
+                sunset, conveying a sense of loneliness yet peacefulness.
+              </p>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Image_20241110015306.jpg" alt="Towering Echo" />
+            </div>
+            <div class="photo-text">
+              <h3>Towering Echo</h3>
+              <p>
+                Cool tones and hard lines evoke a calm feeling for the city,
+                giving it unique character and authenticity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="media-block">
+        <h3 class="block-title">02 / Visual Collection</h3>
+
+        <div class="complex-gallery-layout">
+          <div class="gallery-col-vertical">
+            <div
+              class="img-frame full-height zoomable"
+              onclick="openLightbox(this)"
+            >
+              <img src="image/Action.jpg" alt="Vertical Photo Left" />
+            </div>
+          </div>
+
+          <div class="gallery-col-grid">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Fashion.jpg" alt="Horizontal Photo 1" />
+            </div>
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Macro.jpg" alt="Horizontal Photo 2" />
+            </div>
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Portrait2.jpg" alt="Horizontal Photo 3" />
+            </div>
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Portrait1.jpg" alt="Horizontal Photo 4" />
+            </div>
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Pet.jpg" alt="Horizontal Photo 5" />
+            </div>
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img src="image/Narrative.jpg" alt="Horizontal Photo 6" />
+            </div>
+          </div>
+
+          <div class="gallery-col-vertical">
+            <div
+              class="img-frame full-height zoomable"
+              onclick="openLightbox(this)"
+            >
+              <img src="image/Landscape.jpg" alt="Vertical Photo Right" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="media-block">
+        <h3 class="block-title">03 / Video Production</h3>
+
+        <div class="video-showcase">
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/N2dGd8u40_4?si=9RKFkMdG2KPFWNVG"
+              title="Antique in Times"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-info-wrapper">
+            <h3>Antique in Times</h3>
+            <button
+              class="know-more-btn"
+              onclick="toggleDetails('video-info-1')"
+            >
+              KNOW MORE ↓
+            </button>
+
+            <div id="video-info-1" class="collapsible-content">
+              <div class="details-grid">
+                <div class="detail-box">
+                  <h4>Assignment Context</h4>
+                  <p>
+                    GBDA201 - Digital Media Project 1. A documentary exploring
+                    the heritage of a local clock shop, focusing on the
+                    intersection of craftsmanship and history.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>My Role</h4>
+                  <p>
+                    Cinematographer, Interviewer, Scriptwriter, and Editor
+                    (Visual & Audio).
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Problem & Objective</h4>
+                  <p>
+                    The challenge was to tell a historical story by
+                    cinematography. The goal was to weave historical facts with
+                    personal narratives and visual elements.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Impact & Reflection</h4>
+                  <p>
+                    Mastered the balance between ambient sound and interview
+                    clarity. Significantly improved my ability to structure
+                    long-form content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-showcase">
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/eB03arcQcT4?si=ysBcjYpw_qOyp_45"
+              title="Premier Protein"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-info-wrapper">
+            <h3>Premier Protein Rebrand Advertising</h3>
+            <button
+              class="know-more-btn"
+              onclick="toggleDetails('video-info-2')"
+            >
+              KNOW MORE ↓
+            </button>
+
+            <div id="video-info-2" class="collapsible-content">
+              <div class="details-grid">
+                <div class="detail-box">
+                  <h4>Assignment Context</h4>
+                  <p>
+                    GBDA 202 - Digital Media Project 2. Rebranding and
+                    production for Premier Protein, aimed at modernizing the
+                    brand’s visual language for younger, health-conscious
+                    demographic.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>My Role</h4>
+                  <p>
+                    Cinematographer, Concept Creator (Storyboard), and
+                    Post-production Editor.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Problem & Objective</h4>
+                  <p>
+                    The challenge was visualizing "Energy". I sought to
+                    translate a functional beverage into a lifestyle experience
+                    by using aggressive camera movements and lighting to convey
+                    vitality.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Impact & Reflection</h4>
+                  <p>
+                    Learned "rhythmic editing"—matching cuts to audio beats to
+                    maintain viewer engagement in a short-form format.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-showcase">
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/3qQLsca61So?si=B9C06zuoYC19gcty"
+              title="A Silent Portrait"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-info-wrapper">
+            <h3>A Silent Portrait</h3>
+            <button
+              class="know-more-btn"
+              onclick="toggleDetails('video-info-3')"
+            >
+              KNOW MORE ↓
+            </button>
+
+            <div id="video-info-3" class="collapsible-content">
+              <div class="details-grid">
+                <div class="detail-box">
+                  <h4>Assignment Context</h4>
+                  <p>
+                    GBDA201 - Digital Media Project 1. An experimental short
+                    film exploring atmosphere and visual rhythm without
+                    dialogue.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>My Role</h4>
+                  <p>
+                    Full production: Concept, Filming, Lighting, and Editing.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Problem & Objective</h4>
+                  <p>
+                    To tell a compelling story using only visual cues. The
+                    objective was to evoke emotion through cinematography rather
+                    than words.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <h4>Impact & Reflection</h4>
+                  <p>
+                    Deep dive into color grading and lighting control. Proved my
+                    ability to manage the entire production pipeline
+                    independently.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="media-block">
+        <h3 class="block-title">04 / Product Photography</h3>
+
+        <div class="product-grid">
+          <div class="product-item">
+            <div class="product-images">
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/product3.2.jpg"
+                  alt="Mabe Pearl Earrings Left"
+                />
+              </div>
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/product3.1.jpg"
+                  alt="Mabe Pearl Earrings Right"
+                />
+              </div>
+            </div>
+            <h3>Mabe Earrings</h3>
+          </div>
+
+          <div class="product-item">
+            <div class="product-images">
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/product2.1.jpg"
+                  alt="South Sea White Pendant Left"
+                />
+              </div>
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/product2.2.jpg"
+                  alt="South Sea White Pendant Right"
+                />
+              </div>
+            </div>
+            <h3>South Sea White Pendant</h3>
+          </div>
+
+          <div class="product-item">
+            <div class="product-images">
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img src="image/product1.2.jpg" alt="Tahiti Pendant Left" />
+              </div>
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img src="image/product1.1.jpg" alt="Tahiti Pendant Right" />
+              </div>
+            </div>
+            <h3>Tahiti Pendant</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+
+    <nav class="project-nav-container">
+      <div class="nav-title">VIEW MORE PROJECTS</div>
+      <div class="nav-links-grid">
+        <a href="graphic design.html" class="nav-item">
+          <span class="nav-label">01</span>
+          <span class="nav-text">Graphic Design</span>
+        </a>
+        <a href="ux design.html" class="nav-item">
+          <span class="nav-label">02</span>
+          <span class="nav-text">Web Design & Dev</span>
+        </a>
+        <a href="media.html" class="nav-item active">
+          <span class="nav-label">03</span>
+          <span class="nav-text">Media Production</span>
+        </a>
+        <a href="jewelry design.html" class="nav-item">
+          <span class="nav-label">04</span>
+          <span class="nav-text">Jewelry Design</span>
+        </a>
+      </div>
     </nav>
-    <div class="header-cta">
-      <a href="projects.html">← Back to Projects</a>
-    </div>
-  </header>
 
-<section id="photography" class="photography-section">
-  <h2>Photography</h2>
-  <p class="photography-subtitle">
-    Capturing genuine moments and turning them into compelling stories.
-  </p>
-
-<section class="complex-gallery">
-  <h2>Featured Photography</h2>
-  <div class="photography-cards">
-    <div class="photography-card">
-      <img src="imageedit_3_6698335143.jpg" alt="Photography Project 1">
-      <div class="photography-text-content">
-        <h3>Urban Coastline</h3>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
         <p>
-          The city embodies industry, innovation and constant movement, while the water symbolizes timelessness, tranquility and depth.
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
         </p>
-      </div>
-    </div>
 
-    <div class="photography-card">
-      <img src="Image_20241110015321.jpg" alt="Photography Project 2">
-      <div class="photography-text-content">
-        <h3>Dock at Sunset</h3>
-        <p>
-          The silence of the pier contrasts with the warm colors of the sunset, conveying a sense of loneliness yet peacefulness.
-        </p>
-      </div>
-    </div>
-
-    <div class="photography-card">
-      <img src="Image_20241110015306.jpg" alt="Photography Project 3">
-      <div class="photography-text-content">
-        <h3>Towering Echo</h3>
-        <p>
-          Cool tones and hard lines evoke a calm feeling for the city, giving it unique character and authenticity.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-  
-  <div class="complex-gallery__container">
-    <div class="complex-gallery__vertical">
-      <img src="Action.jpg" alt="Vertical Photo Left">
-    </div>
-
-    <div class="complex-gallery__middle">
-      <img src="Fashion.jpg" alt="Horizontal Photo 1">
-      <img src="Macro.jpg" alt="Horizontal Photo 2">
-      <img src="Portrait2.jpg" alt="Horizontal Photo 3">
-      <img src="Portrait1.jpg" alt="Horizontal Photo 4">
-      <img src="Pet.jpg" alt="Horizontal Photo 5">
-      <img src="Narrative.jpg" alt="Horizontal Photo 6">
-    </div>
-
-    <div class="complex-gallery__vertical">
-      <img src="Landscape.jpg" alt="Vertical Photo Right">
-    </div>
-  </div>
-</section>
-
-<div class="video-card">
-  <h3>Antique in Times</h3>
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/N2dGd8u40_4?si=9RKFkMdG2KPFWNVG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
 
-  <button class="know-more-btn" onclick="toggleDetails('video-info-1')">KNOW MORE</button>
-
-  <div id="video-info-1" class="collapsible-content" style="display: none;">
-    <div class="video-details-grid">
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Assignment Context</h4>
-          <p>GBDA201 - Digital Media Project 1. A documentary exploring the heritage of a local clock shop, focusing on the intersection of craftsmanship and history.</p>
-        </div>
-        <div class="detail-item">
-          <h4>My Role</h4>
-          <p>Cinematographer, Interviewer, Scriptwriter, and Editor (Visual & Audio).</p>
-        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
       </div>
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Problem & Objective</h4>
-          <p>The challenge was to tell a silent, historical story by cinematography. The goal was to weave historical facts with personal narratives and visual elements.</p>
-        </div>
-        <div class="detail-item">
-          <h4>Impact & Reflection</h4>
-          <p>Mastered the balance between ambient sound and interview clarity. Significantly improved my ability to structure long-form content.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </footer>
 
-<div class="video-card">
-<h3>Premier Protein Rebrand Advertising</h3>
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/eB03arcQcT4?si=ysBcjYpw_qOyp_45" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
-      </div>
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
 
-  <button class="know-more-btn" onclick="toggleDetails('video-info-2')">KNOW MORE</button>
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
 
-  <div id="video-info-2" class="collapsible-content" style="display: none;">
-    <div class="video-details-grid">
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Assignment Context</h4>
-<p>GBDA 202 - Digital Media Project 2. Rebranding and production for Premier Protein, aimed at modernizing the brand’s visual language for younger, health-conscious demographic.</p>        </div>
-        <div class="detail-item">
-          <h4>My Role</h4>
-          <p>Cinematographer, Concept Creator (Storyboard), and Post-production Editor.</p>
-        </div>
-      </div>
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Problem & Objective</h4>
-<p>The primary challenge was <b>visualizing "Energy"</b>. I sought to translate a functional beverage into a lifestyle experience by using aggressive camera movements and lighting to convey vitality.</p>        
-        </div>
-        <div class="detail-item">
-          <h4>Impact & Reflection</h4>
-          <p>Learned "rhythmic editing"—matching cuts to audio beats to maintain viewer engagement in a short-form format.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-<div class="video-card">
-  <h3>A Silent Portrait</h3>
-    <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3qQLsca61So?si=B9C06zuoYC19gcty" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
-  <button class="know-more-btn" onclick="toggleDetails('video-info-3')">KNOW MORE</button>
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-  <div id="video-info-3" class="collapsible-content" style="display: none;">
-    <div class="video-details-grid">
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Assignment Context</h4>
-          <p>GBDA201 - Digital Media Project 1. An experimental short film exploring atmosphere and visual rhythm without dialogue.</p>
-        </div>
-        <div class="detail-item">
-          <h4>My Role</h4>
-          <p>Full production: Concept, Filming, Lighting, and Editing.</p>
-        </div>
-      </div>
-      <div class="video-details-col">
-        <div class="detail-item">
-          <h4>Problem & Objective</h4>
-          <p>To tell a compelling story using only visual cues. The objective was to evoke emotion through cinematography rather than words.</p>
-        </div>
-        <div class="detail-item">
-          <h4>Impact & Reflection</h4>
-          <p>Deep dive into color grading and lighting control. Proved my ability to manage the entire production pipeline independently.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
 
-<section id="product-photography" class="media-photography-section">
-  <h2>Product Photography</h2>
-  <p class="media-photography-subtitle">
-    Showcasing products with clarity, style, and market appeal.
-  </p>
-  
-  <div class="media-product-gallery">
-    
-    <div class="media-product-item">
-      <div class="media-images-flex-wrapper">
-        <img src="product3.2.jpg" alt="Mabe Pearl Earrings Left">
-        <img src="product3.1.jpg" alt="Mabe Pearl Earrings Right">
-      </div>
-      <h3>Mabe Earrings</h3>
-    </div>
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
 
-    <div class="media-product-item">
-      <div class="media-images-flex-wrapper">
-        <img src="product2.1.jpg" alt="South Sea White Pendant Left">
-        <img src="product2.2.jpg" alt="South Sea White Pendant Right">
-      </div>
-      <h3>South Sea White Pendant</h3>
-    </div>
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
 
-    <div class="media-product-item">
-      <div class="media-images-flex-wrapper">
-        <img src="product1.2.jpg" alt="Tahiti Pendant Left">
-        <img src="product1.1.jpg" alt="Tahiti Pendant Right">
-      </div>
-      <h3>Tahiti Pendant</h3>
-    </div>
-  </div>
-</section>
+      /* --- Details Toggle Logic --- */
+      function toggleDetails(id) {
+        var content = document.getElementById(id);
+        content.classList.toggle("active");
+      }
 
-<nav class="project-nav-container">
-  <div class="nav-title">VIEW MORE PROJECTS</div>
-  <div class="nav-links-grid">
-    <a href="graphic design.html" class="nav-item">
-      <span class="nav-label">01</span>
-      <span class="nav-text">Graphic Design</span>
-    </a>
-    <a href="ux design.html" class="nav-item">
-      <span class="nav-label">02</span>
-      <span class="nav-text">Web Design & Dev</span>
-    </a>
-    <a href="media.html" class="nav-item">
-      <span class="nav-label">03</span>
-      <span class="nav-text">Media Production</span>
-    </a>
-    <a href="jewelry design.html" class="nav-item">
-      <span class="nav-label">04</span>
-      <span class="nav-text">Jewelry Design</span>
-    </a>
-  </div>
-</nav>
+      /* --- Lightbox Logic --- */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
 
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
+        const img = element.querySelector("img");
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        document.body.style.overflow = "hidden";
+      }
 
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        const modal = document.getElementById("lightbox-modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
 
-<script>
-function toggleDetails(id) {
-    var content = document.getElementById(id);
-    if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
-</script>
-</body>
+      /* --- Scroll to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
-
-
