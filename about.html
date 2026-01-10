@@ -1,248 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body>
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-<script>
-  // Show/hide button
-  const btn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  // Smooth scroll to top
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-  <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+
+    <style>
+      /* --- 修复布局的专用样式 --- */
+
+      /* 1. 确保照片容器保持原来的大小和位置 */
+      .about-image-wrapper {
+        position: relative;
+        padding: 20px 0 0 20px; /* 给金色边框留出左上角的错位空间 */
+        width: 100%;
+        max-width: 450px; /* 限制最大宽度，防止挤压右侧文字 */
+        cursor: pointer;
+        z-index: 10; /* 保证在最上层 */
+      }
+
+      /* 2. 照片堆叠容器 */
+      .stack-container {
+        display: grid;
+        grid-template-areas: "stack";
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* 3. 每一张照片 */
+      .stack-item {
+        grid-area: stack;
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 2px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 增加阴影 */
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* 弹性动画 */
+
+        /* 默认状态：稍微倾斜，黑白 */
+        transform: rotate(var(--rotate)) scale(0.95);
+        z-index: var(--z);
+        opacity: 0.8;
+        filter: grayscale(80%) contrast(100%);
+        background-color: #1a1615;
+      }
+
+      /* 4. 激活的那张照片（彩色、置顶） */
+      .stack-item.active {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+        filter: grayscale(0%) contrast(110%);
+        z-index: 10;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      /* 悬停时的微互动：像洗牌一样 */
+      .about-image-wrapper:hover .stack-item:not(.active) {
+        transform: rotate(calc(var(--rotate) * 1.5)) scale(0.96) translateX(5px);
+      }
+
+      /* --- 印章样式 --- */
+      .about-text-content {
+        position: relative;
+      }
+      .rotating-badge {
+        position: absolute;
+        top: -60px;
+        right: 0;
+        width: 130px;
+        height: 130px;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .badge-svg {
+        width: 100%;
+        height: 100%;
+        animation: rotateBadge 15s linear infinite;
+      }
+      .badge-text {
+        fill: #c1a481;
+        font-family: "Inconsolata", monospace;
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+      .badge-star {
+        fill: #c1a481;
+        font-size: 24px;
+        dominant-baseline: middle;
+        text-anchor: middle;
+      }
+      @keyframes rotateBadge {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (max-width: 768px) {
+        .rotating-badge {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
-     <nav class="header-nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li> 
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
       <div class="header-cta">
         <a href="contact.html">Let's Talk</a>
       </div>
     </header>
-    
-<body>
-  <section class="about-me-section" id="about">
-    <div class="about-me-content">
-      <div class="about-me-text">
-        <h2>About Me</h2>
-        <h3>Internship / Junior Designer / Graphic Design Assistant</h3>
-        <p>
-          I am a student at the University of Waterloo, studying Global Business and Digital Arts.
-          I am passionate about design, technology, and constantly seeking opportunities to learn and grow.
-        </p>
-      </div>
-      <div class="about-me-photo">
-        <img src="me with camera.png" alt="About Me Photo">
-      </div>
-    </div>
-  </section>  
 
-    <section class="goals" id="goals">
-      <h2>Future Goals for Life Development</h2>
-      <div class="goals-container">
-        <div class="goals-column">
-          <h3>Short-term</h3>
-          <div class="goal-category">
-            <h4>Learn</h4>
-            <ul>
-              <li>Conduct a skills gap analysis</li>
-              <li>Define my artist style</li>
+    <section class="about-hero-section">
+      <div class="about-grid">
+        <div class="about-image-wrapper" id="parallax-wrapper">
+          <div class="image-border"></div>
+
+          <div
+            class="stack-container"
+            id="stack-container"
+            onclick="cycleStack()"
+          >
+            <img
+              src="image/selfie.jpg"
+              alt="Portrait 3"
+              class="stack-item"
+              style="--rotate: -6deg; --z: 1"
+            />
+
+            <img
+              src="image/selfie2.jpg"
+              alt="Portrait 2"
+              class="stack-item"
+              style="--rotate: 4deg; --z: 2"
+            />
+
+            <img
+              src="image/selfie3.jpg"
+              alt="Portrait 1"
+              class="stack-item active"
+              style="--rotate: 0deg; --z: 3"
+            />
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <div class="rotating-badge">
+            <svg class="badge-svg" viewBox="0 0 100 100">
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                />
+              </defs>
+              <text class="badge-text">
+                <textPath xlink:href="#circlePath">
+                  NICOLE WU • PORTFOLIO • 2026 •
+                </textPath>
+              </text>
+              <text x="50" y="52" class="badge-star">✦</text>
+            </svg>
+          </div>
+
+          <h1 class="about-title">About<br />Me</h1>
+          <p class="about-bio">
+            I am a student at the University of Waterloo, currently pursuing a
+            degree in Global Business and Digital Arts.
+            <br /><br />
+            Passionate about the intersection of design and technology, I am
+            constantly seeking opportunities to learn, grow, and translate
+            complex ideas into intuitive visual narratives.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="goals-minimal-section">
+      <h2 class="section-heading">Future Goals & Development</h2>
+
+      <div class="goals-grid">
+        <div class="goal-column">
+          <h3 class="goal-type">SHORT TERM</h3>
+
+          <div class="goal-item">
+            <span class="goal-category">LEARN</span>
+            <ul class="goal-list">
+              <li>Conduct a comprehensive skills gap analysis</li>
+              <li>Define and refine my personal artistic style</li>
             </ul>
           </div>
-          <div class="goal-category">
-            <h4>Life</h4>
-            <ul>
-              <li>Drink at least one bottle of water a day</li>
-              <li>Get at least 7 hrs sleep everyday</li>
+
+          <div class="goal-item">
+            <span class="goal-category">LIFE</span>
+            <ul class="goal-list">
+              <li>Maintain hydration (1+ bottle/day)</li>
+              <li>Ensure consistent 7-hour sleep schedule</li>
             </ul>
           </div>
         </div>
 
-        <div class="goals-column">
-          <h3>Long-term</h3>
-          <div class="goal-category">
-            <h4>Career</h4>
-            <ul>
-              <li>Build professional network</li>
-              <li>Learn how to use C4D</li>
+        <div class="goal-column">
+          <h3 class="goal-type">LONG TERM</h3>
+
+          <div class="goal-item">
+            <span class="goal-category">CAREER</span>
+            <ul class="goal-list">
+              <li>Build a robust professional network</li>
+              <li>Master Cinema 4D (C4D) for 3D design</li>
             </ul>
           </div>
-          <div class="goal-category">
-            <h4>Life</h4>
-            <ul>
-              <li>Improve work-life balance</li>
-              <li>Become fluent in Japanese</li>
+
+          <div class="goal-item">
+            <span class="goal-category">LIFE</span>
+            <ul class="goal-list">
+              <li>Achieve a sustainable work-life balance</li>
+              <li>Achieve fluency in Japanese</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-<section class="language" id="language">
-  <h2>Language</h2>
-  <ul class="language-list">
-    <li>English</li>
-    <li>Mandarin</li>
-    <li>Cantonese</li>
-  </ul>
-
-  <h3>Currently Learning</h3>
-  <ul class="language-list">
-    <li>Korean</li>
-    <li>Japanese</li>
-    <li>French</li>
-  </ul>
-</section>
-
-<section class="experience" id="experience">
-  <h2>Work Experience</h2>
-  <div class="timeline">
-    <!-- Video Editor -->
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>CICS Immigrant Youth Centre | Video Editor</h3>
-        <span class="date">Jun 2021 – Aug 2021</span>
-        <p>Edited promotional videos to support youth programs and community outreach initiatives.</p>
-        <ul>
-          <li>Collaborated with staff to shape visual narratives that reflected CICS’s mission and values.</li>
-          <li>Organized raw footage, applied transitions and effects, and optimized content for web and social platforms.</li>
-        </ul>
+    <section class="language-section">
+      <div class="lang-container">
+        <div class="lang-block">
+          <h3>SPOKEN</h3>
+          <p>English / Mandarin / Cantonese</p>
+        </div>
+        <div class="lang-divider"></div>
+        <div class="lang-block">
+          <h3>LEARNING</h3>
+          <p>Korean / Japanese / French</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Summer Camp Counselor -->
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>CICS Immigrant Youth Centre | Summer Camp Counselor</h3>
-        <span class="date">Jul 2022 – Aug 2022</span>
-        <p>Assisted in organizing and facilitating youth programs and activities that promoted community engagement, leadership, and personal development.</p>
-        <ul>
-          <li>Coordinated events and supervised participants to ensure a safe, inclusive environment for immigrant youth.</li>
-          <li>Collaborated with program staff on schedule planning, materials preparation, and on-site support.</li>
-        </ul>
+    <section class="experience-section">
+      <h2 class="section-heading">Work Experiences</h2>
+      <div class="timeline-minimal">
+        <div class="timeline-row">
+          <div class="timeline-date">SEPT 2024 - PRESENT</div>
+          <div class="timeline-detail">
+            <h3>SILKYO</h3>
+            <p class="role">
+              Live Product Host, Web Manager, Visual Content Creator
+            </p>
+            <ul class="timeline-list">
+              <li>
+                Championed product promotion via live streaming, delivering
+                persuasive presentations that drove significant sales growth and
+                enhanced customer loyalty.
+              </li>
+              <li>
+                Spearheaded comprehensive e-commerce operations, optimizing
+                digital storefront performance and implementing data-driven
+                strategies to maximize conversion.
+              </li>
+              <li>
+                Created high-impact, cohesive visual content—spanning
+                photography, videography, and graphic design to strengthen brand
+                identity across all digital and social platforms.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="timeline-date">OCT 2022 - MAY 2023</div>
+          <div class="timeline-detail">
+            <h3>Bur Oak Secondary School Yearbook 2023</h3>
+            <p class="role">Designer & Photographer</p>
+            <ul class="desc">
+              <li>
+                Designed creative and cohesive page layouts using design
+                software to document school milestones.
+              </li>
+              <li>
+                Captured high-quality photographs of school events, sports, and
+                student life for publication.
+              </li>
+              <li>
+                Collaborated with the creative team to meet strict printing
+                deadlines and ensure visual consistency.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="timeline-date">JUL 2022 - AUG 2022</div>
+          <div class="timeline-detail">
+            <h3>CICS Immigrant Youth Centre</h3>
+            <p class="role">Summer Camp Counselor</p>
+            <ul class="desc">
+              <li>
+                Coordinated events and supervised participants to ensure a safe,
+                inclusive environment for immigrant youth.
+              </li>
+              <li>
+                Collaborated with program staff on schedule planning, materials
+                preparation, and on-site support.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="timeline-date">JUN 2021 - AUG 2021</div>
+          <div class="timeline-detail">
+            <h3>CICS Immigrant Youth Centre</h3>
+            <p class="role">Video Editor</p>
+            <ul class="desc">
+              <li>
+                Collaborated with staff to shape visual narratives that
+                reflected CICS’s mission and values.
+              </li>
+              <li>
+                Organized raw footage, applied transitions and effects, and
+                optimized content for web and social platforms.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Year Book -->
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>High School Yearbook | Designer & Photographer</h3>
-        <span class="date">Oct 2022 – May 2023</span>
-        <p>Contributed to the creative production of the annual yearbook, capturing school spirit and preserving memories through visual storytelling.</p>
-        <ul>
-      <li>Designed creative and cohesive page layouts using design software to document school milestones.</li>
-      <li>Captured high-quality photographs of school events, sports, and student life for publication.</li>
-      <li>Collaborated with the creative team to meet strict printing deadlines and ensure visual consistency.</li>
-        </ul>
+    <section id="resume-section" class="resume-section">
+      <h2 class="section-heading">Resume Preview</h2>
+      <div class="resume-previews-container">
+        <div class="resume-preview-item">
+          <img
+            src="image/Nicole_Wu_Resume-1.png"
+            alt="Nicole's Resume Page 1"
+            class="resume-preview-image"
+          />
+          <p class="page-label">PAGE 01</p>
+        </div>
+        <div class="resume-preview-item">
+          <img
+            src="image/Nicole_Wu_Resume-2.png"
+            alt="Nicole's Resume Page 2"
+            class="resume-preview-image"
+          />
+          <p class="page-label">PAGE 02</p>
+        </div>
       </div>
-    </div>
-
-    <!-- SILKYO -->
-    <div class="timeline-item">
-      <div class="timeline-icon"></div>
-      <div class="timeline-content">
-        <h3>SILKYO | Live Product Host, Web Manager, Visual Content Creator</h3>
-        <span class="date">Sept 2024 – Present</span>
-        <p>Drove e-commerce growth and brand presence by integrating live stream sales, compelling visual content creation (photo/video/design), and optimizing end-to-end digital operations.</p>
-        <ul>
-          <li>Championed product promotion via live streaming, delivering persuasive presentations that drove significant sales growth and enhanced customer loyalty.</li>
-          <li>Spearheaded comprehensive e-commerce operations, optimizing digital storefront performance and implementing data-driven strategies to maximize conversion.</li>
-          <li>Created high-impact, cohesive visual content—spanning photography, videography, and graphic design  to strengthen brand identity across all digital and social platforms.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="resume-section" class="resume-section">
-  <h2>My Resume</h2>
-  
-  <div class="resume-previews-container">
-    <div class="resume-preview-item">
-      <img 
-        src="Nicole_Wu_Resume-1.png" 
-        alt="Nicole's Resume Page 1 Preview" 
-        class="resume-preview-image"
+      <a
+        href="image/Nicole_Wu_Resume.pdf"
+        target="_blank"
+        class="resume-download-btn"
+        >View PDF</a
       >
-      <p class="page-label">Page 1</p>
-    </div>
+    </section>
 
-    <div class="resume-preview-item">
-      <img 
-        src="Nicole_Wu_Resume-2.png" 
-        alt="Nicole's Resume Page 2 Preview" 
-        class="resume-preview-image"
-      >
-      <p class="page-label">Page 2</p>
-    </div>
-
-  </div>
-
-  <a href="Nicole_Wu_Resume.pdf" target="_blank" class="resume-download-btn">
-      View Full Resume (PDF) →
-  </a>
-</section>
-
-<nav class="next-page-nav">
-  <div class="nav-hint">CONTINUE TO</div>
-  <a href="skills.html" class="next-page-box">
-    <div class="next-content">
-      <span class="next-num">03</span>
-      <span class="next-title">My Skills</span>
-    </div>
-    <div class="next-arrow">NEXT PAGE →</div>
-  </a>
-</nav>
-
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
-
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
+    <nav class="next-page-nav">
+      <div class="nav-hint">CONTINUE TO</div>
+      <a href="skills.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">03</span>
+          <span class="next-title">My Skills</span>
+        </div>
+        <div class="next-arrow">NEXT PAGE →</div>
       </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+    </nav>
 
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/nicoc0.0" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@nicolew7543" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
 
+    <script>
+      /* --- 1. Photo Stack Logic (点击洗牌) --- */
+      function cycleStack() {
+        const container = document.getElementById("stack-container");
+        const images = Array.from(container.querySelectorAll(".stack-item"));
+
+        // 找到当前最上面的那张 (active)
+        const currentActive = container.querySelector(".active");
+        const currentIndex = images.indexOf(currentActive);
+
+        // 计算下一张
+        const nextIndex = (currentIndex + 1) % images.length;
+        const nextActive = images[nextIndex];
+
+        // 重置所有状态
+        images.forEach((img) => img.classList.remove("active"));
+
+        // 激活下一张
+        nextActive.classList.add("active");
+      }
+
+      /* --- 2. Parallax Effect (视差悬浮) --- */
+      if (window.innerWidth > 768) {
+        const aboutSection = document.querySelector(".about-hero-section");
+        const stackContainer = document.getElementById("stack-container");
+        const border = document.querySelector(".image-border");
+
+        aboutSection.addEventListener("mousemove", (e) => {
+          const x = (window.innerWidth / 2 - e.pageX) / 30;
+          const y = (window.innerHeight / 2 - e.pageY) / 30;
+
+          if (stackContainer)
+            stackContainer.style.transform = `translate(${x}px, ${y}px)`;
+          if (border) border.style.transform = `translate(${-x}px, ${-y}px)`;
+        });
+
+        aboutSection.addEventListener("mouseleave", () => {
+          if (stackContainer)
+            stackContainer.style.transform = `translate(0, 0)`;
+          if (border) border.style.transform = `translate(0, 0)`;
+        });
+      }
+
+      /* --- 3. Scroll Progress & Cursor --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        cursorOutline.animate(
+          { left: `${posX}px`, top: `${posY}px` },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // Hover effects
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item, .resume-preview-image, .stack-item, .about-image-wrapper"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
+      /* --- 4. Back to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
