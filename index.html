@@ -1,200 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicole Portfolio - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="n.styles.css">  
-</head>
-<body style="background-color: #1a1615;"> <button id="back-to-top" aria-label="Back to top">↑</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <header class="main-header">
-    <div class="header-logo">
-      <img src="logo.png" alt="Nicole Portfolio Logo">
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-text">NICOLE WU</div>
+        <div class="loader-subtext">PORTFOLIO © 2026</div>
+        <div class="counter">0</div>
+      </div>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li> 
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      <a href="contact.html">Let's Talk</a>
-    </div>
-  </header>
 
-  <section class="profile" id="profile">
-  <div id="vanta-particles-bg"></div>
-    <div class="profile-content">
-        <div class="avatar-wrapper">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div> 
-            <img src="selfie.jpg" alt="Profile" class="profile-image">
+    <div class="noise-overlay"></div>
+    <div class="gradient-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html">Let's Talk</a>
+      </div>
+    </header>
+
+    <section class="profile-hero-text" id="profile">
+      <div id="vanta-particles-bg"></div>
+
+      <div class="hero-content-centered">
+        <h1 class="hero-main-title shimmer-text">NICOLE WU</h1>
+        <div class="hero-meta-row">
+          <span class="typing-text"></span><span class="cursor">|</span>
+          <span class="location">BASED IN CANADA</span>
         </div>
-<h1 class="profile-title"> 
-  Nicole Wu
-  <span class="profile-subtitle">Portfolio</span> 
-</h1> 
-
-<p class="profile-description">
-  I am a <span class="typing-text"></span><span class="cursor">|</span>
-</p>
-<p class="profile-school">University of Waterloo - Global Business and Digital Arts</p>
-    </div>
-  </section>    
-
-  <section style="background-color: #1a1615; padding: 20px 0;">
-    <table class="education-table">
-      <thead>
-        <tr>
-          <th>Education</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>OSSD</td>
-          <td>2019 - 2023</td>
-        </tr>
-        <tr>
-          <td>Bachelor of Global Business and Digital Arts</td>
-          <td>2023 - Current</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="personal-identity">
-    <h2>Personal Identity</h2>
-    <div class="identity-content">
-      <div class="identity-left">
-        <h3>Crafting Visuals that Drive Impact and Inspire Connection!</h3>
       </div>
-      <div class="identity-right">
-        <p>
-          As a creative and business-minded GBDA student with hands-on experience 
-          in different types of design, business, and product marketing, 
-          I specialize in translating concepts into impactful visual solutions. 
-        </p>
-        <p>
-          By leveraging a solid foundation in Adobe Suite and other platforms, 
-          I hope to contribute to creative projects by leveraging digital media production, 
-          marketing design, and multitasking skills in a dynamic environment.
-        </p>
+
+      <div class="scroll-indicator">
+        <span>SCROLL</span>
+        <div class="line"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<nav class="next-page-nav">
-  <div class="nav-hint">CONTINUE TO</div>
-  <a href="about.html" class="next-page-box">
-    <div class="next-content">
-      <span class="next-num">02</span>
-      <span class="next-title">About Me</span>
-    </div>
-    <div class="next-arrow">NEXT PAGE →</div>
-  </a>
-</nav>
+    <section class="education-minimal-section">
+      <div class="edu-container">
+        <div class="edu-label">EDUCATION HISTORY</div>
 
-<footer>
-  <div class="footer-cta">
-    <h2>Thanks for your viewing</h2>
-    <p>
-      Thank you for taking the time to review my portfolio.
-      Looking forward to connecting with you next time!
-    </p>
+        <div class="edu-row">
+          <div class="edu-year">2023 - PRESENT</div>
+          <div class="edu-content">
+            <h3 class="edu-degree">
+              Bachelor of Global Business and Digital Arts
+            </h3>
+            <p class="edu-school">University of Waterloo</p>
+          </div>
+        </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+        <div class="edu-row">
+          <div class="edu-year">2019 - 2023</div>
+          <div class="edu-content">
+            <h3 class="edu-degree">Ontario Secondary School Diploma</h3>
+            <p class="edu-school">High School</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    // 初始化无连线、有呼吸感的粒子背景
-    VANTA.NET({
-      el: "#vanta-particles-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xc1a481,        // 金色粒子
-      backgroundColor: 0x1a1615, // 深褐色背景
-      points: 25.00,
-      maxDistance: 0.00, 
-      spacing: 15.00,
-      showDots: true
-    })
+    <section class="split-identity-section">
+      <div class="split-panel panel-left">
+        <div class="panel-border"></div>
+        <div class="panel-content">
+          <h2 class="big-title">WHO<br />I AM</h2>
+          <div class="detail-text">
+            <h3>Crafting Visuals that Drive Impact</h3>
+            <p>
+              As a creative and business-minded GBDA student with hands-on
+              experience in different types of design, business, and product
+              marketing, I specialize in translating concepts into impactful
+              visual solutions.
+            </p>
+          </div>
+        </div>
+      </div>
 
-// 打字机特效脚本
-const textElement = document.querySelector(".typing-text");
-const words = ["Designer", "Web Developer", "Visual Storyteller", "Creative Thinker"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+      <div class="split-panel panel-right">
+        <div class="panel-border"></div>
+        <div class="panel-content">
+          <h2 class="big-title">MY<br />VISION</h2>
+          <div class="detail-text">
+            <h3>Inspire Connection & Innovation</h3>
+            <p>
+              By leveraging a solid foundation in Adobe Suite and other
+              platforms, I hope to contribute to creative projects by leveraging
+              digital media production, marketing design, and multitasking
+              skills in a dynamic environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-function typeEffect() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        textElement.textContent = currentWord.substring(0, charIndex--);
-    } else {
-        textElement.textContent = currentWord.substring(0, charIndex++);
-    }
+    <nav class="next-page-nav">
+      <div class="nav-hint">CONTINUE TO</div>
+      <a href="about.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">02</span>
+          <span class="next-title">About Me</span>
+        </div>
+        <div class="next-arrow">NEXT PAGE →</div>
+      </a>
+    </nav>
 
-    let typeSpeed = isDeleting ? 50 : 100;
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
 
-    if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        typeSpeed = 2000; // 打完一个词后停顿 2秒
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500;
-    }
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
 
-    setTimeout(typeEffect, typeSpeed);
-}
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
 
-// 页面加载后启动
-document.addEventListener('DOMContentLoaded', typeEffect);
-    
-    // 返回顶部按钮逻辑
-    const btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-    });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
+      // Vanta 背景初始化
+      VANTA.NET({
+        el: "#vanta-particles-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xc1a481,
+        backgroundColor: 0x1a1615,
+        points: 25.0,
+        maxDistance: 22.0, // 稍微调大一点连线距离，因为没有照片遮挡了
+        spacing: 18.0,
+        showDots: true,
+      });
+
+      // Loading Screen 逻辑
+      function startLoader() {
+        const counterElement = document.querySelector(".counter");
+        const loader = document.getElementById("loader");
+        let currentValue = 0;
+
+        function updateCounter() {
+          const increment = Math.floor(Math.random() * 12) + 1;
+          currentValue += increment;
+
+          if (currentValue >= 100) {
+            currentValue = 100;
+            counterElement.textContent = currentValue;
+            setTimeout(() => {
+              loader.classList.add("loader-hidden");
+            }, 600);
+            return;
+          }
+
+          counterElement.textContent = currentValue;
+          const delay = Math.floor(Math.random() * 120) + 40;
+          setTimeout(updateCounter, delay);
+        }
+        updateCounter();
+      }
+      window.addEventListener("load", startLoader);
+
+      // 打字机特效
+      const textElement = document.querySelector(".typing-text");
+      const words = ["UI/UX Designer", "Web Developer", "Visual Storyteller"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+          textElement.textContent = currentWord.substring(0, charIndex--);
+        } else {
+          textElement.textContent = currentWord.substring(0, charIndex++);
+        }
+        let typeSpeed = isDeleting ? 50 : 100;
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typeSpeed = 2000;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typeSpeed = 500;
+        }
+        setTimeout(typeEffect, typeSpeed);
+      }
+      document.addEventListener("DOMContentLoaded", typeEffect);
+
+      // 返回顶部按钮
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
-
-    <div class="social-links">
-      <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-
-    <p class="get-in-touch-text">GET IN TOUCH</p>
-  </div>
-</footer>
-
