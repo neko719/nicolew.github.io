@@ -36,6 +36,9 @@
     </style>
   </head>
   <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <header class="main-header">
@@ -267,6 +270,54 @@
     </footer>
 
     <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
       /* --- Lightbox Logic --- */
       function openLightbox(element) {
         const modal = document.getElementById("lightbox-modal");
@@ -299,6 +350,23 @@
       btn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // 初始化平滑滚动
+      const lenis = new Lenis({
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
     </script>
   </body>
 </html>
