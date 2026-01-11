@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Portfolio - Silkyo Development</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <header class="main-header">
+      <div class="header-logo">
+        <img src="logo.png" alt="Nicole Portfolio Logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="ux design.html">← Back to Web Design & Dev</a>
+      </div>
+    </header>
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-split">
+        <div class="cs-hero-text">
+          <span class="cs-category">LIVE E-COMMERCE PROJECT</span>
+          <h1 class="cs-title">SILKYO<br />WEB DEVELOPMENT</h1>
+          <p class="cs-subtitle">
+            A comprehensive role combining front-end development, content
+            management, and visual strategy for a jewelry brand.
+          </p>
+          <a href="https://silkyo.ca" class="btn-live-site" target="_blank">
+            VISIT LIVE SITE ↗
+          </a>
+        </div>
+        <div class="cs-hero-image">
+          <div class="img-frame">
+            <img src="silkyopreview.png" alt="Silkyo Website Preview" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-details-section">
+      <div class="cs-details-grid">
+        <div class="cs-detail-box">
+          <h4>MY ROLE</h4>
+          <p>
+            Web Manager & Developer. Responsible for daily operations, feature
+            implementation, and visual updates.
+          </p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>TECH STACK</h4>
+          <p>HTML / CSS / JavaScript</p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>KEY CONTRIBUTIONS</h4>
+          <p>
+            Developed advanced filtering systems, optimized search
+            functionality, and resolved cross-browser compatibility bugs.
+          </p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>IMPACT</h4>
+          <p>
+            Ensured stable day-to-day platform operations while improving
+            product discoverability through new filter systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-visual-section">
+      <h3 class="cs-section-title">
+        Feature Implementation: <br />Search & Filtering
+      </h3>
+
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="search bar.png" alt="Search Functionality Demo" />
+          </div>
+          <div class="cs-caption">
+            <h3>Advanced Filtering Logic</h3>
+            <p>
+              Implemented a tag-based filtering system allowing users to sort
+              products by material, color, and collection, significantly
+              reducing "time-to-purchase".
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="tag.png" alt="Tag Management System" />
+          </div>
+          <div class="cs-caption">
+            <h3>Tag Retrieval System</h3>
+            <p>
+              Structured the product database with semantic tags to ensure the
+              search bar delivers accurate results for broad queries like
+              "Necklace".
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-visual-section">
+      <h3 class="cs-section-title">
+        Content Management & <br />Visual Updates
+      </h3>
+
+      <div class="cs-gallery-item single-feature">
+        <div class="img-frame zoomable" onclick="openLightbox(this)">
+          <img src="the classic.png" alt="New Series Page Layout" />
+        </div>
+        <div class="cs-caption centered-caption">
+          <h3>Launching New Pages</h3>
+          <p>
+            Designed and deployed pages for difference contents. I handled the
+            end-to-end process from asset optimization to layout, ensuring
+            responsive display across all devices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-details-minimal">
+      <div class="details-grid">
+        <div class="details-col">
+          <div class="detail-item">
+            <h3>Maintenance</h3>
+            <p>
+              Regularly performed testing to identify and patch UI bugs across
+              different devices.
+            </p>
+          </div>
+
+          <div class="detail-item">
+            <h3>Problem Solving Example</h3>
+            <p>
+              <strong>Issue:</strong> An unintended text artifact ("map")
+              persisted within the mobile navigation overlay, cluttering the
+              UI.<br />
+              <strong>Solution:</strong> Audited the source code and identified
+              a structural HTML error causing hidden elements to render. I
+              corrected the markup to clean up the interface.<br />
+              <strong>Outcome:</strong> Restored visual clarity and improved the
+              intuitiveness of the mobile navigation.
+            </p>
+          </div>
+        </div>
+
+        <div class="details-col">
+          <div class="detail-item">
+            <h3>Product Uploads & Standardization</h3>
+            <p>
+              Managed the end-to-end process of uploading new products for each
+              collection launch, ensuring strict formatting consistency and
+              visual unity across the entire website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="next-page-nav">
+      <div class="nav-hint">VIEW ANOTHER PROJECT</div>
+      <a href="ux design.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">BACK</span>
+          <span class="next-title">Web Design & Dev</span>
+        </div>
+        <div class="next-arrow">RETURN TO LIST →</div>
+      </a>
+    </nav>
+
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <div class="social-links">
+          <a href="https://www.instagram.com/nicoc0.0" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@nicolew7543" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script>
+      // 1. Lightbox
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+        const img = element.querySelector("img");
+        if (img) {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+          captionText.innerHTML = img.alt;
+          document.body.style.overflow = "hidden";
+        }
+      }
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        document.getElementById("lightbox-modal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // 2. Lenis Scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // 3. Cursor & Scroll Bar
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        cursorOutline.animate(
+          { left: `${posX}px`, top: `${posY}px` },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
