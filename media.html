@@ -54,7 +54,10 @@
         <div class="photo-cards-grid">
           <div class="photo-card">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="imageedit_3_6698335143.jpg" alt="Urban Coastline" />
+              <img
+                src="imageedit_3_6698335143.jpg"
+                alt="Urban Coastline"
+              />
             </div>
             <div class="photo-text">
               <h3>Urban Coastline</h3>
@@ -333,10 +336,16 @@
           <div class="product-item">
             <div class="product-images">
               <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img src="product3.2.jpg" alt="Mabe Pearl Earrings Left" />
+                <img
+                  src="product3.2.jpg"
+                  alt="Mabe Pearl Earrings Left"
+                />
               </div>
               <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img src="product3.1.jpg" alt="Mabe Pearl Earrings Right" />
+                <img
+                  src="product3.1.jpg"
+                  alt="Mabe Pearl Earrings Right"
+                />
               </div>
             </div>
             <h3>Mabe Earrings</h3>
@@ -412,13 +421,25 @@
         </p>
 
         <div class="social-links">
-          <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
             <i class="fab fa-youtube"></i>
           </a>
-          <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
             <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
@@ -431,6 +452,54 @@
     </footer>
 
     <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      // 鼠标移动跟随
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // 小点直接跟随
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" }
+        );
+      });
+
+      // 悬停变大效果
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item"
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering")
+        );
+      });
+
       /* --- Details Toggle Logic --- */
       function toggleDetails(id) {
         var content = document.getElementById(id);
