@@ -1744,21 +1744,6 @@ footer {
   margin-bottom: 40px;
 }
 
-.btn-live-site {
-  display: inline-block;
-  padding: 15px 30px;
-  border: 1px solid #c1a481;
-  color: #c1a481;
-  font-family: "Inconsolata", monospace;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-live-site:hover {
-  background: #c1a481;
-  color: #1a1615;
-}
-
 .work-preview {
   flex: 1.5;
 }
@@ -1833,24 +1818,6 @@ footer {
   margin-bottom: 15px; /* 与按钮的间距 */
   margin-top: 10px;
   font-weight: bold;
-}
-
-/* 按钮样式 (空心金框) */
-.btn-live-site {
-  display: inline-block;
-  padding: 15px 30px;
-  border: 1px solid #c1a481;
-  color: #c1a481;
-  font-family: "Inconsolata", monospace;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.btn-live-site:hover {
-  background: #c1a481;
-  color: #1a1615;
 }
 
 /* --- 2. Project Details Grid (2x2 信息网格) --- */
@@ -2153,17 +2120,21 @@ footer {
 .btn-live-site {
   display: inline-block;
   margin-top: 15px;
-  padding: 12px 25px;
-  background-color: #c1a481;
-  color: #1a1615;
+  padding: 12px 30px;
+  background-color: transparent; 
+  border: 1px solid #c1a481;  
+  color: #c1a481; 
+  font-family: "Inconsolata", monospace;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 4px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-live-site:hover {
-  background-color: #e2cca8;
+  background-color: #c1a481;
+  color: #1a1615; 
+  box-shadow: 0 0 15px rgba(193, 164, 129, 0.4);
 }
 
 .journey-image {
@@ -2175,7 +2146,6 @@ footer {
 }
 
 /* --- Media Production Page (黑金线条版) --- */
-
 .media-section {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
@@ -3756,3 +3726,4 @@ textarea {
 footer p {
   color: rgba(255, 255, 255, 0.5);
 }
+
