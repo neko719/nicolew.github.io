@@ -3619,27 +3619,31 @@ footer {
   }
 }
 
-/* --- 3. Shimmer Gold Text --- */
-.shimmer-text {
-  background: linear-gradient(
-    to right,
-    #b88a44 0%,
-    #e2cca8 20%,
-    #fff 50%,
-    #e2cca8 80%,
-    #b88a44 100%
-  );
-  background-size: 200% auto;
-  color: transparent; /* 文字本身透明 */
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shine 5s linear infinite;
+/* INTERACTIVE DARK SHIMMER (鼠标跟随变深特效) */
+.interactive-shimmer {
+  display: inline-block; 
+  
+  color: #c1a481; 
+  
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  
+  transition: color 0.2s ease, background-image 0.2s ease;
 }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+.interactive-shimmer:hover {
+  color: transparent !important;
+  
+  background-image: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    #8a6d3b 0%,       /* 鼠标中心：深褐色/深金色 */
+    #b88a44 40px,     /* 向外过渡：中等金色 */
+    #c1a481 100px     /* 远处：恢复正常的亮金色 */
+  );
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
 }
 
 /* --- Reading Progress Bar --- */
@@ -3726,4 +3730,5 @@ textarea {
 footer p {
   color: rgba(255, 255, 255, 0.5);
 }
+
 
