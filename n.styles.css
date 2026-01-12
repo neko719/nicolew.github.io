@@ -856,51 +856,41 @@ footer {
 }
 
 .resume-section {
-  padding: 0 5% 120px 5%; /* 底部留足空间 */
+  padding: 0 5% 120px 5%;
   text-align: center;
   background-color: #1a1615;
 }
 
-.resume-previews-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px; /* 两页之间的间距 */
-  max-width: 1000px;
+.resume-pdf-container {
+  width: 80%;
+  max-width: 800px; /* 保持和你原来的一样宽 */
+  height: 900px;    /* 给 PDF 一个足够的高度，方便阅读 */
   margin: 0 auto 60px auto;
+  border: 1px solid rgba(193, 164, 129, 0.3); /* 金色边框 */
+  background-color: #26211e; /* PDF加载前的背景色 */
+  opacity: 0.95;
+  transition: all 0.4s ease; /* 保留丝滑过渡 */
+  overflow: hidden; 
 }
 
-.resume-preview-item {
-  width: 45%; /* 左右各占一半 */
-  position: relative;
-}
-
-.resume-preview-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid rgba(193, 164, 129, 0.3);
-  opacity: 0.9;
-  transition: all 0.4s ease;
-}
-
-.resume-preview-item:hover .resume-preview-image {
+.resume-pdf-container:hover {
   opacity: 1;
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border-color: #c1a481;
+  transform: translateY(-10px); /* 悬停上浮 */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* 阴影 */
+  border-color: #c1a481; /* 边框变亮 */
 }
 
-.page-label {
-  margin-top: 20px;
-  font-family: "Inconsolata", monospace;
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: rgba(193, 164, 129, 0.6);
-  transition: color 0.3s;
+.resume-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
-.resume-preview-item:hover .page-label {
-  color: #c1a481;
+@media (max-width: 768px) {
+  .resume-pdf-container {
+    height: 500px; /* 手机上改矮一点 */
+  }
 }
 
 .resume-download-btn {
@@ -911,18 +901,17 @@ footer {
   letter-spacing: 2px;
   color: #c1a481;
   text-decoration: none;
-  border: 1px solid #c1a481; /* 金色边框 */
+  border: 1px solid #c1a481;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
   overflow: hidden;
   background: transparent;
 }
 
-/* 按钮悬停效果：变成实心 */
 .resume-download-btn:hover {
   background-color: #c1a481;
-  color: #1a1615; /* 文字变黑 */
-  box-shadow: 0 0 20px rgba(193, 164, 129, 0.4); /* 金色光晕 */
+  color: #1a1615;
+  box-shadow: 0 0 20px rgba(193, 164, 129, 0.4);
 }
 
 .skills {
@@ -3730,5 +3719,6 @@ textarea {
 footer p {
   color: rgba(255, 255, 255, 0.5);
 }
+
 
 
