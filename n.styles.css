@@ -862,9 +862,9 @@ footer {
 }
 
 .resume-pdf-container {
-  width: 80%;
-  max-width: 800px; /* 保持和你原来的一样宽 */
-  height: 900px;    /* 给 PDF 一个足够的高度，方便阅读 */
+  width: 100%;
+  max-width: 1000px; /* 保持和你原来的一样宽 */
+  height: 1100px;    /* 给 PDF 一个足够的高度，方便阅读 */
   margin: 0 auto 60px auto;
   border: 1px solid rgba(193, 164, 129, 0.3); /* 金色边框 */
   background-color: #26211e; /* PDF加载前的背景色 */
@@ -873,18 +873,20 @@ footer {
   overflow: hidden; 
 }
 
-.resume-pdf-container:hover {
-  opacity: 1;
-  transform: translateY(-10px); /* 悬停上浮 */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* 阴影 */
-  border-color: #c1a481; /* 边框变亮 */
+.resume-pdf-container {
+    width: 100%;
+    max-width: 1000px;
+    height: 1100px;   
+    margin: 0 auto 60px auto;
+    border: 1px solid rgba(193, 164, 129, 0.3);
+    background-color: #26211e;
 }
 
 .resume-frame {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -3719,6 +3721,7 @@ textarea {
 footer p {
   color: rgba(255, 255, 255, 0.5);
 }
+
 
 
 
