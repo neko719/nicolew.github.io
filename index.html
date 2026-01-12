@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - Home</title>
-    <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,7 +58,8 @@
       <div id="vanta-particles-bg"></div>
 
       <div class="hero-content-centered">
-        <h1 class="hero-main-title shimmer-text">NICOLE WU</h1>
+        <h1 class="hero-main-title">
+        <span class="interactive-shimmer">NICOLE WU</span></h1>
         <div class="hero-meta-row">
           <span class="typing-text"></span><span class="cursor">|</span>
           <span class="location">BASED IN CANADA</span>
@@ -200,16 +200,13 @@
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
 
-      // 鼠标移动跟随
       window.addEventListener("mousemove", function (e) {
         const posX = e.clientX;
         const posY = e.clientY;
 
-        // 小点直接跟随
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // 大圆圈稍微延迟一点动画 (更有质感)
         cursorOutline.animate(
           {
             left: `${posX}px`,
@@ -277,6 +274,24 @@
       }
       window.addEventListener("load", startLoader);
 
+/* --- Interactive Shimmer Logic (鼠标跟随变深) --- */
+      const shimmerTarget = document.querySelector('.interactive-shimmer');
+
+      if (shimmerTarget) {
+        shimmerTarget.addEventListener('mousemove', (e) => {
+          const rect = shimmerTarget.getBoundingClientRect();
+          
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const xPercent = (x / rect.width) * 100 + '%';
+          const yPercent = (y / rect.height) * 100 + '%';
+          
+          shimmerTarget.style.setProperty('--mouse-x', xPercent);
+          shimmerTarget.style.setProperty('--mouse-y', yPercent);
+        });
+      }
+
       // 打字机特效
       const textElement = document.querySelector(".typing-text");
       const words = ["UI/UX Designer", "Web Developer", "Visual Storyteller"];
@@ -332,4 +347,3 @@
     </script>
   </body>
 </html>
-
