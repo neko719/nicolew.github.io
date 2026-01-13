@@ -3562,7 +3562,7 @@ footer {
   }
 }
 
-/* --- 1. Custom Cursor (仅在电脑端显示) --- */
+/* --- 1. Custom Cursor (Gemstone Diamond Style) --- */
 @media (min-width: 1024px) {
   body {
     cursor: none; /* 隐藏默认鼠标 */
@@ -3573,33 +3573,34 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 0;
     z-index: 9999;
-    pointer-events: none; /* 让鼠标能点击下面的东西 */
+    pointer-events: none; 
   }
 
-  /* 中心小实心点 */
   .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px; 
+    height: 6px;
     background-color: #c1a481;
+    box-shadow: 0 0 6px rgba(193, 164, 129, 0.8);
   }
 
-  /* 外部空心圆圈 */
+  /* 外部空心菱形边框 */
   .cursor-outline {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: 1px solid rgba(193, 164, 129, 0.5);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  /* 悬停状态：圆圈变大 */
+  /* 悬停状态：变大 + 旋转特效 */
   body.hovering .cursor-outline {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(193, 164, 129, 0.1);
+    width: 55px;
+    height: 55px;
+    background-color: rgba(193, 164, 129, 0.05); /* 极淡的金色背景 */
     border-color: #c1a481;
+    transform: translate(-50%, -50%) rotate(135deg);
   }
 
   /* 隐藏链接原本的鼠标手型 */
@@ -3721,6 +3722,7 @@ textarea {
 footer p {
   color: rgba(255, 255, 255, 0.5);
 }
+
 
 
 
