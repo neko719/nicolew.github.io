@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nicole Portfolio - Web Design & Dev</title>
-    <link rel="icon" href="logo.png" type="image/png">
+    <title>Nicole Portfolio - Product Design & Dev</title>
+    <link rel="icon" href="logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +16,117 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
+
+    <style>
+      /* --- Alternating Showcase Layout --- */
+      .alternating-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 150px; /* 项目之间的大间距，显高级 */
+        margin-top: 60px;
+      }
+
+      .showcase-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+      }
+
+      /* 奇偶交错逻辑：让偶数项目反转方向 */
+      .showcase-item.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .showcase-image {
+        flex: 1.2; /* 图片占的空间稍多 */
+      }
+
+      .showcase-image .img-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+
+      .showcase-info {
+        flex: 0.8;
+        text-align: left;
+      }
+
+      /* 标签样式 */
+      .showcase-info .web-tag {
+        font-family: "Inconsolata", monospace;
+        color: rgba(193, 164, 129, 0.8);
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      /* 标题样式 */
+      .showcase-info h3 {
+        font-family: "Cormorant", serif;
+        font-size: 3.5rem;
+        color: #c1a481;
+        margin: 15px 0 25px 0;
+        line-height: 1;
+      }
+
+      /* 描述文字 */
+      .showcase-info p {
+        font-size: 1.1rem;
+        color: rgba(193, 164, 129, 0.7);
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 450px;
+      }
+
+      /* 细金线跳转按钮 (复刻 Project Details 风格) */
+      .project-link-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: transparent;
+        border: 1px solid #c1a481;
+        color: #c1a481;
+        font-family: "Inconsolata", monospace;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .project-link-btn:hover {
+        background: #c1a481;
+        color: #1a1615;
+      }
+
+      .btn-arrow {
+        margin-left: 5px;
+        font-family: sans-serif;
+      }
+
+      /* 手机端适配：变回垂直堆叠 */
+      @media (max-width: 992px) {
+        .showcase-item,
+        .showcase-item.reverse {
+          flex-direction: column;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .showcase-info p {
+          margin: 0 auto 30px auto;
+        }
+
+        .alternating-showcase {
+          gap: 100px;
+        }
+
+        .showcase-info h3 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
   </head>
   <body style="background-color: #1a1615">
     <div class="cursor-dot"></div>
@@ -43,7 +154,7 @@
 
     <section class="web-design-section">
       <div class="project-hero">
-        <h2 class="project-title">WEB DESIGN<br />& DEV</h2>
+        <h2 class="project-title">UI/UX DESIGN<br />& DEV</h2>
         <p class="project-subtitle">
           Attention to detail and aesthetics to create visually stunning and
           user-centric web designs.
@@ -53,58 +164,70 @@
       <div class="design-block">
         <h3 class="block-title">01 / Academic Projects</h3>
 
-        <div class="web-grid">
-          <div class="web-card">
-            <div class="web-card-content">
-              <span class="web-tag">PHOTO APP</span>
-              <h3>Memento</h3>
-              <p>
-                A digital memory archive that transforms personal experiences
-                into visual stories using elegant UI design.
-              </p>
-              <a href="memento.html" class="web-link">View Case Study →</a>
-            </div>
-            <div class="web-bg-num">01</div>
+  <div class="alternating-showcase">
+            
+          <div class="showcase-item">
+              <div class="showcase-image">
+                  <div class="img-frame zoomable" onclick="openLightbox(this)">
+                      <img src="er-hero.png" alt="ER to Home Service Design">
+                  </div>
+              </div>
+              <div class="showcase-info">
+                  <span class="web-tag">01 / SERVICE DESIGN & UX</span>
+                  <h3>ER to Home</h3>
+                  <p>An accessible kiosk system and printed booklet designed to ensure safe hospital discharges for elderly patients.</p>
+                  <a href="kiosk.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
+              </div>
           </div>
 
-          <div class="web-card">
-            <div class="web-card-content">
-              <span class="web-tag">LANGUAGE LEARNING APP</span>
-              <h3>CanTalk</h3>
-              <p>
-                A language learning app with intuitive design and smooth user
-                interactions, making communication accessible.
-              </p>
-              <a href="cantalk.html" class="web-link">View Case Study →</a>
-            </div>
-            <div class="web-bg-num">02</div>
+          <div class="showcase-item reverse">
+              <div class="showcase-image">
+                  <div class="img-frame small-img-frame zoomable" onclick="openLightbox(this)">
+                      <img src="memento home page.png" alt="Memento Photo App">
+                  </div>
+              </div>
+              <div class="showcase-info">
+                  <span class="web-tag">02 / PHOTO APP</span>
+                  <h3>Memento</h3>
+                  <p>A digital memory archive that transforms personal experiences into visual stories using elegant UI design.</p>
+                  <a href="memento.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
+              </div>
           </div>
 
-          <div class="web-card">
-            <div class="web-card-content">
-              <span class="web-tag">VISUAL IDENTITY & WEB</span>
-              <h3>Charmed Flower</h3>
-              <p>
-                A comprehensive visual identity and website redesign for a local
-                boutique florist, focusing on organic aesthetics.
-              </p>
-              <a
-                href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="web-link"
-                >View Prototype →</a
-              >
-            </div>
-            <div class="web-bg-num">03</div>
+          <div class="showcase-item">
+              <div class="showcase-image">
+                  <div class="img-frame small-img-frame zoomable" onclick="openLightbox(this)">
+                      <img src="Cantalk.png" alt="CanTalk App">
+                  </div>
+              </div>
+              <div class="showcase-info">
+                  <span class="web-tag">03 / LANGUAGE LEARNING APP</span>
+                  <h3>CanTalk</h3>
+                  <p>A language learning app with intuitive design and smooth user interactions, making communication accessible.</p>
+                  <a href="cantalk.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
+              </div>
           </div>
+
+          <div class="showcase-item reverse">
+              <div class="showcase-image">
+                  <div class="img-frame zoomable" onclick="openLightbox(this)">
+                      <img src="charmedflower.png" alt="Charmed Flower Web Design">
+                  </div>
+              </div>
+              <div class="showcase-info">
+                  <span class="web-tag">04 / VISUAL IDENTITY & WEB</span>
+                  <h3>Charmed Flower</h3>
+                  <p>A comprehensive visual identity and website redesign for a local boutique florist, focusing on organic aesthetics.</p>
+                  <a href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582" target="_blank" rel="noopener noreferrer" class="project-link-btn">VIEW PROTOTYPE <span class="btn-arrow">→</span></a>
+              </div>
+          </div>
+
         </div>
-      </div>
 
       <div class="section-divider"></div>
 
       <div class="design-block">
-     <h3 class="block-title">02 / Work Experience</h3>
+        <h3 class="block-title">02 / Work Experience</h3>
         <div class="work-showcase">
           <div class="work-info">
             <h3>Silkyo Website</h3>
@@ -113,12 +236,7 @@
               and UI design, focusing on creating a seamless e-commerce
               experience that reflects the brand's modern urban aesthetic.
             </p>
-            <a
-              href="silkyo.html"
-              class="btn-live-site"
-            >
-              View SILKYO →
-            </a>
+            <a href="silkyo.html" class="btn-live-site"> View Case Study → </a>
           </div>
 
           <div class="work-preview">
@@ -232,20 +350,20 @@
             left: `${posX}px`,
             top: `${posY}px`,
           },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
       // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item, .project-link-btn",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
