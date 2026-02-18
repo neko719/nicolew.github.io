@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - Projects</title>
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href=" logo.png" type=" png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +25,9 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <a href="index.html"
+          ><img src=" logo.png" alt="Nicole Portfolio Logo"
+        /></a>
       </div>
       <nav class="header-nav">
         <ul>
@@ -67,8 +69,8 @@
         <div class="bento-item bento-standard">
           <div class="bento-bg-num">02</div>
           <div class="bento-card-inner">
-            <span class="bento-tag">UI / UX</span>
-            <h3>Web Design & Dev</h3>
+            <span class="bento-tag">UI/UX & Web Dev</span>
+            <h3>Product Design</h3>
             <p class="bento-desc">
               Intuitive and polished web experiences that balance form and
               function.
@@ -104,6 +106,19 @@
             >
           </div>
         </div>
+
+        <div class="bento-item bento-wide">
+          <div class="bento-bg-num">05</div>
+          <div class="bento-card-inner">
+            <span class="bento-tag">Strategy & Content</span>
+            <h3>Marketing & Content</h3>
+            <p class="bento-desc">
+              Driving brand growth through data-driven strategies, social media
+              activation, and compelling visual storytelling.
+            </p>
+            <a href="marketing.html" class="bento-link">View Campaigns →</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -111,7 +126,7 @@
       <div class="nav-hint">WANT TO COLLABORATE?</div>
       <a href="contact.html" class="next-page-box">
         <div class="next-content">
-          <span class="next-num">05</span>
+          <span class="next-num">06</span>
           <span class="next-title">Get In Touch</span>
         </div>
         <div class="next-arrow">LET'S TALK →</div>
@@ -125,134 +140,86 @@
           Thank you for taking the time to review my portfolio. Looking forward
           to connecting with you next time!
         </p>
-
         <div class="social-links">
           <a
             href="https://www.instagram.com/nicoc0.0"
             target="_blank"
             aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+            ><i class="fab fa-instagram"></i
+          ></a>
           <a
             href="https://www.youtube.com/@nicolew7543"
             target="_blank"
             aria-label="YouTube"
-          >
-            <i class="fab fa-youtube"></i>
-          </a>
+            ><i class="fab fa-youtube"></i
+          ></a>
           <a
             href="https://www.linkedin.com/in/nicole-wu-4948b8252"
             target="_blank"
             aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-            <i class="fas fa-envelope"></i>
-          </a>
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook"
+            ><i class="fas fa-envelope"></i
+          ></a>
         </div>
-
         <p class="get-in-touch-text">GET IN TOUCH</p>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script>
-      /* --- Scroll Progress Logic --- */
+      /* Scroll & Cursor */
       window.addEventListener("scroll", () => {
         const scrollTop =
           document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight =
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
-        const scrolled = (scrollTop / scrollHeight) * 100;
-
-        document.getElementById("progress-bar").style.width = scrolled + "%";
+        document.getElementById("progress-bar").style.width =
+          (scrollTop / scrollHeight) * 100 + "%";
+        document.getElementById("back-to-top").style.display =
+          window.scrollY > 300 ? "block" : "none";
       });
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
 
-      // --- 1. Back to Top Button Logic ---
-      const btn = document.getElementById("back-to-top");
-      window.addEventListener("scroll", () => {
-        btn.style.display = window.scrollY > 300 ? "block" : "none";
-      });
-      btn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      // --- 2. Luxury Cursor Logic ---
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
-
-      // 鼠标移动跟随
-      window.addEventListener("mousemove", function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // 小点直接跟随
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // 大圆圈稍微延迟一点动画 (更有质感)
+      window.addEventListener("mousemove", (e) => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
         cursorOutline.animate(
-          {
-            left: `${posX}px`,
-            top: `${posY}px`,
-          },
-          { duration: 500, fill: "forwards" }
+          { left: `${e.clientX}px`, top: `${e.clientY}px` },
+          { duration: 500, fill: "forwards" },
         );
       });
+      document
+        .querySelectorAll("a, button, .bento-item, .next-page-box")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () =>
+            document.body.classList.add("hovering"),
+          );
+          el.addEventListener("mouseleave", () =>
+            document.body.classList.remove("hovering"),
+          );
+        });
 
-      // 悬停变大效果 (针对 Bento 卡片、链接、按钮)
-      // 这里特别加入了 .bento-item 和 .next-page-box 确保项目卡片有反应
-      const hoverTargets = document.querySelectorAll(
-        "a, button, .bento-item, .next-page-box, .nav-item"
-      );
-
-      hoverTargets.forEach((el) => {
-        el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
-        );
-        el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
-        );
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-
-    <script>
-      // 初始化 3D 倾斜效果
+      /* Tilt & Smooth Scroll */
       VanillaTilt.init(
-        document.querySelectorAll(
-          ".bento-item, .skill-bento-card, .next-page-box"
-        ),
-        {
-          max: 5, // 最大倾斜角度，越小越高级 (建议 3-5)
-          speed: 400, // 动画速度
-          glare: true, // 开启反光
-          "max-glare": 0.2, // 反光强度 (0-1)，0.2 比较低调
-          scale: 1.02, // 悬停时稍微放大一点点
-        }
+        document.querySelectorAll(".bento-item, .next-page-box"),
+        { max: 5, speed: 400, glare: true, "max-glare": 0.2 },
       );
-    </script>
-
-    <script>
-      // 初始化平滑滚动
-      const lenis = new Lenis({
-        duration: 1.2, // 滚动持续时间，越长越滑
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
-        smooth: true,
-      });
-
+      const lenis = new Lenis({ duration: 1.2, smooth: true });
       function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
       }
-
       requestAnimationFrame(raf);
     </script>
   </body>
 </html>
-
-
