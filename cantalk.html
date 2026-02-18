@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - CanTalk UX Case Study</title>
-    <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -159,7 +158,7 @@
         <div class="slide-frame-container">
           <img
             id="slideImage"
-            src="Wu_Nicole_Presentation-01.png"
+            src="210 presentation/Wu_Nicole_Presentation-01.png"
             alt="Slide 1"
             onclick="openLightbox(this)"
             class="zoomable"
@@ -189,7 +188,7 @@
         rel="noopener noreferrer"
       >
         <div class="next-content">
-          <span class="next-num">03</span>
+          <span class="next-num">04</span>
           <span class="next-title">Charmed Flower</span>
         </div>
         <div class="next-arrow">NEXT CASE STUDY →</div>
@@ -200,15 +199,17 @@
       <div class="footer-cta">
         <h2>Thanks for your viewing</h2>
         <div class="social-links">
-          <a href="https://www.instagram.com/nicoc0.0" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.youtube.com/@nicolew7543" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/nicole-wu-4948b8252" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+          <a href="https://www.instagram.com/nicoc0.0" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@nicolew7543" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
           <a href="mailto:n9wu@uwaterloo.ca"><i class="fas fa-envelope"></i></a>
         </div>
         <p class="get-in-touch-text">GET IN TOUCH</p>
@@ -220,26 +221,35 @@
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
 
+      // 鼠标移动跟随
       window.addEventListener("mousemove", function (e) {
         const posX = e.clientX;
         const posY = e.clientY;
+
+        // 小点直接跟随
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
+
+        // 大圆圈稍微延迟一点动画 (更有质感)
         cursorOutline.animate(
-          { left: `${posX}px`, top: `${posY}px` },
-          { duration: 500, fill: "forwards" }
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 500, fill: "forwards" },
         );
       });
 
+      // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -253,8 +263,7 @@
         if (currentSlide < 1) currentSlide = totalSlides;
 
         const slideNum = currentSlide.toString().padStart(2, "0");
-        
-        const imgPath = `Wu_Nicole_Presentation-${slideNum}.png`;
+        const imgPath = `210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
 
         document.getElementById("slideImage").src = imgPath;
         document.getElementById("currentNum").innerText = slideNum;
@@ -266,6 +275,7 @@
         const modalImg = document.getElementById("lightbox-img");
         const captionText = document.getElementById("lightbox-caption");
 
+        // 检查 element 是否本身就是 img (用于 Slider)，或者包含 img (用于 Gallery)
         const img =
           element.tagName === "IMG" ? element : element.querySelector("img");
 
@@ -298,8 +308,8 @@
     <script>
       // 初始化平滑滚动
       const lenis = new Lenis({
-        duration: 1.2, 
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        duration: 1.2, // 滚动持续时间，越长越滑
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
         smooth: true,
       });
 
@@ -312,6 +322,3 @@
     </script>
   </body>
 </html>
-
-
-
