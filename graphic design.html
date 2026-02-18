@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - Graphic Design</title>
-    <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -263,6 +262,9 @@
                 Premier Protein's bold red logo, featuring a powerful “P” with a
                 flexed bicep, exudes strength and energy.
               </p>
+              <a href="premier protein.html" class="project-link-btn">
+                VIEW CASE STUDY <span class="btn-arrow">→</span>
+              </a>
             </div>
           </div>
 
@@ -276,6 +278,9 @@
                 SILKYO's sleek black design, highlighted by a flowing “S” with
                 silk shape, radiates modern urban sophistication.
               </p>
+              <a href="silkyo.html" target="_blank" class="project-link-btn">
+                VIEW CASE STUDY <span class="btn-arrow">→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -381,20 +386,20 @@
             left: `${posX}px`,
             top: `${posY}px`,
           },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
       // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -483,4 +488,3 @@
     </script>
   </body>
 </html>
-
