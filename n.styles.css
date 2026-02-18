@@ -54,7 +54,9 @@ section {
   width: 100%;
   z-index: 1000;
 
-  transition: background var(--transition-speed), border var(--transition-speed);
+  transition:
+    background var(--transition-speed),
+    border var(--transition-speed);
 }
 
 body {
@@ -219,7 +221,9 @@ footer {
 .social-links a {
   color: #c1a481;
   font-size: 24px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .social-links a:hover {
@@ -251,7 +255,9 @@ footer {
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
   z-index: 1000;
 }
 #back-to-top:hover {
@@ -853,67 +859,6 @@ footer {
 .timeline-detail .desc {
   font-family: "Inconsolata", monospace;
   line-height: 1.6;
-}
-
-.resume-section {
-  padding: 0 5% 120px 5%;
-  text-align: center;
-  background-color: #1a1615;
-}
-
-.resume-pdf-container {
-  width: 100%;
-  max-width: 1000px; /* 保持和你原来的一样宽 */
-  height: 1100px;    /* 给 PDF 一个足够的高度，方便阅读 */
-  margin: 0 auto 60px auto;
-  border: 1px solid rgba(193, 164, 129, 0.3); /* 金色边框 */
-  background-color: #26211e; /* PDF加载前的背景色 */
-  opacity: 0.95;
-  transition: all 0.4s ease; /* 保留丝滑过渡 */
-  overflow: hidden; 
-}
-
-.resume-pdf-container {
-    width: 100%;
-    max-width: 1000px;
-    height: 1100px;   
-    margin: 0 auto 60px auto;
-    border: 1px solid rgba(193, 164, 129, 0.3);
-    background-color: #26211e;
-}
-
-.resume-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
-@media (max-width: 768px) {
-  .resume-pdf-container {
-    height: 500px; /* 手机上改矮一点 */
-  }
-}
-
-.resume-download-btn {
-  display: inline-block;
-  padding: 15px 40px;
-  font-family: "Inconsolata", monospace;
-  font-size: 16px;
-  letter-spacing: 2px;
-  color: #c1a481;
-  text-decoration: none;
-  border: 1px solid #c1a481;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-.resume-download-btn:hover {
-  background-color: #c1a481;
-  color: #1a1615;
-  box-shadow: 0 0 20px rgba(193, 164, 129, 0.4);
 }
 
 .skills {
@@ -2108,13 +2053,14 @@ footer {
   margin-right: auto;
 }
 
+/* 修正后的 Silkyo 按钮样式：黑金线条风 */
 .btn-live-site {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 30px;
-  background-color: transparent; 
-  border: 1px solid #c1a481;  
-  color: #c1a481; 
+  background-color: transparent; /* 关键：背景透明 */
+  border: 1px solid #c1a481; /* 关键：金色边框 */
+  color: #c1a481; /* 关键：金色文字 */
   font-family: "Inconsolata", monospace;
   text-decoration: none;
   border-radius: 4px;
@@ -2122,10 +2068,11 @@ footer {
   transition: all 0.3s ease;
 }
 
+/* 悬停效果：变成实心金 */
 .btn-live-site:hover {
   background-color: #c1a481;
-  color: #1a1615; 
-  box-shadow: 0 0 15px rgba(193, 164, 129, 0.4);
+  color: #1a1615; /* 文字变黑 */
+  box-shadow: 0 0 15px rgba(193, 164, 129, 0.4); /* 加一点发光 */
 }
 
 .journey-image {
@@ -2137,6 +2084,7 @@ footer {
 }
 
 /* --- Media Production Page (黑金线条版) --- */
+
 .media-section {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
@@ -2344,7 +2292,9 @@ footer {
   max-height: 0;
   overflow: hidden;
   padding: 0 10px;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
 }
 
 .faq-answer p {
@@ -3573,33 +3523,43 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
+    /* 核心改动：旋转45度，把正方形变成菱形/宝石形状 */
     transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 0;
+    border-radius: 0; /* 关键：去掉圆角，变成尖锐的几何线条 */
     z-index: 9999;
-    pointer-events: none; 
+    pointer-events: none;
   }
 
+  /* 中心实心菱形 - 像一颗小钻石 */
   .cursor-dot {
-    width: 6px; 
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background-color: #c1a481;
+    /* 给中心点加一点点高光晕染，更有质感 */
     box-shadow: 0 0 6px rgba(193, 164, 129, 0.8);
   }
 
   /* 外部空心菱形边框 */
   .cursor-outline {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border: 1px solid rgba(193, 164, 129, 0.5);
-    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* 增加 transform 过渡，让旋转动作丝滑 */
+    transition:
+      width 0.3s,
+      height 0.3s,
+      background-color 0.3s,
+      border-color 0.3s,
+      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   /* 悬停状态：变大 + 旋转特效 */
   body.hovering .cursor-outline {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(193, 164, 129, 0.05); /* 极淡的金色背景 */
     border-color: #c1a481;
+    /* 悬停时旋转到 135度，产生一种机械咬合或珠宝闪烁的动态感 */
     transform: translate(-50%, -50%) rotate(135deg);
   }
 
@@ -3611,30 +3571,44 @@ footer {
   }
 }
 
-/* INTERACTIVE DARK SHIMMER (鼠标跟随变深特效) */
+/* =========================================
+   INTERACTIVE DARK SHIMMER (鼠标跟随变深特效)
+   ========================================= */
+
 .interactive-shimmer {
-  display: inline-block; 
-  
-  color: #c1a481; 
-  
+  display: inline-block; /* 必须是 inline-block 才能计算宽高 */
+
+  /* 1. 默认状态：普通的金色实心文字 */
+  color: #c1a481;
+
+  /* 初始化 CSS 变量，默认在中心点 */
   --mouse-x: 50%;
   --mouse-y: 50%;
-  
-  transition: color 0.2s ease, background-image 0.2s ease;
+
+  /* 让颜色切换有平滑过渡 */
+  transition:
+    color 0.2s ease,
+    background-image 0.2s ease;
 }
 
+/* 2. 鼠标悬停时的状态：启用渐变遮罩 */
 .interactive-shimmer:hover {
+  /* 把文字变透明，让背景显露出来 */
   color: transparent !important;
-  
+
+  /* 核心：定义一个以鼠标位置为中心的放射性渐变 */
   background-image: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
-    #8a6d3b 0%,       /* 鼠标中心：深褐色/深金色 */
-    #b88a44 40px,     /* 向外过渡：中等金色 */
-    #c1a481 100px     /* 远处：恢复正常的亮金色 */
+    #8a6d3b 0%,
+    /* 鼠标中心：深褐色/深金色 */ #b88a44 40px,
+    /* 向外过渡：中等金色 */ #c1a481 100px /* 远处：恢复正常的亮金色 */
   );
-  
+
+  /* 使用文字作为背景的遮罩 */
   -webkit-background-clip: text;
   background-clip: text;
+
+  /* 确保背景不重复 */
   background-repeat: no-repeat;
 }
 
@@ -3672,7 +3646,9 @@ footer {
 
 /* =========================================
    GLOBAL TYPOGRAPHY COLORS UPDATE
+   (统一全站字体颜色层级)
    ========================================= */
+
 /* 1. 全局正文颜色：改为柔和的灰白色 */
 body,
 p,
@@ -3723,7 +3699,442 @@ footer p {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* --- Project Link Button (复刻 Know More 按钮风格) --- */
+.project-link-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px; /* 和你的 Know More 按钮一样大 */
+  background: transparent;
+  border: 1px solid #c1a481; /* 关键：实心金色细边框 */
+  color: #c1a481;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
+.project-link-btn:hover {
+  background: #c1a481; /* 悬停变实心 */
+  color: #1a1615; /* 文字变黑 */
+}
 
+/* 箭头微调 */
+.btn-arrow {
+  margin-left: 5px;
+  font-family: sans-serif; /* 防止箭头在某些字体下变形 */
+}
 
+/* --- Magic Lens Styles --- */
+.lens-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px; /* 根据你的图片高度调整 */
+  margin: 0 auto;
+  background-color: #f4f4f4; /* 给个浅灰背景，突显Logo */
+  border: 1px solid rgba(193, 164, 129, 0.3);
+  overflow: hidden;
+  cursor: none; /* 隐藏默认鼠标，用我们的透视镜 */
+}
 
+.lens-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lens-img-wrapper img {
+  width: 60%; /* Logo 大小 */
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* 底层 (Old) */
+.old-layer {
+  z-index: 1;
+  filter: grayscale(100%) opacity(0.6); /* 让旧 Logo 稍微暗淡一点，对比更强烈 */
+}
+
+/* 顶层 (New) - 核心魔法 */
+.new-layer {
+  z-index: 2;
+  background-color: #fff; /* 新 Logo 的背景，可以改成透明或品牌色 */
+  /* 初始状态：圆圈半径为 0 (隐藏) */
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.1s ease-out; /* 极其微小的延迟让移动更顺滑 */
+}
+
+/* 标签样式 */
+.lens-label {
+  position: absolute;
+  bottom: 30px;
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.lens-img-wrapper .lens-label {
+  color: #666; /* 旧标签颜色 */
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.new-layer .label-new {
+  color: #fff;
+  background: #c1a481; /* 新标签金色 */
+  box-shadow: 0 5px 15px rgba(193, 164, 129, 0.4);
+}
+
+/* 装饰圆圈 (金边) */
+.lens-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px; /* 透视镜大小，必须和 JS 里的半径匹配 */
+  height: 200px;
+  border: 2px solid #c1a481; /* 金色边框 */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(193, 164, 129, 0.3); /* 发光效果 */
+  display: none; /* 默认隐藏，进入区域才显示 */
+}
+
+/* 手机端适配：直接显示对比，或者点击切换 */
+@media (max-width: 768px) {
+  .lens-container {
+    height: 300px;
+    cursor: default;
+  }
+  .new-layer {
+    clip-path: circle(100% at 50% 50%) !important;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .lens-container:active .new-layer {
+    opacity: 1;
+  } /* 手机上按住显示新 Logo */
+  .lens-cursor {
+    display: none !important;
+  }
+}
+
+.cursor-dot,
+.cursor-outline {
+  z-index: 99999 !important; /* 99999 保证它比 Lightbox 的 10000 还要高 */
+}
+
+.close-btn {
+  cursor: none !important; /* 强制隐藏系统默认的“小手” */
+  transition:
+    color 0.3s,
+    transform 0.3s;
+}
+
+.close-btn:hover {
+  color: #fff; /* 鼠标放上去时，X 稍微变亮变白 */
+  transform: scale(1.2); /* 稍微放大一点点，增加点击反馈 */
+}
+
+/* --- Alternating Showcase Layout --- */
+.alternating-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 150px; /* 项目之间的大间距，显高级 */
+  margin-top: 60px;
+}
+
+.showcase-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* 奇偶交错逻辑：让第二个项目反转方向 */
+.showcase-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.showcase-image {
+  flex: 1.2; /* 图片占的空间稍多 */
+}
+
+.showcase-info {
+  flex: 0.8;
+  text-align: left;
+}
+
+/* 装饰文字和标题 */
+.showcase-info h3 {
+  font-family: "Cormorant", serif;
+  font-size: 3.5rem; /* 大标题增加冲击力 */
+  color: #c1a481;
+  margin: 15px 0 25px 0;
+  line-height: 1;
+}
+
+.showcase-info p {
+  font-size: 1.1rem;
+  color: rgba(193, 164, 129, 0.7);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 450px;
+}
+
+.small-img-frame {
+  max-width: 240px; /* 把最大宽度限制在320px，相当于一个大屏手机的宽度 */
+  margin: 0 auto; /* 确保图片在它那一半的区域里保持居中 */
+  border-radius: 16px; /* 加一点圆角显得更像精致的 App 截图 */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* 加一点阴影让缩小的图片更有立体感 */
+  overflow: hidden;
+}
+
+.small-img-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 手机端适配：变回垂直堆叠 */
+@media (max-width: 992px) {
+  .showcase-item,
+  .showcase-item.reverse {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .showcase-info p {
+    margin: 0 auto 30px auto;
+  }
+
+  .alternating-showcase {
+    gap: 100px;
+  }
+
+  .showcase-info h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/* --- Bento Grid Gap Fix --- */
+.bento-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 强制两列 */
+  grid-auto-rows: minmax(300px, auto); /* 定义默认高度 */
+  gap: 20px;
+}
+
+/* 强制让长卡片的高度 = 2个标准卡片 + 间隙 */
+.bento-tall {
+  grid-row: span 2;
+  height: 100%; /* 关键：撑满高度 */
+}
+
+/* 宽卡片占满两列 */
+.bento-wide {
+  grid-column: span 2;
+}
+
+/* 手机端全部变成单列 */
+@media (max-width: 768px) {
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+  }
+  .bento-tall,
+  .bento-wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* =========================================
+   Marketing Page Specific Styles
+   ========================================= */
+
+/* 页面主体容器 */
+.marketing-hero-section {
+  padding: 120px 5% 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Showcase Layout (左右交错) --- */
+.marketing-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.marketing-showcase.reverse {
+  flex-direction: row-reverse;
+}
+
+.showcase-info {
+  flex: 0.8;
+}
+
+.showcase-image {
+  flex: 1.2;
+}
+
+/* --- Strategy List (策略清单样式) --- */
+.strategy-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 35px 0;
+  border-left: 2px solid #c1a481;
+  padding-left: 20px;
+}
+
+.strategy-list li {
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.strategy-list strong {
+  color: #c1a481;
+  font-weight: 600;
+}
+
+/* --- Social Media Grid (Silkyo 手机样机) --- */
+.social-grid {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 关键：顶部对齐，这样 offset-down 才会生效 */
+  gap: 40px;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* 手机外壳样式 */
+.phone-mockup {
+  width: 260px;
+  height: auto;
+  background: #000;
+  border-radius: 35px;
+  padding: 12px;
+  border: 2px solid #333;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.phone-mockup:hover {
+  transform: translateY(-10px);
+}
+
+/* ⬇️ 修复：使用 offset-down 而不是负边距，保证不顶到上面的线 */
+.offset-down {
+  margin-top: 80px; /* 让第二个手机往下降，形成错落感 */
+}
+
+/* 手机屏幕区域 */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 9/16;
+  background-color: #1a1615;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Project Link Button Style --- */
+.project-link-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid #c1a481;
+  color: #c1a481;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.project-link-btn:hover {
+  background: #c1a481;
+  color: #1a1615;
+}
+
+.btn-arrow {
+  margin-left: 5px;
+}
+
+/* --- Coming Soon Styles (Tokyo Disney) --- */
+.coming-soon-container {
+  opacity: 0.7; /* 变暗 */
+  pointer-events: none; /* 禁止点击 */
+  user-select: none;
+}
+
+.tbc-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  border: 1px dashed #c1a481;
+  color: #c1a481;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.blurred-img img {
+  filter: blur(8px) grayscale(50%); /* 模糊效果 */
+  opacity: 0.6;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .marketing-hero-section {
+    padding-top: 100px;
+  }
+
+  .marketing-showcase,
+  .marketing-showcase.reverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .social-grid {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    align-items: center; /* 手机上改回居中对齐 */
+  }
+
+  .phone-mockup {
+    width: 45%;
+  }
+
+  .offset-down {
+    margin-top: 0; /* 手机上取消错落，避免太挤 */
+  }
+}
