@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From ER to Home | Nicole Wu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="n.styles.css" />
+
+    <style>
+      /* 限制大图宽度 */
+      .constrained-img {
+        max-width: 700px !important;
+        margin: 0 auto;
+      }
+
+      /* 保证图片显示完整，不被裁切 */
+      .img-frame img {
+        object-fit: contain !important;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Lightbox 样式 */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 85vh;
+        border: 1px solid #c1a481;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+      }
+      .close-btn {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        color: #c1a481;
+        font-size: 50px;
+        cursor: pointer;
+        z-index: 10001;
+      }
+      /* 鼠标放上去显示放大镜，提示可点击 */
+      .zoomable {
+        cursor: zoom-in;
+      }
+    </style>
+  </head>
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-logo">
+        <a href="index.html"
+          ><img src="image/logo.png" alt="Nicole Portfolio Logo"
+        /></a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html">Let's Talk</a>
+      </div>
+    </header>
+
+    <section class="cs-hero-section">
+      <div class="cs-hero-split">
+        <div class="cs-hero-text">
+          <span class="cs-category">UX/UI DESIGN / SERVICE DESIGN / KIOSK</span>
+          <h1 class="cs-title">From ER<br />to Home</h1>
+          <p class="cs-subtitle">
+            A holistic discharge system designed for elderly patients, combining
+            accessible digital kiosks with physical printed booklets to ensure
+            safe transitions.
+          </p>
+        </div>
+        <div class="cs-hero-image">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/er-hero.png" alt="ER to Home Interface Hero" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-details-section">
+      <div class="cs-details-grid">
+        <div class="cs-detail-box">
+          <h4>My Role</h4>
+          <p>User Researcher, UX/UI Designer</p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>Tools</h4>
+          <p>Figma, User Flow, Service Blueprinting</p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>The Challenge</h4>
+          <p>
+            Elderly patients often forget discharge instructions due to stress
+            and complex medical jargon, leading to dangerous readmissions.
+            Digital-only solutions fail to accommodate their tech-literacy
+            levels.
+          </p>
+        </div>
+        <div class="cs-detail-box">
+          <h4>The Solution</h4>
+          <p>
+            An accessible kiosk that simplifies medical jargon, uses intuitive
+            tap-to-login interactions, and offers tangible outputs like printed
+            booklets for better memory retention at home.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-visual-section">
+      <h2 class="cs-section-title">Accessible Identification</h2>
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/er-login.png" alt="Tap to Login Interface" />
+          </div>
+          <div class="cs-caption">
+            <h3>Frictionless Login</h3>
+            <p>
+              By allowing patients to tap their hospital wristband or Ontario
+              Health Card, the system bypasses complex typing and password
+              requirements that frustrate elderly users.
+            </p>
+          </div>
+        </div>
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/er-info.png" alt="Patient Information Overview" />
+          </div>
+          <div class="cs-caption">
+            <h3>Clear Visual Hierarchy</h3>
+            <p>
+              Utilizing large typography, high-contrast text, and simple avatars
+              to ensure readability for aging eyes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-visual-section" style="padding-top: 0">
+      <h2 class="cs-section-title">Visualizing Critical Care</h2>
+
+      <div
+        class="img-frame zoomable constrained-img"
+        style="margin-bottom: 40px"
+        onclick="openLightbox(this)"
+      >
+        <img src="image/er-warning.png" alt="Color Coded Warning Signs" />
+      </div>
+      <p
+        class="cs-subtitle"
+        style="text-align: center; margin: 0 auto; max-width: 800px"
+      >
+        Simplifying complex medical instructions by using an intuitive
+        color-coded traffic-light system. It clearly separates absolute
+        emergencies (Red: Call 911) from concerning symptoms (Yellow: Call
+        helpline).
+      </p>
+    </section>
+
+    <section class="cs-visual-section">
+      <h2 class="cs-section-title">Tangible Takeaways</h2>
+      <div class="cs-gallery-grid">
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/er-print.png" alt="Print Booklet Option" />
+          </div>
+          <div class="cs-caption">
+            <h3>Physical Booklets</h3>
+            <p>
+              Acknowledging that digital-only solutions often fail during
+              stressful recovery periods, the system generates a physical,
+              easy-to-read printed booklet for the patient to take home.
+            </p>
+          </div>
+        </div>
+        <div class="cs-gallery-item">
+          <div class="img-frame zoomable" onclick="openLightbox(this)">
+            <img src="image/er-delivery.png" alt="Multiple Delivery Methods" />
+          </div>
+          <div class="cs-caption">
+            <h3>Flexible Delivery</h3>
+            <p>
+              Providing versatile options (Email, SMS, or Booklet) to
+              accommodate the varying digital literacy levels of elderly
+              patients and their caregivers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="next-page-nav">
+      <div class="nav-hint">NEXT PROJECT</div>
+      <a href="memento.html" class="next-page-box">
+        <div class="next-content">
+          <span class="next-num">02</span>
+          <span class="next-title">Memento</span>
+        </div>
+        <div class="next-arrow">VIEW CASE →</div>
+      </a>
+    </nav>
+
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
+
+    <script>
+      /* --- Scroll Progress Logic --- */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      });
+
+      // --- Custom Cursor Logic ---
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        cursorOutline.animate(
+          { left: `${posX}px`, top: `${posY}px` },
+          { duration: 500, fill: "forwards" },
+        );
+      });
+
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .faq-item, .bento-item",
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering"),
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering"),
+        );
+      });
+
+      /* --- Lightbox Logic --- */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+        const img = element.querySelector("img");
+
+        if (img) {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+          captionText.innerHTML = img.alt;
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+
+        const modal = document.getElementById("lightbox-modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      /* --- Scroll to Top --- */
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+      // Smooth Scrolling
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

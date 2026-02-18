@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing & Content Strategy | Nicole Wu</title>
+    <link rel="icon" href="image/logo.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="n.styles.css" />
+
+    <link rel="stylesheet" href="marketing.css" />
+  </head>
+
+  <body style="background-color: #1a1615">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="progress-bar"></div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
+    </div>
+
+    <header class="main-header">
+      <div class="header-logo">
+        <a href="index.html"
+          ><img src="image/logo.png" alt="Nicole Portfolio Logo"
+        /></a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="projects.html">← Back to Projects</a>
+      </div>
+    </header>
+
+    <section class="marketing-hero-section">
+      <div class="project-hero">
+        <h2 class="project-title">MARKETING<br />& CONTENT</h2>
+        <p class="project-subtitle">
+          Data-driven strategies and compelling visual storytelling that bridge
+          the gap between brands and their audiences.
+        </p>
+      </div>
+
+      <div class="design-block">
+        <h3 class="block-title">01 / Campaign Strategy</h3>
+        <div class="marketing-showcase">
+          <div class="showcase-info">
+            <span class="web-tag">SOCIAL CAMPAIGN & REBRAND</span>
+            <h3>Premier Protein</h3>
+            <p>
+              A comprehensive rebrand and social media campaign targeting Gen-Z
+              and Millennials. The strategy utilized high-energy short-form
+              content on TikTok and in-depth storytelling on YouTube to
+              establish brand trust.
+            </p>
+
+            <ul class="strategy-list">
+              <li>
+                <strong>Target Audience:</strong> Fitness enthusiasts aged
+                18-35.
+              </li>
+              <li><strong>Platforms:</strong> Instagram, TikTok, YouTube.</li>
+              <li>
+                <strong>Key Insight:</strong> Shifting brand perception from
+                "functional supplement" to "lifestyle fuel."
+              </li>
+            </ul>
+
+            <a href="premier protein.html" class="project-link-btn"
+              >VIEW FULL CAMPAIGN <span class="btn-arrow">→</span></a
+            >
+          </div>
+          <div class="showcase-image">
+            <div class="img-frame zoomable" onclick="openLightbox(this)">
+              <img
+                src="image/pplogo.png"
+                alt="Premier Protein Social Campaign"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="design-block">
+        <h3 class="block-title">02 / Social Media Activation</h3>
+        <div class="marketing-showcase reverse">
+          <div class="showcase-info">
+            <span class="web-tag">CONTENT CREATION & OPERATION</span>
+            <h3>Silkyo</h3>
+            <p>
+              Spearheaded the localized content strategy for the Asian-Canadian
+              market on Xiaohongshu (Red). Created high-quality visual assets
+              that aligned with the brand's "Modern Urban" aesthetic, driving
+              engagement and directing traffic to the e-commerce site.
+            </p>
+            <a href="silkyo.html" class="project-link-btn"
+              >VIEW LIVE SITE <span class="btn-arrow">→</span></a
+            >
+          </div>
+
+          <div class="social-grid">
+            <div class="phone-mockup">
+              <div class="phone-screen zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/silkyo-social-1.jpg"
+                  alt="Silkyo Social Post 1"
+                />
+              </div>
+            </div>
+            <div class="phone-mockup offset-down">
+              <div class="phone-screen zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/silkyo-social-2.jpg"
+                  alt="Silkyo Social Post 2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="design-block">
+        <h3 class="block-title">03 / Experiential Marketing</h3>
+        <div class="marketing-showcase coming-soon-container">
+          <div class="showcase-info">
+            <span class="web-tag">PRODUCT CONCEPT & ACTIVATION</span>
+            <h3>Tokyo Disney Dining</h3>
+            <p>
+              An upcoming case study exploring the "Ferris Wheel Rotating
+              Restaurant" concept. Focusing on user journey mapping, experience
+              design, and "Instagrammable" moment creation using the Six
+              Thinking Hats method.
+            </p>
+
+            <div class="tbc-badge">TO BE CONTINUED...</div>
+          </div>
+          <div class="showcase-image">
+            <div class="img-frame blurred-img">
+              <img src="image/disney-concept.png" alt="Concept Loading" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="project-nav-container">
+      <div class="nav-title">VIEW MORE PROJECTS</div>
+      <div class="nav-links-grid">
+        <a href="graphic design.html" class="nav-item">
+          <span class="nav-label">01</span>
+          <span class="nav-text">Graphic Design</span>
+        </a>
+        <a href="ux design.html" class="nav-item">
+          <span class="nav-label">02</span>
+          <span class="nav-text">Product Design</span>
+        </a>
+        <a href="media.html" class="nav-item">
+          <span class="nav-label">03</span>
+          <span class="nav-text">Media Production</span>
+        </a>
+        <a href="jewelry design.html" class="nav-item">
+          <span class="nav-label">05</span>
+          <span class="nav-text">Jewelry Design</span>
+        </a>
+      </div>
+    </nav>
+
+    <footer>
+      <div class="footer-cta">
+        <h2>Thanks for your viewing</h2>
+        <p>
+          Thank you for taking the time to review my portfolio. Looking forward
+          to connecting with you next time!
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/nicoc0.0"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@nicolew7543"
+            target="_blank"
+            aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nicole-wu-4948b8252"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <p class="get-in-touch-text">GET IN TOUCH</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+      /* Lightbox Logic */
+      function openLightbox(element) {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("lightbox-caption");
+        const img = element.querySelector("img");
+        if (img) {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+          captionText.innerHTML = img.alt;
+          document.body.style.overflow = "hidden";
+        }
+      }
+      function closeLightbox(event) {
+        if (event.target.id === "lightbox-img") return;
+        document.getElementById("lightbox-modal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      /* Scroll & Cursor Logic */
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        document.getElementById("progress-bar").style.width =
+          (scrollTop / scrollHeight) * 100 + "%";
+        document.getElementById("back-to-top").style.display =
+          window.scrollY > 300 ? "block" : "none";
+      });
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
+
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+      window.addEventListener("mousemove", (e) => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+        cursorOutline.animate(
+          { left: `${e.clientX}px`, top: `${e.clientY}px` },
+          { duration: 500, fill: "forwards" },
+        );
+      });
+
+      const hoverTargets = document.querySelectorAll(
+        "a, button, .zoomable, .phone-screen, .project-link-btn",
+      );
+      hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovering"),
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovering"),
+        );
+      });
+
+      /* Init Lenis & Tilt */
+      const lenis = new Lenis({ duration: 1.2, smooth: true });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // 3D Tilt for phones
+      VanillaTilt.init(document.querySelectorAll(".phone-mockup"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+      });
+    </script>
+  </body>
+</html>
