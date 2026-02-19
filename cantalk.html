@@ -253,7 +253,7 @@
         );
       });
 
-      /* --- Presentation Slider Logic --- */
+      /* --- Presentation Slider Logic (已修复) --- */
       const totalSlides = 16;
       let currentSlide = 1;
 
@@ -263,7 +263,10 @@
         if (currentSlide < 1) currentSlide = totalSlides;
 
         const slideNum = currentSlide.toString().padStart(2, "0");
-        const imgPath = `210 presentation/Wu_Nicole_Presentation-${slideNum}.png`;
+        
+        // ❌ 删除原来的: `210 presentation/Wu_Nicole_Presentation-${slideNum}.png`
+        // ✅ 修正为: 直接文件名，不带文件夹
+        const imgPath = `Wu_Nicole_Presentation-${slideNum}.png`;
 
         document.getElementById("slideImage").src = imgPath;
         document.getElementById("currentNum").innerText = slideNum;
@@ -322,4 +325,3 @@
     </script>
   </body>
 </html>
-
