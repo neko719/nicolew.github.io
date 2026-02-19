@@ -11,6 +11,8 @@ body {
   background-color: #1a1615 !important; /* 强制所有页面使用该颜色 */
   color: #e2cca8; /* 默认文字颜色 */
   min-height: 100%;
+  font-family: "Inconsolata", monospace;
+  line-height: 1.6;
 }
 
 /* 打字机光标闪烁效果 */
@@ -49,7 +51,12 @@ section {
 
   border-bottom: 1px solid rgba(193, 164, 129, 0.1);
 
-  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -59,27 +66,12 @@ section {
     border var(--transition-speed);
 }
 
-body {
-  font-family: "Inconsolata", monospace;
-  background-color: #1a1615;
-  color: #e2cca8;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
+/* footer merged to keep single definition */
 footer {
   background-color: #1a1615;
-}
-
-.main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 32px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  color: #e2cca8;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .header-logo img {
@@ -191,13 +183,6 @@ footer {
 .nav-item:hover .nav-text {
   color: #c1a481;
 }
-
-footer {
-  color: #e2cca8;
-  text-align: center;
-  padding: 60px 20px;
-}
-
 .footer-cta h2 {
   font-family: "Cormorant", serif;
   font-size: 40px;
@@ -4136,5 +4121,67 @@ footer p {
 
   .offset-down {
     margin-top: 0; /* 手机上取消错落，避免太挤 */
+  }
+}
+
+/* --- 方案 A: 2+3 稳重布局 (推荐) --- */
+.nav-links-grid {
+  display: grid;
+  /* 核心魔法：把一行分成 6 份，方便组合 */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(193, 164, 129, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  /* 默认：下面那行，每张卡片占 2 份 (总共6份，所以是 1/3 宽) */
+  grid-column: span 2;
+  min-width: 0; /* 防止溢出 */
+}
+
+/* 特殊处理：前两个卡片 (Graphic & Product) 变宽 */
+.nav-item:nth-child(1),
+.nav-item:nth-child(2) {
+  /* 上面那行，每张卡片占 3 份 (总共6份，所以是 1/2 宽) */
+  grid-column: span 3;
+}
+
+/* 悬停效果 */
+.nav-item:hover {
+  background: rgba(193, 164, 129, 0.1);
+  border-color: #c1a481;
+  transform: translateY(-5px);
+}
+
+.nav-text {
+  font-family: "Cormorant", serif;
+  font-size: 1.5rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* 手机适配 (强制单列) */
+@media (max-width: 768px) {
+  .nav-links-grid {
+    grid-template-columns: 1fr; /* 手机上一列 */
+  }
+  .nav-item,
+  .nav-item:nth-child(1),
+  .nav-item:nth-child(2) {
+    grid-column: span 1; /* 所有人恢复占满一行 */
   }
 }
