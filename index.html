@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #1a1615">
+  <body style="background-color: #24292e !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -24,9 +24,30 @@
 
     <div id="loader">
       <div class="loader-content">
+        <svg
+          class="loader-line-svg"
+          viewBox="0 0 305 70"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="loader-line-path"
+            d="M5,45 L25,45 L25,15 L50,45 L50,15 L60,45 L90,45 L98,38 L104,45 L108,52 L112,10 L116,45 L124,36 L132,45 L150,45 L160,15 L175,45 L190,20 L205,45 L220,15 L230,45 L300,45"
+            fill="none"
+            stroke="#1a1615"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle
+            class="loader-line-dot"
+            cx="300"
+            cy="45"
+            r="3"
+            fill="#1a1615"
+          />
+        </svg>
         <div class="loader-text">NICOLE WU</div>
         <div class="loader-subtext">PORTFOLIO © 2026</div>
-        <div class="counter">0</div>
       </div>
     </div>
 
@@ -38,13 +59,12 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -59,7 +79,8 @@
 
       <div class="hero-content-centered">
         <h1 class="hero-main-title">
-        <span class="interactive-shimmer">NICOLE WU</span></h1>
+          <span class="interactive-shimmer">NICOLE WU</span>
+        </h1>
         <div class="hero-meta-row">
           <span class="typing-text"></span><span class="cursor">|</span>
           <span class="location">BASED IN CANADA</span>
@@ -212,20 +233,20 @@
             left: `${posX}px`,
             top: `${posY}px`,
           },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
       // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -235,12 +256,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.0,
+        minHeight: 200.0, 
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color: 0xc1a481,
-        backgroundColor: 0x1a1615,
+        color: 0xabacad,
+        backgroundColor: 0xf1efe9,
         points: 25.0,
         maxDistance: 22.0, // 稍微调大一点连线距离，因为没有照片遮挡了
         spacing: 18.0,
@@ -249,46 +270,38 @@
 
       // Loading Screen 逻辑
       function startLoader() {
-        const counterElement = document.querySelector(".counter");
         const loader = document.getElementById("loader");
-        let currentValue = 0;
+        const path = document.querySelector(".loader-line-path");
 
-        function updateCounter() {
-          const increment = Math.floor(Math.random() * 12) + 1;
-          currentValue += increment;
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+        path.getBoundingClientRect(); // force reflow so the transition actually plays
+        path.style.transition =
+          "stroke-dashoffset 3s cubic-bezier(0.65, 0, 0.35, 1)";
+        path.style.strokeDashoffset = "0";
 
-          if (currentValue >= 100) {
-            currentValue = 100;
-            counterElement.textContent = currentValue;
-            setTimeout(() => {
-              loader.classList.add("loader-hidden");
-            }, 600);
-            return;
-          }
-
-          counterElement.textContent = currentValue;
-          const delay = Math.floor(Math.random() * 120) + 40;
-          setTimeout(updateCounter, delay);
-        }
-        updateCounter();
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+        }, 4000); // 3s draw + text fade + brief hold
       }
       window.addEventListener("load", startLoader);
 
-/* --- Interactive Shimmer Logic (鼠标跟随变深) --- */
-      const shimmerTarget = document.querySelector('.interactive-shimmer');
+      /* --- Interactive Shimmer Logic (鼠标跟随变深) --- */
+      const shimmerTarget = document.querySelector(".interactive-shimmer");
 
       if (shimmerTarget) {
-        shimmerTarget.addEventListener('mousemove', (e) => {
+        shimmerTarget.addEventListener("mousemove", (e) => {
           const rect = shimmerTarget.getBoundingClientRect();
-          
+
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          
-          const xPercent = (x / rect.width) * 100 + '%';
-          const yPercent = (y / rect.height) * 100 + '%';
-          
-          shimmerTarget.style.setProperty('--mouse-x', xPercent);
-          shimmerTarget.style.setProperty('--mouse-y', yPercent);
+
+          const xPercent = (x / rect.width) * 100 + "%";
+          const yPercent = (y / rect.height) * 100 + "%";
+
+          shimmerTarget.style.setProperty("--mouse-x", xPercent);
+          shimmerTarget.style.setProperty("--mouse-y", yPercent);
         });
       }
 
