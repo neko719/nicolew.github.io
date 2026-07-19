@@ -15,8 +15,83 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
+    <style>
+      /* New Minimal Editorial Footer Styles */
+      .editorial-nav-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-item .edit-num {
+        font-family: "Inconsolata", monospace;
+        font-size: 12px;
+        color: #abacad;
+        letter-spacing: 1px;
+        transition: color 0.4s ease;
+      }
+
+      .editorial-nav-item .edit-text {
+        font-family: "Cormorant", serif;
+        font-size: 24px;
+        color: #5f5f60;
+        font-weight: 300;
+        position: relative;
+      }
+
+      .editorial-nav-item .edit-text::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #abacad;
+        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-divider {
+        font-family: "Cormorant", serif;
+        font-size: 20px;
+        color: #c9c5c2;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .editorial-nav-item:hover .edit-text,
+      .editorial-nav-item.active-page .edit-text {
+        color: #1a1615;
+      }
+
+      .editorial-nav-item:hover .edit-num,
+      .editorial-nav-item.active-page .edit-num {
+        color: #1a1615;
+      }
+
+      .editorial-nav-item:hover .edit-text::after,
+      .editorial-nav-item.active-page .edit-text::after {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links-editorial-flex {
+          flex-direction: column;
+          gap: 15px !important;
+        }
+        .editorial-nav-divider {
+          display: none;
+        }
+        .editorial-nav-item .edit-text {
+          font-size: 20px;
+        }
+      }
+    </style>
   </head>
-  <body style="background-color: #1a1615">
+  <body style="background-color: #24292e !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -24,13 +99,12 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -55,7 +129,7 @@
           <div class="photo-card">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
               <img
-                src="imageedit_3_6698335143.jpg"
+                src="image/imageedit_3_6698335143.jpg"
                 alt="Urban Coastline"
               />
             </div>
@@ -70,7 +144,7 @@
 
           <div class="photo-card">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Image_20241110015321.jpg" alt="Dock at Sunset" />
+              <img src="image/Image_20241110015321.jpg" alt="Dock at Sunset" />
             </div>
             <div class="photo-text">
               <h3>Dock at Sunset</h3>
@@ -83,7 +157,7 @@
 
           <div class="photo-card">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Image_20241110015306.jpg" alt="Towering Echo" />
+              <img src="image/Image_20241110015306.jpg" alt="Towering Echo" />
             </div>
             <div class="photo-text">
               <h3>Towering Echo</h3>
@@ -105,28 +179,28 @@
               class="img-frame full-height zoomable"
               onclick="openLightbox(this)"
             >
-              <img src="Action.jpg" alt="Vertical Photo Left" />
+              <img src="image/Action.jpg" alt="Vertical Photo Left" />
             </div>
           </div>
 
           <div class="gallery-col-grid">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Fashion.jpg" alt="Horizontal Photo 1" />
+              <img src="image/Fashion.jpg" alt="Horizontal Photo 1" />
             </div>
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Macro.jpg" alt="Horizontal Photo 2" />
+              <img src="image/Macro.jpg" alt="Horizontal Photo 2" />
             </div>
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Portrait2.jpg" alt="Horizontal Photo 3" />
+              <img src="image/Portrait2.jpg" alt="Horizontal Photo 3" />
             </div>
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Portrait1.jpg" alt="Horizontal Photo 4" />
+              <img src="image/Portrait1.jpg" alt="Horizontal Photo 4" />
             </div>
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Pet.jpg" alt="Horizontal Photo 5" />
+              <img src="image/Pet.jpg" alt="Horizontal Photo 5" />
             </div>
             <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="Narrative.jpg" alt="Horizontal Photo 6" />
+              <img src="image/Narrative.jpg" alt="Horizontal Photo 6" />
             </div>
           </div>
 
@@ -135,7 +209,7 @@
               class="img-frame full-height zoomable"
               onclick="openLightbox(this)"
             >
-              <img src="Landscape.jpg" alt="Vertical Photo Right" />
+              <img src="image/Landscape.jpg" alt="Vertical Photo Right" />
             </div>
           </div>
         </div>
@@ -361,13 +435,13 @@
             <div class="product-images">
               <div class="img-frame zoomable" onclick="openLightbox(this)">
                 <img
-                  src="product3.2.jpg"
+                  src="image/product3.2.jpg"
                   alt="Mabe Pearl Earrings Left"
                 />
               </div>
               <div class="img-frame zoomable" onclick="openLightbox(this)">
                 <img
-                  src="product3.1.jpg"
+                  src="image/product3.1.jpg"
                   alt="Mabe Pearl Earrings Right"
                 />
               </div>
@@ -379,13 +453,13 @@
             <div class="product-images">
               <div class="img-frame zoomable" onclick="openLightbox(this)">
                 <img
-                  src="product2.1.jpg"
+                  src="image/product2.1.jpg"
                   alt="South Sea White Pendant Left"
                 />
               </div>
               <div class="img-frame zoomable" onclick="openLightbox(this)">
                 <img
-                  src="product2.2.jpg"
+                  src="image/product2.2.jpg"
                   alt="South Sea White Pendant Right"
                 />
               </div>
@@ -396,10 +470,10 @@
           <div class="product-item">
             <div class="product-images">
               <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img src="product1.2.jpg" alt="Tahiti Pendant Left" />
+                <img src="image/product1.2.jpg" alt="Tahiti Pendant Left" />
               </div>
               <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img src="product1.1.jpg" alt="Tahiti Pendant Right" />
+                <img src="image/product1.1.jpg" alt="Tahiti Pendant Right" />
               </div>
             </div>
             <h3>Tahiti Pendant</h3>
@@ -414,33 +488,85 @@
       <div id="lightbox-caption"></div>
     </div>
 
-    <nav class="project-nav-container">
-      <div class="nav-title">VIEW MORE PROJECTS</div>
+    <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
+    <nav
+      class="project-nav-container"
+      style="
+        max-width: 1200px;
+        margin: 120px auto 60px auto;
+        padding: 60px 20px 0 20px;
+        border-top: 1px solid #c9c5c2;
+        text-align: center;
+      "
+    >
+      <div
+        class="nav-title"
+        style="
+          font-family: &quot;Inconsolata&quot;, monospace;
+          font-size: 13px;
+          color: #abacad;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          margin-bottom: 50px;
+          position: relative;
+          display: inline-block;
+        "
+      >
+        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
+        <span style="opacity: 0.4; margin: 0 10px">—</span>
+      </div>
 
-      <div class="nav-links-grid">
-        <a href="graphic design.html" class="nav-item">
-          <span class="nav-label">01</span>
-          <span class="nav-text">Graphic Design</span>
+      <div
+        class="nav-links-editorial-flex"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          row-gap: 20px;
+        "
+      >
+        <!-- Link 01: Visual Design -->
+        <a
+          href="graphic design.html"
+          class="editorial-nav-item"
+          id="foot-nav-visual"
+        >
+          <span class="edit-num">01</span
+          ><span class="edit-text">Visual Design</span>
         </a>
 
-        <a href="ux design.html" class="nav-item">
-          <span class="nav-label">02</span>
-          <span class="nav-text">Product Design</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 02: Product Design -->
+        <a href="ux design.html" class="editorial-nav-item" id="foot-nav-ux">
+          <span class="edit-num">02</span
+          ><span class="edit-text">Product Design</span>
         </a>
 
-        <a href="media.html" class="nav-item">
-          <span class="nav-label">03</span>
-          <span class="nav-text">Media Production</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 03: Media Production -->
+        <a
+          href="media.html"
+          class="editorial-nav-item active-page"
+          id="foot-nav-media"
+        >
+          <span class="edit-num">03</span
+          ><span class="edit-text">Media Production</span>
         </a>
 
-        <a href="jewelry design.html" class="nav-item">
-          <span class="nav-label">04</span>
-          <span class="nav-text">Jewelry Design</span>
-        </a>
+        <span class="editorial-nav-divider">/</span>
 
-        <a href="marketing.html" class="nav-item">
-          <span class="nav-label">05</span>
-          <span class="nav-text">Marketing & Content</span>
+        <!-- Link 04: Marketing & Content -->
+        <a
+          href="marketing.html"
+          class="editorial-nav-item"
+          id="foot-nav-market"
+        >
+          <span class="edit-num">04</span
+          ><span class="edit-text">Marketing & Content</span>
         </a>
       </div>
     </nav>
@@ -588,4 +714,3 @@
     </script>
   </body>
 </html>
-
