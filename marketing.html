@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marketing & Content Strategy | Nicole Wu</title>
-    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="icon" href="image/logo.png" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,11 +19,86 @@
     />
 
     <link rel="stylesheet" href="n.styles.css" />
-
     <link rel="stylesheet" href="marketing.css" />
+    <style>
+      /* New Minimal Editorial Footer Styles */
+      .editorial-nav-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-item .edit-num {
+        font-family: "Inconsolata", monospace;
+        font-size: 12px;
+        color: #abacad;
+        letter-spacing: 1px;
+        transition: color 0.4s ease;
+      }
+
+      .editorial-nav-item .edit-text {
+        font-family: "Cormorant", serif;
+        font-size: 24px;
+        color: #5f5f60;
+        font-weight: 300;
+        position: relative;
+      }
+
+      .editorial-nav-item .edit-text::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #abacad;
+        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-divider {
+        font-family: "Cormorant", serif;
+        font-size: 20px;
+        color: #c9c5c2;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .editorial-nav-item:hover .edit-text,
+      .editorial-nav-item.active-page .edit-text {
+        color: #cf9d7b !important;
+      }
+
+      .editorial-nav-item:hover .edit-num,
+      .editorial-nav-item.active-page .edit-num {
+        color: #cf9d7b !important;
+      }
+
+      .editorial-nav-item:hover .edit-text::after,
+      .editorial-nav-item.active-page .edit-text::after {
+        width: 100%;
+        background-color: #cf9d7b;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links-editorial-flex {
+          flex-direction: column;
+          gap: 15px !important;
+        }
+        .editorial-nav-divider {
+          display: none;
+        }
+        .editorial-nav-item .edit-text {
+          font-size: 20px;
+        }
+      }
+    </style>
   </head>
 
-  <body style="background-color: #1a1615">
+  <body style="background-color: #0c1519 !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -38,14 +113,13 @@
     <header class="main-header">
       <div class="header-logo">
         <a href="index.html"
-          ><img src="logo.png" alt="Nicole Portfolio Logo"
+          ><img src="image/logo.png" alt="Nicole Portfolio Logo"
         /></a>
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -64,6 +138,7 @@
         </p>
       </div>
 
+      <!-- BLOCK 01 / CAMPAIGN STRATEGY: PREMIER PROTEIN -->
       <div class="design-block">
         <h3 class="block-title">01 / Campaign Strategy</h3>
         <div class="marketing-showcase">
@@ -96,7 +171,8 @@
           <div class="showcase-image">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
               <img
-                src="pplogo.png"alt="Premier Protein Social Campaign"
+                src="image/pplogo.png"
+                alt="Premier Protein Social Campaign"
               />
             </div>
           </div>
@@ -105,6 +181,7 @@
 
       <div class="section-divider"></div>
 
+      <!-- BLOCK 02 / SOCIAL MEDIA ACTIVATION: SILKYO -->
       <div class="design-block">
         <h3 class="block-title">02 / Social Media Activation</h3>
         <div class="marketing-showcase reverse">
@@ -126,7 +203,7 @@
             <div class="phone-mockup">
               <div class="phone-screen zoomable" onclick="openLightbox(this)">
                 <img
-                  src="silkyo-social-1.jpg"
+                  src="image/silkyo-social-1.jpg"
                   alt="Silkyo Social Post 1"
                 />
               </div>
@@ -134,7 +211,7 @@
             <div class="phone-mockup offset-down">
               <div class="phone-screen zoomable" onclick="openLightbox(this)">
                 <img
-                  src="silkyo-social-2.jpg"
+                  src="image/silkyo-social-2.jpg"
                   alt="Silkyo Social Post 2"
                 />
               </div>
@@ -145,57 +222,177 @@
 
       <div class="section-divider"></div>
 
+      <!-- BLOCK 03 / EXPERIENTIAL MARKETING: THE BLOCKY ODYSSEY -->
       <div class="design-block">
         <h3 class="block-title">03 / Experiential Marketing</h3>
-        <div class="marketing-showcase coming-soon-container">
+        <div class="marketing-showcase">
           <div class="showcase-info">
-            <span class="web-tag">PRODUCT CONCEPT & ACTIVATION</span>
-            <h3>Tokyo Disney Dining</h3>
+            <span class="web-tag">EXPERIENCE PROPOSAL & ACUMEN</span>
+            <h3>The Blocky Odyssey</h3>
             <p>
-              An upcoming case study exploring the "Ferris Wheel Rotating
-              Restaurant" concept. Focusing on user journey mapping, experience
-              design, and "Instagrammable" moment creation using the Six
-              Thinking Hats method.
+              An experiential marketing proposal and cross-platform framework
+              introducing a story-driven, interactive Minecraft attraction to
+              Tokyo DisneySea. Designed around extensive consumer demographic
+              evaluations, this campaign flips passive rider behaviors into
+              active gamified conversion funnels.
             </p>
 
-            <div class="tbc-badge">TO BE CONTINUED...</div>
+            <ul class="strategy-list">
+              <li>
+                <strong>Target Segment:</strong> Urban Young Women aged 18–29 in
+                the Greater Tokyo Area prioritizing shareable, aesthetic
+                moments.
+              </li>
+              <li>
+                <strong>Omnichannel Activation:</strong> AIDA promotional design
+                blending stop-motion Tokyo subway immersive tunnels with active
+                in-park Explorer Collection Quests.
+              </li>
+              <li>
+                <strong>Conversion Engine:</strong> A LINE-based closed funnel
+                ecosystem driving ticket acquisition, maps navigation, and
+                phygital souvenir monetization channels.
+              </li>
+            </ul>
+
+            <div
+              style="
+                font-family: &quot;Inconsolata&quot;, monospace;
+                font-size: 13px;
+                color: #c1a481;
+                letter-spacing: 1px;
+                margin-top: 15px;
+                text-transform: uppercase;
+              "
+            >
+              ✦ Strategic Framework: Integrated OLC Group Metrics & Gamification
+              Models
+            </div>
           </div>
-          <div class="showcase-image">
-            <div class="img-frame blurred-img">
-              <img src="disney-concept.png" alt="Concept Loading" />
+
+          <!-- REPLACED IMAGE GRID CONTAINER WITH AN EDITORIAL VIDEO WRAPPER FRAME -->
+          <div
+            class="showcase-image"
+            style="width: 100%; display: flex; align-items: center"
+          >
+            <div
+              class="video-responsive-wrapper"
+              style="
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                width: 100%;
+                border: 1px solid #c9c5c2;
+                background-color: #162127 !important;
+                border-radius: 2px;
+              "
+            >
+              <iframe
+                src="https://www.youtube.com/embed/tI4n7hxFuYs"
+                title="Product Demo"
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                "
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <nav class="project-nav-container">
-      <div class="nav-title">VIEW MORE PROJECTS</div>
+    <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
+    <nav
+      class="project-nav-container"
+      style="
+        max-width: 1200px;
+        margin: 120px auto 60px auto;
+        padding: 60px 20px 0 20px;
+        border-top: 1px solid #c9c5c2;
+        text-align: center;
+      "
+    >
+      <div
+        class="nav-title"
+        style="
+          font-family: &quot;Inconsolata&quot;, monospace;
+          font-size: 13px;
+          color: #abacad;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          margin-bottom: 50px;
+          position: relative;
+          display: inline-block;
+        "
+      >
+        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
+        <span style="opacity: 0.4; margin: 0 10px">—</span>
+      </div>
 
-      <div class="nav-links-grid">
-        <a href="graphic design.html" class="nav-item">
-          <span class="nav-label">01</span>
-          <span class="nav-text">Graphic Design</span>
+      <div
+        class="nav-links-editorial-flex"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          row-gap: 20px;
+        "
+      >
+        <!-- Link 01: Visual Design -->
+        <a
+          href="graphic design.html"
+          class="editorial-nav-item"
+          id="foot-nav-visual"
+        >
+          <span class="edit-num">01</span
+          ><span class="edit-text">Visual Design</span>
         </a>
 
-        <a href="ux design.html" class="nav-item">
-          <span class="nav-label">02</span>
-          <span class="nav-text">Product Design</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 02: Product Design -->
+        <a href="ux design.html" class="editorial-nav-item" id="foot-nav-ux">
+          <span class="edit-num">02</span
+          ><span class="edit-text">Product Design</span>
         </a>
 
-        <a href="media.html" class="nav-item">
-          <span class="nav-label">03</span>
-          <span class="nav-text">Media Production</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 03: Media Production -->
+        <a href="media.html" class="editorial-nav-item" id="foot-nav-media">
+          <span class="edit-num">03</span
+          ><span class="edit-text">Media Production</span>
         </a>
 
-        <a href="jewelry design.html" class="nav-item">
-          <span class="nav-label">04</span>
-          <span class="nav-text">Jewelry Design</span>
-        </a>
+        <span class="editorial-nav-divider">/</span>
 
-        <a href="marketing.html" class="nav-item">
-          <span class="nav-label">05</span>
-          <span class="nav-text">Marketing & Content</span>
+        <!-- Link 04: Marketing & Content -->
+        <a
+          href="marketing.html"
+          class="editorial-nav-item active-page"
+          id="foot-nav-market"
+        >
+          <span class="edit-num">04</span
+          ><span class="edit-text">Marketing & Content</span>
         </a>
       </div>
     </nav>
@@ -250,10 +447,12 @@
           document.body.style.overflow = "hidden";
         }
       }
-      function closeLightbox(event) {
-        if (event.target.id === "lightbox-img") return;
-        document.getElementById("lightbox-modal").style.display = "none";
-        document.body.style.overflow = "auto";
+      if (typeof closeLightbox !== "function") {
+        window.closeLightbox = function (event) {
+          if (event.target.id === "lightbox-img") return;
+          document.getElementById("lightbox-modal").style.display = "none";
+          document.body.style.overflow = "auto";
+        };
       }
 
       /* Scroll & Cursor Logic */
@@ -305,7 +504,6 @@
       }
       requestAnimationFrame(raf);
 
-      // 3D Tilt for phones
       VanillaTilt.init(document.querySelectorAll(".phone-mockup"), {
         max: 10,
         speed: 400,
@@ -315,6 +513,3 @@
     </script>
   </body>
 </html>
-
-
-
