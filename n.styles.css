@@ -8,8 +8,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #1a1615 !important; /* 强制所有页面使用该颜色 */
-  color: #e2cca8; /* 默认文字颜色 */
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important; /* 默认文字颜色 */
   min-height: 100%;
   font-family: "Inconsolata", monospace;
   line-height: 1.6;
@@ -18,7 +18,7 @@ body {
 /* 打字机光标闪烁效果 */
 .cursor {
   display: inline-block;
-  color: #c1a481;
+  color: #cf9d7b !important;
   animation: blink 1s infinite;
   font-weight: bold;
 }
@@ -34,22 +34,20 @@ body {
 }
 
 .typing-text {
-  color: #e2cca8;
+  color: #8a8c8d !important;
   font-family: "Inconsolata", monospace;
   font-weight: bold;
 }
 
 section {
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
 }
 
 .main-header {
-  background: rgba(26, 22, 21, 0.6) !important;
+  background: rgba(12, 21, 25, 0.6) !important;
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(193, 164, 129, 0.1);
 
   display: flex;
   align-items: center;
@@ -68,8 +66,8 @@ section {
 
 /* footer merged to keep single definition */
 footer {
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
   text-align: center;
   padding: 60px 20px;
 }
@@ -87,52 +85,53 @@ footer {
 
 .header-nav a {
   text-decoration: none;
-  color: #c1a481;
+  color: #5f5f60;
   font-family: "Cormorant", serif;
   font-size: 18px;
 }
 
 .header-nav a:hover {
-  color: #6e685f;
+  color: #1a1615;
 }
 
 .header-cta a {
-  background-color: #6e685f;
-  color: #e2cca8;
+  background-color: transparent;
+  color: #cf9d7b !important;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
+  border: 1px solid #cf9d7b;
   font-family: "Cormorant", serif;
 }
 
 .header-cta a:hover {
-  background-color: #c1a481;
-  color: #1a1615;
+  background-color: #cf9d7b;
+  color: #3a3534;
 }
 
 .header-nav a.active {
-  color: #c1a481; /* 您的强调色 */
-  border-bottom: 2px solid #c1a481;
+  color: #cf9d7b !important; /* 您的强调色 */
+  border-bottom: 2px solid #abacad;
   padding-bottom: 2px;
 
   cursor: default;
 }
 
 .header-nav a.active:hover {
-  color: #c1a481; /* 保持强调色 */
+  color: #cf9d7b !important; /* 保持强调色 */
   background-color: transparent; /* 确保没有背景色变化 */
 }
 
 /* --- Global Project Navigation --- */
 .project-nav-container {
   padding: 60px 8% 20px;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   text-align: center;
 }
 
 .nav-title {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #abacad;
   font-size: 12px;
   letter-spacing: 4px;
   margin-bottom: 30px;
@@ -149,8 +148,8 @@ footer {
 
 .nav-item {
   flex: 1;
-  background-color: #26211e;
-  border: 1px solid rgba(193, 164, 129, 0.15);
+  background-color: #162127 !important;
+  border: 1px solid #c9c5c2;
   border-radius: 12px;
   padding: 25px 15px;
   text-decoration: none;
@@ -163,20 +162,20 @@ footer {
 .nav-label {
   font-family: "Inconsolata", monospace;
   font-size: 11px;
-  color: #c1a481;
+  color: #abacad;
   margin-bottom: 8px;
 }
 
 .nav-text {
   font-family: "Cormorant", serif;
   font-size: 18px;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   white-space: nowrap;
 }
 
 .nav-item:hover {
-  border-color: #c1a481;
-  background-color: #2d2723;
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-5px);
 }
 
@@ -191,7 +190,7 @@ footer {
 }
 
 .footer-cta p {
-  color: #e2cca8;
+  color: #8a8c8d !important;
   margin-bottom: 20px;
 }
 
@@ -204,7 +203,7 @@ footer {
 }
 
 .social-links a {
-  color: #c1a481;
+  color: #8a8c8d !important;
   font-size: 24px;
   transition:
     transform 0.3s ease,
@@ -212,7 +211,7 @@ footer {
 }
 
 .social-links a:hover {
-  color: #e2cca8;
+  color: #1a1615;
   transform: translateY(-3px);
 }
 
@@ -220,7 +219,7 @@ footer {
   font-family: "Inconsolata", monospace;
   font-size: 14px;
   letter-spacing: 4px;
-  color: #c1a481;
+  color: #abacad;
   margin-top: 10px;
   text-transform: uppercase;
   font-weight: 500;
@@ -231,23 +230,21 @@ footer {
   bottom: 24px;
   right: 24px;
   display: none;
-  background-color: #6e685f;
-  color: #e2cca8;
-  border: none;
+  background-color: transparent;
+  color: #cf9d7b;
+  border: 1px solid #cf9d7b;
   border-radius: 50%;
   width: 48px;
   height: 48px;
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
+  transition: all 0.3s;
   z-index: 1000;
 }
 #back-to-top:hover {
-  background-color: #c1a481;
-  color: #1a1615;
+  background-color: #cf9d7b;
+  color: #3a3534;
   transform: translateY(-2px);
 }
 
@@ -255,7 +252,7 @@ footer {
   display: flex;
   width: 100%;
   height: 85vh; /* 占据大部分屏幕高度，营造沉浸感 */
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   overflow: hidden;
   border-top: 1px solid rgba(193, 164, 129, 0.2);
   border-bottom: 1px solid rgba(193, 164, 129, 0.2);
@@ -275,12 +272,12 @@ footer {
 }
 
 .panel-left {
-  border-right: 1px solid rgba(193, 164, 129, 0.2);
+  border-right: 1px solid #c9c5c2;
 }
 
 .split-panel:hover {
   flex: 2.5; /* 展开占据更多空间 */
-  background-color: #1f1b1a; /* 稍微变亮一点点，增加层次 */
+  background-color: #162127 !important; /* 稍微变亮一点点，增加层次 */
 }
 
 /* 当鼠标悬停在左边时，右边变暗一点 */
@@ -303,7 +300,7 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 8vw; /* 响应式超大字体 */
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 0;
   transition: all 0.8s ease;
   transform-origin: left center;
@@ -329,7 +326,7 @@ footer {
 .detail-text p {
   font-family: "Inconsolata", monospace;
   font-size: 1.1rem;
-  color: rgba(193, 164, 129, 0.9);
+  color: #8a8c8d !important;
   line-height: 1.6;
 }
 
@@ -351,7 +348,7 @@ footer {
 /* --- 交互效果 --- */
 .avatar-wrapper:hover .profile-image {
   transform: scale(1.05); /* 头像稍微放大 */
-  box-shadow: 0 0 50px rgba(193, 164, 129, 0.6);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 /* --- New Text-Only Hero Section (无照片主页) --- */
@@ -386,7 +383,7 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 15vw; /* 极大的字体，撑满屏幕视觉 */
   font-weight: 300;
-  color: #c1a481;
+  color: #cf9d7b !important;
   line-height: 0.8;
   margin: 0;
   letter-spacing: -2px;
@@ -398,7 +395,7 @@ footer {
   margin-top: 20px;
   font-family: "Inconsolata", monospace;
   font-size: 1.2rem;
-  color: rgba(193, 164, 129, 0.8);
+  color: #8a8c8d !important;
   letter-spacing: 2px;
   display: flex;
   justify-content: center;
@@ -427,14 +424,14 @@ footer {
 .scroll-indicator span {
   font-family: "Inconsolata", monospace;
   font-size: 10px;
-  color: rgba(193, 164, 129, 0.5);
+  color: #abacad;
   letter-spacing: 2px;
 }
 
 .scroll-indicator .line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, #c1a481, transparent);
+  background: linear-gradient(to bottom, #abacad, transparent);
 }
 
 /* --- 动画帧 --- */
@@ -461,7 +458,7 @@ footer {
   padding: 120px 5% 100px 5%;
   max-width: 1400px; /* 让宽屏显示更舒服 */
   margin: 0 auto;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
 }
 
 /* 顶部大标题 */
@@ -474,13 +471,13 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 5rem;
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 20px;
 }
 
 .skills-subtitle {
   font-family: "Inconsolata", monospace;
-  color: rgba(193, 164, 129, 0.7);
+  color: #8a8c8d !important;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -497,9 +494,9 @@ footer {
 .skill-bento-card {
   position: relative;
   padding: 40px;
-  border: 1px solid rgba(193, 164, 129, 0.2); /* 细金线边框 */
+  border: 1px solid #c9c5c2; /* 细金线边框 */
   border-radius: 4px; /* 稍微一点点圆角 */
-  background: rgba(30, 26, 25, 0.3); /* 极淡的背景 */
+  background-color: #162127 !important; /* 极淡的背景 */
   overflow: hidden;
   transition: all 0.4s ease;
   display: flex;
@@ -515,8 +512,8 @@ footer {
 }
 
 .skill-bento-card:hover {
-  border-color: #c1a481;
-  background: rgba(30, 26, 25, 0.6);
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -548,7 +545,7 @@ footer {
 
 .skill-bento-card li::before {
   content: "- ";
-  color: #c1a481;
+  color: #abacad;
   margin-right: 5px;
 }
 
@@ -557,7 +554,7 @@ footer {
   bottom: -20px;
   right: -20px;
   font-size: 8rem;
-  color: rgba(193, 164, 129, 0.05);
+  color: rgba(95, 95, 96, 0.08);
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 1;
   transform: rotate(-15deg);
@@ -565,7 +562,7 @@ footer {
 
 .skill-bento-card:hover .skill-bg-icon {
   transform: scale(1.2) rotate(0deg); /* 变大且回正 */
-  color: rgba(193, 164, 129, 0.15); /* 稍微变亮 */
+  color: rgba(95, 95, 96, 0.15); /* 稍微变亮 */
   bottom: -10px;
   right: -10px;
 }
@@ -577,7 +574,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 120px 5% 60px 5%;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
 }
 
 .about-grid {
@@ -600,7 +597,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(193, 164, 129, 0.4);
+  border: 1px solid #c9c5c2;
   z-index: 1;
   transition: transform 0.5s ease;
 }
@@ -627,7 +624,7 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 5rem;
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 30px;
 }
 
@@ -660,7 +657,7 @@ footer {
 }
 
 .badge-text {
-  fill: #c1a481;
+  fill: #abacad;
   font-family: "Inconsolata", monospace;
   font-size: 13px;
   letter-spacing: 2px;
@@ -668,7 +665,7 @@ footer {
 }
 
 .badge-star {
-  fill: #c1a481;
+  fill: #abacad;
   font-size: 24px;
   dominant-baseline: middle;
   text-anchor: middle;
@@ -700,7 +697,7 @@ footer {
   text-align: center;
   font-family: "Cormorant", serif;
   font-size: 3rem;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 80px 0 60px 0;
   font-weight: 300;
 }
@@ -721,8 +718,8 @@ footer {
   font-family: "Inconsolata", monospace;
   font-size: 14px;
   letter-spacing: 2px;
-  color: rgba(193, 164, 129, 0.6);
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2);
+  color: #abacad;
+  border-bottom: 1px solid #c9c5c2;
   padding-bottom: 15px;
   margin-bottom: 30px;
 }
@@ -753,16 +750,16 @@ footer {
 
 .goal-list li::before {
   content: "•";
-  color: #c1a481;
+  color: #abacad;
   position: absolute;
   left: 0;
 }
 
 .language-section {
-  border-top: 1px solid rgba(193, 164, 129, 0.2);
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2);
+  border-top: 1px solid #c9c5c2;
+  border-bottom: 1px solid #c9c5c2;
   padding: 40px 0;
-  background: rgba(30, 26, 25, 0.5);
+  background: transparent;
 }
 
 .lang-container {
@@ -782,7 +779,7 @@ footer {
   font-family: "Inconsolata", monospace;
   font-size: 12px;
   letter-spacing: 2px;
-  color: rgba(193, 164, 129, 0.5);
+  color: #abacad;
   margin-bottom: 10px;
 }
 
@@ -794,7 +791,7 @@ footer {
 .lang-divider {
   width: 1px;
   height: 50px;
-  background: rgba(193, 164, 129, 0.2);
+  background: #c9c5c2;
   margin: 0 40px;
 }
 
@@ -812,17 +809,17 @@ footer {
   grid-template-columns: 200px 1fr;
   gap: 40px;
   padding: 40px 0;
-  border-top: 1px solid rgba(193, 164, 129, 0.2);
+  border-top: 1px solid #c9c5c2;
   transition: background 0.3s;
 }
 
 .timeline-row:hover {
-  background: linear-gradient(90deg, rgba(193, 164, 129, 0.05), transparent);
+  background-color: #162127 !important;
 }
 
 .timeline-date {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #8a8c8d !important;
   font-size: 14px;
   padding-top: 5px;
 }
@@ -836,7 +833,7 @@ footer {
 .timeline-detail .role {
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
-  color: #c1a481;
+  color: #8a8c8d !important;
   margin-bottom: 15px;
   font-style: italic;
 }
@@ -847,8 +844,8 @@ footer {
 }
 
 .skills {
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
   padding: 60px 20px;
   text-align: center;
 }
@@ -857,7 +854,7 @@ footer {
   font-size: 60px;
   margin-bottom: 40px;
   font-family: "Cormorant", serif;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .skills-grid {
@@ -871,7 +868,7 @@ footer {
 }
 
 .skill {
-  background-color: #2a2625;
+  background-color: #162127 !important;
   padding: 20px;
   border-radius: 6px;
   text-align: left;
@@ -887,7 +884,7 @@ footer {
   font-size: 25px;
   margin-bottom: 10px;
   font-family: "Cormorant", serif;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .skills-grid .skill:nth-child(5) {
@@ -907,12 +904,12 @@ footer {
 .skill li {
   margin-bottom: 5px;
   font-family: "Inconsolata", monospace;
-  color: #e2cca8;
+  color: #8a8c8d !important;
 }
 
 .sub-projects-container {
   padding: 80px 8%;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   text-align: center;
 }
 
@@ -927,8 +924,8 @@ footer {
 
 /* 核心卡片样式：参考 Bento 风格 */
 .bento-sub-card {
-  background-color: #26211e; /* 与 Bento 保持一致的深褐色 */
-  border: 1px solid rgba(193, 164, 129, 0.15); /* 淡淡的金色边框 */
+  background-color: #162127 !important; /* 与 Bento 保持一致的深褐色 */
+  border: 1px solid #c9c5c2; /* 淡淡的金色边框 */
   border-radius: 15px;
   padding: 40px 30px;
   width: 320px; /* 固定的宽度确保三行排开 */
@@ -941,16 +938,16 @@ footer {
 
 /* 悬停效果：边框加亮、轻微位移 */
 .bento-sub-card:hover {
-  border-color: #c1a481;
+  border-color: #abacad;
   transform: translateY(-10px);
-  background-color: #2d2723;
+  background-color: #162127 !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .bento-sub-card h3 {
   font-family: "Cormorant", serif;
   font-size: 26px;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 15px;
   text-transform: none; /* 保持首字母大写，更有设计感 */
 }
@@ -958,7 +955,7 @@ footer {
 .bento-sub-card p {
   font-family: "Inconsolata", monospace;
   font-size: 15px;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   line-height: 1.6;
   margin-bottom: 25px;
   opacity: 0.8;
@@ -967,13 +964,13 @@ footer {
 /* --- Photography 摄影板块统一高级样式 --- */
 .photography-section {
   padding: 100px 8%;
-  background-color: #1a1615; /* 统一深色背景 */
+  background-color: #0c1519 !important; /* 统一深色背景 */
   text-align: center;
 }
 
 .photography-subtitle {
   font-family: "Inconsolata", monospace;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   opacity: 0.8;
   margin-bottom: 60px;
 }
@@ -990,8 +987,8 @@ footer {
 
 /* 核心卡片样式：参考 Bento 风格 */
 .photography-card {
-  background-color: #26211e; /* 统一深褐色 */
-  border: 1px solid rgba(193, 164, 129, 0.15); /* 淡淡的金色边框 */
+  background-color: #162127 !important; /* 统一深褐色 */
+  border: 1px solid #c9c5c2; /* 淡淡的金色边框 */
   border-radius: 15px;
   padding: 25px;
   width: 380px; /* 略微调宽，确保三张并排 */
@@ -1001,9 +998,9 @@ footer {
 }
 
 .photography-card:hover {
-  border-color: #c1a481;
+  border-color: #abacad;
   transform: translateY(-10px);
-  background-color: #2d2723;
+  background-color: #162127 !important;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
@@ -1024,14 +1021,14 @@ footer {
 .photography-card h3 {
   font-family: "Cormorant", serif;
   font-size: 24px;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 12px;
 }
 
 .photography-card p {
   font-family: "Inconsolata", monospace;
   font-size: 14px;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   line-height: 1.6;
   opacity: 0.8;
 }
@@ -1039,7 +1036,7 @@ footer {
 /* 底部链接样式：参考 Bento 的箭头风格 */
 .bento-sub-link {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #cf9d7b !important;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
@@ -1055,8 +1052,8 @@ footer {
 
 .projects-bento-section {
   padding: 120px 5% 100px 5%;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
 }
 
 .bento-header {
@@ -1068,13 +1065,13 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 5rem;
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 0 0 20px 0;
 }
 
 .bento-header p {
   font-family: "Inconsolata", monospace;
-  color: rgba(193, 164, 129, 0.7);
+  color: #8a8c8d !important;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -1091,8 +1088,8 @@ footer {
 
 .bento-item {
   position: relative;
-  background-color: rgba(30, 26, 25, 0.2);
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  background-color: #162127 !important;
+  border: 1px solid #c9c5c2;
   border-radius: 4px;
   padding: 40px;
   display: flex;
@@ -1110,7 +1107,7 @@ footer {
   font-size: 10rem;
   font-weight: 700;
   line-height: 1;
-  color: rgba(193, 164, 129, 0.03);
+  color: rgba(95, 95, 96, 0.05);
   z-index: 0;
   transition: all 0.5s ease;
   pointer-events: none;
@@ -1124,7 +1121,7 @@ footer {
 .bento-tag {
   font-family: "Inconsolata", monospace;
   font-size: 0.8rem;
-  color: #c1a481;
+  color: #abacad;
   letter-spacing: 2px;
   text-transform: uppercase;
   display: block;
@@ -1152,7 +1149,7 @@ footer {
 
 .bento-link {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #cf9d7b !important;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
@@ -1167,10 +1164,10 @@ footer {
 }
 
 .bento-item:hover {
-  border-color: #c1a481;
-  background-color: rgba(30, 26, 25, 0.6);
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .bento-item:hover .bento-desc {
@@ -1181,7 +1178,7 @@ footer {
 }
 
 .bento-item:hover .bento-bg-num {
-  color: rgba(193, 164, 129, 0.1); /* 稍微明显一点 */
+  color: rgba(95, 95, 96, 0.1); /* 稍微明显一点 */
   transform: translateX(-10px);
 }
 
@@ -1202,8 +1199,8 @@ footer {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
 }
 
 /* 顶部 Hero */
@@ -1216,14 +1213,14 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 5rem;
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 20px;
 }
 
 .project-subtitle {
   font-family: "Inconsolata", monospace;
   font-size: 1.1rem;
-  color: rgba(193, 164, 129, 0.7);
+  color: #8a8c8d !important;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -1236,8 +1233,8 @@ footer {
 .block-title {
   font-family: "Inconsolata", monospace;
   font-size: 1.2rem;
-  color: rgba(193, 164, 129, 0.5);
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2);
+  color: #cf9d7b !important;
+  border-bottom: 1px solid #c9c5c2;
   padding-bottom: 20px;
   margin-bottom: 40px;
   letter-spacing: 2px;
@@ -1245,9 +1242,9 @@ footer {
 
 /* 图片画框样式 (核心) */
 .img-frame {
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 10px; /* 留白 */
-  background: transparent;
+  background-color: #162127 !important;
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
@@ -1267,8 +1264,8 @@ footer {
 }
 
 .img-frame.zoomable:hover {
-  border-color: #c1a481; /* 悬停金框变亮 */
-  background: rgba(193, 164, 129, 0.05);
+  border-color: #abacad; /* 悬停金框变亮 */
+  background-color: #162127 !important;
 }
 
 /* --- Lightbox Styles (大图查看器) --- */
@@ -1290,7 +1287,7 @@ footer {
 .lightbox-content {
   max-width: 90%;
   max-height: 85%;
-  border: 1px solid #c1a481; /* 给大图也加个金框 */
+  border: 1px solid #abacad; /* 给大图也加个金框 */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   animation: zoomIn 0.3s;
 }
@@ -1298,7 +1295,7 @@ footer {
 #lightbox-caption {
   margin-top: 20px;
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #abacad;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -1307,7 +1304,7 @@ footer {
   position: absolute;
   top: 30px;
   right: 50px;
-  color: #c1a481;
+  color: #abacad;
   font-size: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -1356,7 +1353,7 @@ footer {
   text-align: center;
   font-family: "Inconsolata", monospace;
   font-size: 0.8rem;
-  color: rgba(193, 164, 129, 0.5);
+  color: #abacad;
   margin-top: 10px;
 }
 
@@ -1365,8 +1362,8 @@ footer {
   display: block;
   margin: 0 auto;
   background: transparent;
-  border: 1px solid #c1a481;
-  color: #c1a481;
+  border: 1px solid #cf9d7b;
+  color: #cf9d7b;
   font-family: "Inconsolata", monospace;
   padding: 12px 30px;
   cursor: pointer;
@@ -1374,22 +1371,22 @@ footer {
 }
 
 .know-more-btn:hover {
-  background: #c1a481;
-  color: #1a1615;
+  background: #cf9d7b;
+  color: #3a3534;
 }
 
 .collapsible-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
-  background: rgba(30, 26, 25, 0.5); /* 深色背景 */
+  background-color: #162127 !important; /* 深色背景 */
   margin-top: 20px;
   border-radius: 4px;
 }
 
 .collapsible-content.active {
   max-height: 500px;
-  border: 1px solid rgba(193, 164, 129, 0.1);
+  border: 1px solid #c9c5c2;
 }
 
 .details-grid {
@@ -1406,7 +1403,7 @@ footer {
 .detail-box h4 {
   font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
@@ -1436,7 +1433,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(30, 26, 25, 0.3);
+  background: transparent;
   border-radius: 4px;
   /* 确保框紧贴图片 */
   width: fit-content;
@@ -1465,7 +1462,7 @@ footer {
 .nav-btn {
   background: none;
   border: none;
-  color: #c1a481;
+  color: #8a8c8d !important;
   font-family: "Inconsolata", monospace;
   cursor: pointer;
   font-size: 1rem;
@@ -1480,12 +1477,12 @@ footer {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: rgba(193, 164, 129, 0.2);
+  background: #c9c5c2;
   border-radius: 50%;
   margin: 0 5px;
 }
 .zine-indicators .dot.active {
-  background: #c1a481;
+  background: #1a1615;
 }
 
 /* --- Logo Grid --- */
@@ -1500,7 +1497,7 @@ footer {
 }
 
 .logo-frame {
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 40px;
   display: flex;
   align-items: center;
@@ -1511,7 +1508,7 @@ footer {
 }
 
 .logo-frame:hover {
-  border-color: #c1a481;
+  border-color: #abacad;
 }
 
 .logo-frame img {
@@ -1534,7 +1531,7 @@ footer {
 /* 分割线 */
 .section-divider {
   height: 1px;
-  background: rgba(193, 164, 129, 0.1);
+  background: #c9c5c2;
   width: 60%;
   margin: 80px auto;
 }
@@ -1544,8 +1541,8 @@ footer {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
 }
 
 /* Web Grid (3列布局) */
@@ -1559,8 +1556,8 @@ footer {
 /* Web Card (黑金极简卡片) */
 .web-card {
   position: relative;
-  background-color: rgba(30, 26, 25, 0.2);
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  background-color: #162127 !important;
+  border: 1px solid #c9c5c2;
   border-radius: 4px;
   padding: 40px;
   display: flex;
@@ -1572,8 +1569,8 @@ footer {
 }
 
 .web-card:hover {
-  border-color: #c1a481;
-  background-color: rgba(30, 26, 25, 0.5);
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-5px);
 }
 
@@ -1585,7 +1582,7 @@ footer {
 .web-tag {
   font-family: "Inconsolata", monospace;
   font-size: 0.8rem;
-  color: #c1a481;
+  color: #abacad;
   letter-spacing: 2px;
   text-transform: uppercase;
   display: block;
@@ -1608,7 +1605,7 @@ footer {
 
 .web-link {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #cf9d7b !important;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
@@ -1626,14 +1623,14 @@ footer {
   right: 10px;
   font-family: "Cormorant", serif;
   font-size: 10rem;
-  color: rgba(193, 164, 129, 0.03);
+  color: rgba(95, 95, 96, 0.05);
   z-index: 1;
   line-height: 1;
   transition: all 0.5s ease;
 }
 
 .web-card:hover .web-bg-num {
-  color: rgba(193, 164, 129, 0.1);
+  color: rgba(95, 95, 96, 0.1);
   transform: translateX(-10px);
 }
 
@@ -1642,10 +1639,10 @@ footer {
   display: flex;
   gap: 60px;
   align-items: center;
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 60px;
   border-radius: 4px;
-  background: rgba(30, 26, 25, 0.1);
+  background-color: #162127 !important;
 }
 
 .work-info {
@@ -1674,8 +1671,8 @@ footer {
   padding: 120px 5% 80px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
 }
 
 .cs-hero-split {
@@ -1699,7 +1696,7 @@ footer {
 
 /* 核心修复：限制图片最大宽度，防止模糊 */
 .cs-hero-image .img-frame {
-  border: 1px solid rgba(193, 164, 129, 0.2); /* 细金线框 */
+  border: 1px solid #c9c5c2; /* 细金线框 */
   padding: 10px;
   max-width: 450px; /* 限制宽度，保持精致 */
   width: 100%;
@@ -1733,7 +1730,7 @@ footer {
 .cs-category {
   font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
-  color: #c1a481;
+  color: #abacad;
   letter-spacing: 2px;
   display: block;
   margin-bottom: 15px; /* 与按钮的间距 */
@@ -1746,8 +1743,8 @@ footer {
   padding: 60px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  border-top: 1px solid rgba(193, 164, 129, 0.2); /* 顶部金线 */
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2); /* 底部金线 */
+  border-top: 1px solid #c9c5c2; /* 顶部金线 */
+  border-bottom: 1px solid #c9c5c2; /* 底部金线 */
 }
 
 .cs-details-grid {
@@ -1759,7 +1756,7 @@ footer {
 .cs-detail-box h4 {
   font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
-  color: #c1a481;
+  color: #cf9d7b !important;
   letter-spacing: 1px;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -1782,7 +1779,7 @@ footer {
   text-align: center;
   font-family: "Cormorant", serif;
   font-size: 3rem;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 60px;
 }
 
@@ -1799,15 +1796,15 @@ footer {
 
 /* 图表画框 */
 .cs-gallery-item .img-frame {
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 10px;
   margin-bottom: 25px;
-  background: rgba(255, 255, 255, 0.02); /* 极淡的背景衬托透明图片 */
+  background-color: #162127 !important; /* 极淡的背景衬托透明图片 */
   transition: border-color 0.3s ease;
 }
 
 .cs-gallery-item .img-frame:hover {
-  border-color: #c1a481;
+  border-color: #abacad;
 }
 
 .cs-gallery-item img {
@@ -1831,9 +1828,9 @@ footer {
 
 /* 通用项目详情板块 - 适配所有 UX 项目 */
 .project-details-minimal {
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   padding: 80px 10%;
-  border-bottom: 1px solid rgba(193, 164, 129, 0.1);
+  border-bottom: 1px solid #c9c5c2;
 }
 
 .details-grid {
@@ -1853,18 +1850,18 @@ footer {
 
 .detail-item h3 {
   font-family: "Cormorant", serif;
-  color: #c1a481; /* 金色标题 */
+  color: #cf9d7b !important; /* 金色标题 */
   font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
-  border-left: 3px solid #c1a481;
+  border-left: 3px solid #1a1615;
   padding-left: 15px;
 }
 
 .detail-item p {
   font-family: "Inconsolata", monospace;
-  color: #e2cca8; /* 浅米色文本 */
+  color: #8a8c8d !important; /* 浅米色文本 */
   line-height: 1.7;
   font-size: 15px;
   margin: 0;
@@ -1875,7 +1872,7 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  border-top: 1px solid rgba(193, 164, 129, 0.2);
+  border-top: 1px solid #c9c5c2;
 }
 
 .slider-wrapper {
@@ -1888,16 +1885,16 @@ footer {
 
 /* 幻灯片画框 */
 .slide-frame-container {
-  border: 1px solid rgba(193, 164, 129, 0.2); /* 细金框 */
+  border: 1px solid #c9c5c2; /* 细金框 */
   padding: 15px; /* 留白 */
-  background: rgba(30, 26, 25, 0.3); /* 淡背景 */
+  background-color: #162127 !important; /* 淡背景 */
   max-width: 800px;
   width: 100%;
   transition: border-color 0.3s ease;
 }
 
 .slide-frame-container:hover {
-  border-color: #c1a481; /* 悬停变亮 */
+  border-color: #abacad; /* 悬停变亮 */
 }
 
 .slide-frame-container img {
@@ -1910,8 +1907,8 @@ footer {
 /* 切换按钮 (极简线条箭头) */
 .slider-btn {
   background: transparent;
-  border: 1px solid rgba(193, 164, 129, 0.4);
-  color: #c1a481;
+  border: 1px solid #8a8c8d !important;
+  color: #8a8c8d !important;
   font-family: "Inconsolata", monospace;
   font-size: 1.5rem;
   width: 50px;
@@ -1925,9 +1922,9 @@ footer {
 }
 
 .slider-btn:hover {
-  background: #c1a481;
-  color: #1a1615;
-  border-color: #c1a481;
+  background: #cf9d7b;
+  color: #3a3534;
+  border-color: #cf9d7b;
   transform: scale(1.1);
 }
 
@@ -1935,12 +1932,12 @@ footer {
 .slide-counter {
   font-family: "Inconsolata", monospace;
   font-size: 1.2rem;
-  color: #c1a481;
+  color: #8a8c8d !important;
   letter-spacing: 2px;
 }
 
 .slide-counter .divider {
-  color: rgba(193, 164, 129, 0.4);
+  color: #abacad;
   margin: 0 10px;
 }
 
@@ -1977,7 +1974,7 @@ footer {
 .cs-hero-image .img-frame {
   animation: hero-floating 4s ease-in-out infinite;
   will-change: transform;
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 10px;
   max-width: 300px;
   width: 100%;
@@ -2002,7 +1999,7 @@ footer {
 
 #work-website {
   padding: 80px 20px;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   text-align: center; /* 确保标题和副标题居中 */
   width: 100%;
   overflow: hidden; /* 防止图片溢出导致右滑 */
@@ -2018,10 +2015,10 @@ footer {
 
 /* 卡片样式调整 */
 .work-website-card {
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #162127 !important;
   padding: 30px;
   border-radius: 15px;
-  border: 1px solid rgba(193, 164, 129, 0.3);
+  border: 1px solid #c9c5c2;
   max-width: 800px; /* 限制最大宽度，防止卡片在超大屏太散 */
   width: 90%; /* 在小屏幕上占据90%宽度 */
   margin: 0 auto; /* 保险起见，设置左右自动 */
@@ -2043,9 +2040,9 @@ footer {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 30px;
-  background-color: transparent; /* 关键：背景透明 */
-  border: 1px solid #c1a481; /* 关键：金色边框 */
-  color: #c1a481; /* 关键：金色文字 */
+  background-color: transparent;
+  border: 1px solid #cf9d7b;
+  color: #cf9d7b;
   font-family: "Inconsolata", monospace;
   text-decoration: none;
   border-radius: 4px;
@@ -2055,9 +2052,9 @@ footer {
 
 /* 悬停效果：变成实心金 */
 .btn-live-site:hover {
-  background-color: #c1a481;
-  color: #1a1615; /* 文字变黑 */
-  box-shadow: 0 0 15px rgba(193, 164, 129, 0.4); /* 加一点发光 */
+  background-color: #cf9d7b;
+  color: #3a3534;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .journey-image {
@@ -2074,8 +2071,8 @@ footer {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #5f5f60;
 }
 
 /* 1. Featured Photography Grid */
@@ -2143,14 +2140,14 @@ footer {
 }
 
 .video-frame {
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  border: 1px solid #c9c5c2;
   padding: 10px;
-  background: transparent;
+  background-color: #162127 !important;
   transition: border-color 0.3s ease;
 }
 
 .video-frame:hover {
-  border-color: #c1a481;
+  border-color: #abacad;
 }
 
 .video-frame iframe {
@@ -2167,7 +2164,7 @@ footer {
 .video-info-wrapper h3 {
   font-family: "Cormorant", serif;
   font-size: 2.5rem;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 20px;
 }
 
@@ -2196,14 +2193,14 @@ footer {
   text-align: left; /* 不再居中 */
   /* 左侧留出更多空间，制造高级感 */
   padding: 150px 5% 80px 10%;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
 }
 
 .contact-title {
   font-family: "Cormorant", serif;
   font-size: 4rem;
   line-height: 1;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 0;
   font-weight: 300;
 }
@@ -2221,8 +2218,8 @@ footer {
 /* --- FAQ Section --- */
 .faq-section {
   padding: 60px 5%;
-  background-color: #1a1615;
-  border-top: 1px solid rgba(193, 164, 129, 0.2);
+  background-color: #0c1519 !important;
+  border-top: 1px solid #c9c5c2;
 }
 
 .faq-label {
@@ -2230,7 +2227,7 @@ footer {
   font-family: "Inconsolata", monospace;
   font-size: 14px;
   letter-spacing: 3px;
-  color: rgba(193, 164, 129, 0.6);
+  color: #abacad;
   margin-bottom: 40px;
 }
 
@@ -2240,8 +2237,8 @@ footer {
 }
 
 .faq-item {
-  background: transparent;
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2);
+  background-color: #162127 !important;
+  border-bottom: 1px solid #c9c5c2;
   margin-bottom: 0;
   cursor: pointer;
   overflow: hidden;
@@ -2249,7 +2246,7 @@ footer {
 }
 
 .faq-item:first-child {
-  border-top: 1px solid rgba(193, 164, 129, 0.2);
+  border-top: 1px solid #c9c5c2;
 }
 
 .faq-header {
@@ -2263,13 +2260,13 @@ footer {
   margin: 0;
   font-family: "Cormorant", serif;
   font-size: 1.8rem;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   font-weight: 300;
 }
 
 .faq-icon {
   font-size: 24px;
-  color: #c1a481;
+  color: #abacad;
   transition: transform 0.3s ease;
 }
 
@@ -2298,19 +2295,19 @@ footer {
 }
 
 .faq-item:hover .faq-header h3 {
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 /* --- Infinite Marquee --- */
 .marquee-container {
-  background-color: #c1a481; /* 金色背景 */
-  color: #1a1615; /* 黑色文字 */
+  background-color: transparent; /* 金色背景 */
+  color: #8a8c8d !important; /* 黑色文字 */
   padding: 15px 0;
   overflow: hidden; /* 隐藏超出部分 */
   white-space: nowrap; /* 强制不换行 */
   position: relative;
-  border-top: 1px solid #1a1615;
-  border-bottom: 1px solid #1a1615;
+  border-top: 1px solid #c9c5c2;
+  border-bottom: 1px solid #c9c5c2;
 }
 
 .marquee-content {
@@ -2347,7 +2344,7 @@ footer {
   margin: 0 auto;
   padding: 80px 5% 150px 5%;
   gap: 80px;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
 }
 
 .contact-left {
@@ -2378,14 +2375,14 @@ footer {
 }
 
 .info-link:hover {
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .social-text-links a {
   display: inline-block;
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
-  color: #c1a481;
+  color: #8a8c8d !important;
   text-decoration: none;
   margin-right: 20px;
   border-bottom: 1px solid transparent;
@@ -2393,7 +2390,7 @@ footer {
 }
 
 .social-text-links a:hover {
-  border-bottom-color: #c1a481;
+  border-bottom-color: #abacad;
 }
 
 .availability-badge {
@@ -2435,17 +2432,17 @@ footer {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(193, 164, 129, 0.3);
+  border-bottom: 1px solid #c9c5c2;
   padding: 15px 0;
   font-family: "Inconsolata", monospace;
   font-size: 1.1rem;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   transition: border-color 0.3s;
 }
 
 .minimal-form input::placeholder,
 .minimal-form textarea::placeholder {
-  color: rgba(193, 164, 129, 0.3);
+  color: #abacad;
   opacity: 1; /* Firefox需要 */
 }
 
@@ -2456,7 +2453,7 @@ footer {
 .minimal-form input:focus,
 .minimal-form textarea:focus {
   outline: none;
-  border-bottom-color: #c1a481;
+  border-bottom-color: #1a1615;
 }
 
 .minimal-form label {
@@ -2474,17 +2471,17 @@ footer {
 .minimal-form textarea:not(:placeholder-shown) + label {
   top: -20px;
   font-size: 0.8rem;
-  color: #c1a481;
+  color: #1a1615;
 }
 
 .btn-minimal-submit {
   align-self: flex-start;
   background: transparent;
-  border: 1px solid #c1a481;
+  border: 1px solid #cf9d7b;
   padding: 15px 30px; /* 增加内边距 */
   font-family: "Cormorant", serif;
   font-size: 1.5rem;
-  color: #c1a481; /* 金色文字 */
+  color: #cf9d7b; /* 金色文字 */
   cursor: pointer;
   margin-top: 20px;
   transition: all 0.3s ease;
@@ -2498,8 +2495,8 @@ footer {
 }
 
 .btn-minimal-submit:hover {
-  background-color: #c1a481;
-  color: #1a1615;
+  background-color: #cf9d7b;
+  color: #3a3534;
 }
 
 .btn-minimal-submit:hover .arrow {
@@ -2507,9 +2504,9 @@ footer {
 }
 
 .education-minimal-section {
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   padding: 80px 4vw 40px 4vw; /* 调整间距 */
-  color: #c1a481;
+  color: #8a8c8d !important;
 }
 
 .edu-container {
@@ -2520,7 +2517,7 @@ footer {
   font-family: "Inconsolata", monospace;
   font-size: 12px;
   letter-spacing: 2px;
-  color: rgba(193, 164, 129, 0.5); /* 调暗一点 */
+  color: #abacad; /* 调暗一点 */
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -2529,19 +2526,19 @@ footer {
   display: flex;
   align-items: baseline; /* 文字基线对齐 */
   padding: 30px 0;
-  border-top: 1px solid rgba(193, 164, 129, 0.2); /* 极细的金线 */
+  border-top: 1px solid #c9c5c2; /* 极细的金线 */
   transition: background-color 0.3s ease;
 }
 
 .edu-row:hover {
-  background: linear-gradient(90deg, rgba(193, 164, 129, 0.05), transparent);
+  background-color: #162127 !important;
 }
 
 .edu-year {
   flex: 0 0 200px; /* 固定宽度，对齐 */
   font-family: "Inconsolata", monospace;
   font-size: 14px;
-  color: #c1a481;
+  color: #8a8c8d !important;
   opacity: 0.8;
 }
 
@@ -2560,13 +2557,13 @@ footer {
 .edu-school {
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
-  color: rgba(193, 164, 129, 0.6);
+  color: #abacad;
   margin: 0;
 }
 
 .personal-identity {
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -2576,7 +2573,7 @@ footer {
   font-size: 32px;
   margin-bottom: 30px;
   font-family: "Cormorant", serif;
-  color: #c1a481;
+  color: #cf9d7b !important;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -2594,7 +2591,7 @@ footer {
 .identity-left h3 {
   font-size: 28px;
   font-family: "Cormorant", serif;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 20px;
 }
 
@@ -2610,14 +2607,14 @@ footer {
 
 .experience {
   padding: 80px 40px;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   text-align: center;
 }
 
 .experience h2 {
   font-size: 48px;
   margin-bottom: 40px;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .timeline-content {
@@ -2640,7 +2637,7 @@ footer {
   bottom: 0;
   left: 50%;
   width: 4px;
-  background: #6e685f;
+  background: #c9c5c2;
   transform: translateX(-50%);
 }
 
@@ -2663,7 +2660,7 @@ footer {
 }
 
 .timeline-content {
-  background: #2a2625;
+  background-color: #162127 !important;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -2697,20 +2694,20 @@ footer {
 .timeline-content h3 {
   margin: 0 0 8px;
   font-size: 20px;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .timeline-content .date {
   display: block;
   font-size: 14px;
-  color: #6e685f;
+  color: #8a8c8d !important;
   margin-bottom: 12px;
 }
 
 .timeline-content p,
 .timeline-content ul {
   font-size: 16px;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   line-height: 1.5;
 }
 
@@ -2732,9 +2729,9 @@ footer {
 
 .goals {
   margin-top: 40px;
-  background-color: #2a2625;
+  background-color: #162127 !important;
   padding: 20px;
-  border: 1px solid #6e685f;
+  border: 1px solid #c9c5c2;
   border-radius: 4px;
   max-width: 900px;
   margin-left: auto;
@@ -2746,7 +2743,7 @@ footer {
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #c1a481;
+  color: #cf9d7b !important;
   text-align: center;
 }
 
@@ -2767,7 +2764,7 @@ footer {
   margin-bottom: 16px;
   text-transform: uppercase;
   font-weight: 400;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .goal-category {
@@ -2779,7 +2776,7 @@ footer {
   margin-bottom: 8px;
   text-transform: uppercase;
   font-weight: 300;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .goal-category ul {
@@ -2792,7 +2789,7 @@ footer {
   margin-bottom: 8px;
   font-size: 15px;
   font-weight: 300;
-  color: #e2cca8;
+  color: #8a8c8d !important;
 }
 
 .language {
@@ -2804,13 +2801,13 @@ footer {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #c1a481;
+  color: #cf9d7b !important;
 }
 
 .language h3 {
   font-size: 20px;
   text-align: center;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 30px 0 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -2827,8 +2824,8 @@ footer {
   font-size: 18px;
   font-weight: 300;
   padding: 15px 0;
-  border-bottom: 1px solid #6e685f;
-  color: #e2cca8;
+  border-bottom: 1px solid #c9c5c2;
+  color: #8a8c8d !important;
 }
 
 /* --- Jewelry Design Page (黑金线条版) --- */
@@ -2837,8 +2834,8 @@ footer {
   padding: 120px 5% 100px 5%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #1a1615;
-  color: #e2cca8;
+  background-color: #0c1519 !important;
+  color: #8a8c8d !important;
 }
 
 /* 顶部 Hero (复用全站样式) */
@@ -2851,14 +2848,14 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 5rem;
   line-height: 0.9;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 20px;
 }
 
 .project-subtitle {
   font-family: "Inconsolata", monospace;
   font-size: 1.1rem;
-  color: rgba(193, 164, 129, 0.7);
+  color: #8a8c8d !important;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -2871,7 +2868,7 @@ footer {
 .work-header {
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(193, 164, 129, 0.2);
+  border-bottom: 1px solid #c9c5c2;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2880,7 +2877,7 @@ footer {
 .work-number {
   font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
-  color: rgba(193, 164, 129, 0.5);
+  color: #abacad;
   letter-spacing: 2px;
 }
 
@@ -2899,10 +2896,10 @@ footer {
 
 /* 阶段卡片 (极简风) */
 .phase-card {
-  border: 1px solid rgba(193, 164, 129, 0.2); /* 细金线框 */
+  border: 1px solid #c9c5c2; /* 细金线框 */
   border-radius: 4px;
   padding: 20px;
-  background: transparent;
+  background-color: #162127 !important;
   transition: all 0.3s ease;
   cursor: zoom-in;
   display: flex;
@@ -2910,15 +2907,15 @@ footer {
 }
 
 .phase-card:hover {
-  border-color: #c1a481;
-  background: rgba(193, 164, 129, 0.05);
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-5px);
 }
 
 /* 特殊强调：我的工作部分 */
 .phase-card.my-work {
-  border: 1px solid #c1a481; /* 金色实线 */
-  background: rgba(193, 164, 129, 0.08); /* 微弱金光 */
+  border: 1px solid #abacad; /* 金色实线 */
+  background-color: #162127 !important; /* 微弱金光 */
   position: relative;
 }
 
@@ -2933,15 +2930,15 @@ footer {
 .phase-badge {
   font-family: "Inconsolata", monospace;
   font-size: 0.8rem;
-  color: #c1a481;
+  color: #abacad;
   letter-spacing: 1px;
 }
 
 .my-role-tag {
   font-family: "Inconsolata", monospace;
   font-size: 0.7rem;
-  background: #c1a481;
-  color: #1a1615;
+  background: #cf9d7b;
+  color: #3a3534;
   padding: 2px 6px;
   border-radius: 2px;
   font-weight: bold;
@@ -2949,8 +2946,8 @@ footer {
 
 /* 图片容器 */
 .phase-img {
-  border: 1px solid rgba(193, 164, 129, 0.1);
-  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #c9c5c2;
+  background-color: #162127 !important;
   padding: 10px;
   margin-bottom: 20px;
   height: 250px; /* 固定高度 */
@@ -2981,7 +2978,7 @@ footer {
 /* 分割线 */
 .section-divider {
   height: 1px;
-  background: rgba(193, 164, 129, 0.1);
+  background: #c9c5c2;
   width: 60%;
   margin: 80px auto;
 }
@@ -3005,7 +3002,7 @@ footer {
 .lightbox-content {
   max-width: 90%;
   max-height: 85%;
-  border: 1px solid #c1a481;
+  border: 1px solid #abacad;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   animation: zoomIn 0.3s;
 }
@@ -3013,7 +3010,7 @@ footer {
 #lightbox-caption {
   margin-top: 20px;
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #abacad;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -3022,7 +3019,7 @@ footer {
   position: absolute;
   top: 30px;
   right: 50px;
-  color: #c1a481;
+  color: #abacad;
   font-size: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -3036,8 +3033,8 @@ footer {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
-  background-color: #26211e;
-  border: 1px solid rgba(193, 164, 129, 0.15);
+  background-color: #e5e1d8;
+  border: 1px solid #c9c5c2;
   border-radius: 20px;
   text-decoration: none;
   position: relative;
@@ -3056,7 +3053,7 @@ footer {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(193, 164, 129, 0.2),
+    rgba(171, 172, 173, 0.2),
     transparent
   );
   transform: rotate(30deg);
@@ -3068,16 +3065,16 @@ footer {
 }
 
 .next-page-box:hover {
-  border-color: #c1a481;
-  background-color: #2d2723;
+  border-color: #abacad;
+  background-color: #162127 !important;
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .next-num {
   display: block;
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #abacad;
   font-size: 14px;
   margin-bottom: 8px;
   text-align: left;
@@ -3085,14 +3082,14 @@ footer {
 
 .next-title {
   font-family: "Cormorant", serif;
-  color: #e2cca8;
+  color: #8a8c8d !important;
   font-size: 36px;
   display: block;
 }
 
 .next-arrow {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #8a8c8d !important;
   font-size: 14px;
   letter-spacing: 2px;
   transition: all 0.3s ease;
@@ -3100,7 +3097,7 @@ footer {
 
 .next-page-box:hover .next-arrow {
   transform: translateX(10px);
-  color: #fff;
+  color: #cf9d7b !important;
 }
 
 /* =========================================
@@ -3116,14 +3113,14 @@ footer {
   text-align: center;
 
   padding: 80px 10% 60px;
-  background-color: #1a1615;
+  background-color: #0c1519 !important;
   position: relative;
   overflow: hidden;
 }
 
 .nav-hint {
   font-family: "Inconsolata", monospace;
-  color: #c1a481;
+  color: #abacad;
   font-size: 12px;
   letter-spacing: 4px;
   margin-bottom: 20px; /* 控制文字和下方按钮的距离 */
@@ -3201,7 +3198,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1a1615; /* 与你原本背景色一致 */
+  background-color: #0c1519 !important; /* 与你原本背景色一致 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3218,7 +3215,7 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 14px;
   letter-spacing: 6px;
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin-bottom: 10px;
   opacity: 0;
   animation: fadeInUp 0.8s forwards 0.2s;
@@ -3227,7 +3224,7 @@ footer {
 .loader-subtext {
   font-family: "Inconsolata", monospace;
   font-size: 10px;
-  color: rgba(193, 164, 129, 0.5);
+  color: #abacad;
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeInUp 0.8s forwards 0.4s;
@@ -3237,7 +3234,7 @@ footer {
   font-family: "Cormorant", serif;
   font-size: 15vw; /* 超大数字，极具视觉冲击力 */
   font-weight: 300;
-  color: #c1a481;
+  color: #cf9d7b !important;
   line-height: 1;
 }
 
@@ -3350,7 +3347,7 @@ footer {
   .main-header {
     flex-direction: column;
     padding: 15px;
-    background: #1a1615 !important; /* 手机端背景不透明 */
+    background: #0c1519 !important; /* 手机端背景不透明 */
   }
   .header-nav ul {
     gap: 15px;
@@ -3509,7 +3506,7 @@ footer {
     top: 0;
     left: 0;
     /* 核心改动：旋转45度，把正方形变成菱形/宝石形状 */
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%);
     border-radius: 0; /* 关键：去掉圆角，变成尖锐的几何线条 */
     z-index: 9999;
     pointer-events: none;
@@ -3519,33 +3516,33 @@ footer {
   .cursor-dot {
     width: 5px;
     height: 5px;
-    background-color: #c1a481;
+    background-color: #cf9d7b;
     /* 给中心点加一点点高光晕染，更有质感 */
-    box-shadow: 0 0 6px rgba(193, 164, 129, 0.8);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   }
 
   /* 外部空心菱形边框 */
   .cursor-outline {
     width: 25px;
     height: 25px;
-    border: 1px solid rgba(193, 164, 129, 0.5);
+    border: 1px solid #cf9d7b;
     /* 增加 transform 过渡，让旋转动作丝滑 */
     transition:
       width 0.3s,
       height 0.3s,
       background-color 0.3s,
       border-color 0.3s,
-      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   /* 悬停状态：变大 + 旋转特效 */
   body.hovering .cursor-outline {
     width: 50px;
     height: 50px;
-    background-color: rgba(193, 164, 129, 0.05); /* 极淡的金色背景 */
-    border-color: #c1a481;
+    background-color: rgba(171, 172, 173, 0.1); /* 极淡的金色背景 */
+    border-color: #abacad;
     /* 悬停时旋转到 135度，产生一种机械咬合或珠宝闪烁的动态感 */
-    transform: translate(-50%, -50%) rotate(135deg);
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 
   /* 隐藏链接原本的鼠标手型 */
@@ -3564,7 +3561,7 @@ footer {
   display: inline-block; /* 必须是 inline-block 才能计算宽高 */
 
   /* 1. 默认状态：普通的金色实心文字 */
-  color: #c1a481;
+  color: #cf9d7b !important;
 
   /* 初始化 CSS 变量，默认在中心点 */
   --mouse-x: 50%;
@@ -3584,9 +3581,9 @@ footer {
   /* 核心：定义一个以鼠标位置为中心的放射性渐变 */
   background-image: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
-    #8a6d3b 0%,
-    /* 鼠标中心：深褐色/深金色 */ #b88a44 40px,
-    /* 向外过渡：中等金色 */ #c1a481 100px /* 远处：恢复正常的亮金色 */
+    #5f5f60 0%,
+    /* 鼠标中心：深褐色/深金色 */ #abacad 40px,
+    /* 向外过渡：中等金色 */ #cf9d7b 100px /* 远处：恢复正常的亮金色 */
   );
 
   /* 使用文字作为背景的遮罩 */
@@ -3603,10 +3600,10 @@ footer {
   top: 0;
   left: 0;
   height: 3px; /* 极细 */
-  background: #c1a481; /* 金色 */
+  background: #cf9d7b !important; /* 金色 */
   width: 0%; /* 初始宽度 */
   z-index: 99999; /* 保证在最顶层 */
-  box-shadow: 0 0 10px rgba(193, 164, 129, 0.5); /* 加一点发光 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 加一点发光 */
   transition: width 0.1s ease-out;
 }
 
@@ -3616,17 +3613,17 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1615; /* 与网页背景同色，隐藏轨道 */
+  background: #0c1519; /* 与网页背景同色，隐藏轨道 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(193, 164, 129, 0.3); /* 半透明金色 */
+  background-color: #c9c5c2; /* 半透明金色 */
   border-radius: 4px; /* 圆角 */
-  border: 2px solid #1a1615; /* 加个边框让它看起来更细，有悬浮感 */
+  border: 2px solid #0c1519; /* 加个边框让它看起来更细，有悬浮感 */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #c1a481; /* 激活变成实心金 */
+  background-color: #abacad; /* 激活变成实心金 */
 }
 
 /* =========================================
@@ -3637,8 +3634,9 @@ footer {
 /* 1. 全局正文颜色：改为柔和的灰白色 */
 body,
 p,
-li {
-  color: rgba(255, 255, 255, 0.8);
+li,
+.phase-desc {
+  color: #8a8c8d !important;
   font-weight: 300; /* 稍微细一点，更显精致 */
 }
 
@@ -3648,40 +3646,36 @@ h3,
 h4,
 h5,
 h6 {
-  color: #c1a481 !important;
+  color: #cf9d7b !important;
 }
 
 a,
 .bento-link,
 .web-link,
 .btn-live-site {
-  color: #c1a481;
+  color: #cf9d7b;
 }
 
 .project-subtitle,
 .cs-subtitle,
 .photography-subtitle,
-.phase-desc,
 .timeline-date,
 .phase-badge,
 .ux-category,
 .cs-category {
-  color: rgba(193, 164, 129, 0.7) !important;
+  color: #abacad !important;
 }
 
 input,
-textarea {
-  color: #e0e0e0 !important;
+textarea,
+.detail-box p {
+  color: #8a8c8d !important;
 }
 
 .cs-detail-box p,
 .detail-block p,
 .timeline-list li {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-footer p {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8a8c8d !important;
 }
 
 /* --- Project Link Button (复刻 Know More 按钮风格) --- */
@@ -3690,8 +3684,8 @@ footer p {
   margin-top: 20px;
   padding: 12px 30px; /* 和你的 Know More 按钮一样大 */
   background: transparent;
-  border: 1px solid #c1a481; /* 关键：实心金色细边框 */
-  color: #c1a481;
+  border: 1px solid #cf9d7b; /* 关键：实心金色细边框 */
+  color: #cf9d7b;
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
   text-decoration: none;
@@ -3700,8 +3694,8 @@ footer p {
 }
 
 .project-link-btn:hover {
-  background: #c1a481; /* 悬停变实心 */
-  color: #1a1615; /* 文字变黑 */
+  background: #cf9d7b; /* 悬停变实心 */
+  color: #3a3534; /* 文字变黑 */
 }
 
 /* 箭头微调 */
@@ -3717,8 +3711,8 @@ footer p {
   max-width: 800px;
   height: 500px; /* 根据你的图片高度调整 */
   margin: 0 auto;
-  background-color: #f4f4f4; /* 给个浅灰背景，突显Logo */
-  border: 1px solid rgba(193, 164, 129, 0.3);
+  background-color: #162127 !important; /* 给个浅灰背景，突显Logo */
+  border: 1px solid #c9c5c2;
   overflow: hidden;
   cursor: none; /* 隐藏默认鼠标，用我们的透视镜 */
 }
@@ -3750,7 +3744,7 @@ footer p {
 /* 顶层 (New) - 核心魔法 */
 .new-layer {
   z-index: 2;
-  background-color: #fff; /* 新 Logo 的背景，可以改成透明或品牌色 */
+  background-color: #162127 !important; /* 新 Logo 的背景，可以改成透明或品牌色 */
   /* 初始状态：圆圈半径为 0 (隐藏) */
   clip-path: circle(0px at 50% 50%);
   transition: clip-path 0.1s ease-out; /* 极其微小的延迟让移动更顺滑 */
@@ -3774,9 +3768,9 @@ footer p {
 }
 
 .new-layer .label-new {
-  color: #fff;
-  background: #c1a481; /* 新标签金色 */
-  box-shadow: 0 5px 15px rgba(193, 164, 129, 0.4);
+  color: #f1efe9;
+  background: #cf9d7b; /* 新标签金色 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* 装饰圆圈 (金边) */
@@ -3786,12 +3780,12 @@ footer p {
   left: 0;
   width: 200px; /* 透视镜大小，必须和 JS 里的半径匹配 */
   height: 200px;
-  border: 2px solid #c1a481; /* 金色边框 */
+  border: 2px solid #cf9d7b; /* 金色边框 */
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 3;
-  box-shadow: 0 0 30px rgba(193, 164, 129, 0.3); /* 发光效果 */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* 发光效果 */
   display: none; /* 默认隐藏，进入区域才显示 */
 }
 
@@ -3864,14 +3858,14 @@ footer p {
 .showcase-info h3 {
   font-family: "Cormorant", serif;
   font-size: 3.5rem; /* 大标题增加冲击力 */
-  color: #c1a481;
+  color: #cf9d7b !important;
   margin: 15px 0 25px 0;
   line-height: 1;
 }
 
 .showcase-info p {
   font-size: 1.1rem;
-  color: rgba(193, 164, 129, 0.7);
+  color: #5f5f60;
   line-height: 1.6;
   margin-bottom: 30px;
   max-width: 450px;
@@ -3981,20 +3975,20 @@ footer p {
   list-style: none;
   padding: 0;
   margin: 25px 0 35px 0;
-  border-left: 2px solid #c1a481;
+  border-left: 2px solid #1a1615;
   padding-left: 20px;
 }
 
 .strategy-list li {
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #8a8c8d !important;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
 .strategy-list strong {
-  color: #c1a481;
+  color: #cf9d7b !important;
   font-weight: 600;
 }
 
@@ -4038,7 +4032,7 @@ footer p {
   overflow: hidden;
   cursor: zoom-in;
   aspect-ratio: 9/16;
-  background-color: #1a1615;
+  background-color: #162127 !important;
 }
 
 .phone-screen img {
@@ -4053,8 +4047,8 @@ footer p {
   display: inline-block;
   padding: 12px 30px;
   background: transparent;
-  border: 1px solid #c1a481;
-  color: #c1a481;
+  border: 1px solid #cf9d7b;
+  color: #cf9d7b;
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
   text-decoration: none;
@@ -4064,8 +4058,8 @@ footer p {
 }
 
 .project-link-btn:hover {
-  background: #c1a481;
-  color: #1a1615;
+  background: #cf9d7b;
+  color: #3a3534;
 }
 
 .btn-arrow {
@@ -4083,8 +4077,8 @@ footer p {
   display: inline-block;
   margin-top: 20px;
   padding: 8px 20px;
-  border: 1px dashed #c1a481;
-  color: #c1a481;
+  border: 1px dashed #abacad;
+  color: #abacad;
   font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
   letter-spacing: 2px;
@@ -4142,8 +4136,8 @@ footer p {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(193, 164, 129, 0.2);
+  background: transparent;
+  border: 1px solid #c9c5c2;
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -4162,15 +4156,15 @@ footer p {
 
 /* 悬停效果 */
 .nav-item:hover {
-  background: rgba(193, 164, 129, 0.1);
-  border-color: #c1a481;
+  background-color: #162127 !important;
+  border-color: #abacad;
   transform: translateY(-5px);
 }
 
 .nav-text {
   font-family: "Cormorant", serif;
   font-size: 1.5rem;
-  color: #fff;
+  color: #cf9d7b !important;
   white-space: nowrap;
 }
 
