@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #1a1615">
+  <body style="background-color: #24292e !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -24,13 +24,12 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -61,7 +60,7 @@
 
         <div class="cs-hero-image">
           <div class="img-frame">
-            <img src="memento home page.png" alt="Memento App Preview" />
+            <img src="image/memento home page.png" alt="Memento App Preview" />
           </div>
         </div>
       </div>
@@ -113,7 +112,7 @@
       <div class="cs-gallery-grid">
         <div class="cs-gallery-item">
           <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="Customer Profile-1.png" alt="Customer Profile" />
+            <img src="image/Customer Profile-1.png" alt="Customer Profile" />
           </div>
           <div class="cs-caption">
             <h3>Customer Profile</h3>
@@ -126,7 +125,7 @@
 
         <div class="cs-gallery-item">
           <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="Customer Journey.png" alt="Customer Journey" />
+            <img src="image/Customer Journey.png" alt="Customer Journey" />
           </div>
           <div class="cs-caption">
             <h3>Customer Journey</h3>
@@ -149,7 +148,7 @@
       <div class="nav-hint">VIEW NEXT PROJECT</div>
       <a href="cantalk.html" class="next-page-box">
         <div class="next-content">
-          <span class="next-num">03</span>
+          <span class="next-num">02</span>
           <span class="next-title">CanTalk App</span>
         </div>
         <div class="next-arrow">NEXT CASE STUDY →</div>
@@ -227,20 +226,20 @@
             left: `${posX}px`,
             top: `${posY}px`,
           },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
       // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -293,4 +292,3 @@
     </script>
   </body>
 </html>
-
