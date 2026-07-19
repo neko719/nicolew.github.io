@@ -22,7 +22,7 @@
       .alternating-showcase {
         display: flex;
         flex-direction: column;
-        gap: 150px; /* 项目之间的大间距，显高级 */
+        gap: 150px; /* Generous elite layout spacing */
         margin-top: 60px;
       }
 
@@ -33,13 +33,13 @@
         gap: 80px;
       }
 
-      /* 奇偶交错逻辑：让偶数项目反转方向 */
+      /* Alternating column grid rules */
       .showcase-item.reverse {
         flex-direction: row-reverse;
       }
 
       .showcase-image {
-        flex: 1.2; /* 图片占的空间稍多 */
+        flex: 1.2;
       }
 
       .showcase-image .img-frame img {
@@ -54,40 +54,37 @@
         text-align: left;
       }
 
-      /* 标签样式 */
       .showcase-info .web-tag {
         font-family: "Inconsolata", monospace;
-        color: rgba(193, 164, 129, 0.8);
+        color: #abacad;
         font-size: 0.9rem;
         letter-spacing: 2px;
         text-transform: uppercase;
       }
 
-      /* 标题样式 */
       .showcase-info h3 {
         font-family: "Cormorant", serif;
         font-size: 3.5rem;
-        color: #c1a481;
+        color: #cf9d7b !important;
         margin: 15px 0 25px 0;
         line-height: 1;
       }
 
-      /* 描述文字 */
       .showcase-info p {
         font-size: 1.1rem;
-        color: rgba(193, 164, 129, 0.7);
+        color: #5f5f60;
+        color: #8a8c8d !important;
         line-height: 1.6;
         margin-bottom: 30px;
         max-width: 450px;
       }
 
-      /* 细金线跳转按钮 (复刻 Project Details 风格) */
       .project-link-btn {
         display: inline-block;
         padding: 12px 30px;
         background: transparent;
-        border: 1px solid #c1a481;
-        color: #c1a481;
+        border: 1px solid #cf9d7b;
+        color: #cf9d7b;
         font-family: "Inconsolata", monospace;
         font-size: 1rem;
         text-decoration: none;
@@ -96,8 +93,8 @@
       }
 
       .project-link-btn:hover {
-        background: #c1a481;
-        color: #1a1615;
+        background: #cf9d7b;
+        color: #3a3534;
       }
 
       .btn-arrow {
@@ -105,7 +102,6 @@
         font-family: sans-serif;
       }
 
-      /* 手机端适配：变回垂直堆叠 */
       @media (max-width: 992px) {
         .showcase-item,
         .showcase-item.reverse {
@@ -126,9 +122,84 @@
           font-size: 2.5rem;
         }
       }
+
+      /* New Minimal Editorial Footer Styles */
+      .editorial-nav-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-item .edit-num {
+        font-family: "Inconsolata", monospace;
+        font-size: 12px;
+        color: #abacad;
+        letter-spacing: 1px;
+        transition: color 0.4s ease;
+      }
+
+      .editorial-nav-item .edit-text {
+        font-family: "Cormorant", serif;
+        font-size: 24px;
+        color: #5f5f60;
+        font-weight: 300;
+        position: relative;
+      }
+
+      .editorial-nav-item .edit-text::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #abacad;
+        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .editorial-nav-divider {
+        font-family: "Cormorant", serif;
+        font-size: 20px;
+        color: #c9c5c2;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .editorial-nav-item:hover .edit-text,
+      .editorial-nav-item.active-page .edit-text {
+        color: #cf9d7b !important;
+      }
+
+      .editorial-nav-item:hover .edit-num,
+      .editorial-nav-item.active-page .edit-num {
+        color: #cf9d7b !important;
+      }
+
+      .editorial-nav-item:hover .edit-text::after,
+      .editorial-nav-item.active-page .edit-text::after {
+        width: 100%;
+        background-color: #cf9d7b;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links-editorial-flex {
+          flex-direction: column;
+          gap: 15px !important;
+        }
+        .editorial-nav-divider {
+          display: none;
+        }
+        .editorial-nav-item .edit-text {
+          font-size: 20px;
+        }
+      }
     </style>
   </head>
-  <body style="background-color: #1a1615">
+  <body style="background-color: #0c1519 !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -136,13 +207,12 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -164,73 +234,201 @@
       <div class="design-block">
         <h3 class="block-title">01 / Academic Projects</h3>
 
-  <div class="alternating-showcase">
-            
+        <div class="alternating-showcase">
+          <!-- PROJECT 01: ER TO HOME -->
           <div class="showcase-item">
-              <div class="showcase-image">
-                  <div class="img-frame zoomable" onclick="openLightbox(this)">
-                      <img src="er-hero.png" alt="ER to Home Service Design">
-                  </div>
+            <div class="showcase-image">
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img src="image/er-hero.png" alt="ER to Home Service Design" />
               </div>
-              <div class="showcase-info">
-                  <span class="web-tag">01 / SERVICE DESIGN & UX</span>
-                  <h3>ER to Home</h3>
-                  <p>An accessible kiosk system and printed booklet designed to ensure safe hospital discharges for elderly patients.</p>
-                  <a href="kiosk.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
-              </div>
+            </div>
+            <div class="showcase-info">
+              <span class="web-tag">01 / SERVICE DESIGN & UX</span>
+              <h3>ER to Home</h3>
+              <p>
+                An accessible kiosk system and printed booklet designed to
+                ensure safe hospital discharges for elderly patients.
+              </p>
+              <a href="kiosk.html" class="project-link-btn"
+                >VIEW CASE STUDY <span class="btn-arrow">→</span></a
+              >
+            </div>
           </div>
 
+          <!-- PROJECT 02: MEMENTO -->
           <div class="showcase-item reverse">
-              <div class="showcase-image">
-                  <div class="img-frame small-img-frame zoomable" onclick="openLightbox(this)">
-                      <img src="memento home page.png" alt="Memento Photo App">
-                  </div>
+            <div class="showcase-image">
+              <div
+                class="img-frame small-img-frame zoomable"
+                onclick="openLightbox(this)"
+              >
+                <img
+                  src="image/memento home page.png"
+                  alt="Memento Photo App"
+                />
               </div>
-              <div class="showcase-info">
-                  <span class="web-tag">02 / PHOTO APP</span>
-                  <h3>Memento</h3>
-                  <p>A digital memory archive that transforms personal experiences into visual stories using elegant UI design.</p>
-                  <a href="memento.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
-              </div>
+            </div>
+            <div class="showcase-info">
+              <span class="web-tag">02 / PHOTO APP</span>
+              <h3>Memento</h3>
+              <p>
+                A digital memory archive that transforms personal experiences
+                into visual stories using elegant UI design.
+              </p>
+              <a href="memento.html" class="project-link-btn"
+                >VIEW CASE STUDY <span class="btn-arrow">→</span></a
+              >
+            </div>
           </div>
 
+          <!-- PROJECT 03: CANTALK -->
           <div class="showcase-item">
-              <div class="showcase-image">
-                  <div class="img-frame small-img-frame zoomable" onclick="openLightbox(this)">
-                      <img src="Cantalk.png" alt="CanTalk App">
-                  </div>
+            <div class="showcase-image">
+              <div
+                class="img-frame small-img-frame zoomable"
+                onclick="openLightbox(this)"
+              >
+                <img src="image/Cantalk.png" alt="CanTalk App" />
               </div>
-              <div class="showcase-info">
-                  <span class="web-tag">03 / LANGUAGE LEARNING APP</span>
-                  <h3>CanTalk</h3>
-                  <p>A language learning app with intuitive design and smooth user interactions, making communication accessible.</p>
-                  <a href="cantalk.html" class="project-link-btn">VIEW CASE STUDY <span class="btn-arrow">→</span></a>
-              </div>
+            </div>
+            <div class="showcase-info">
+              <span class="web-tag">03 / LANGUAGE LEARNING APP</span>
+              <h3>CanTalk</h3>
+              <p>
+                A language learning app with intuitive design and smooth user
+                interactions, making communication accessible.
+              </p>
+              <a href="cantalk.html" class="project-link-btn"
+                >VIEW CASE STUDY <span class="btn-arrow">→</span></a
+              >
+            </div>
           </div>
 
+          <!-- PROJECT 04: CHARMED FLOWER -->
           <div class="showcase-item reverse">
-              <div class="showcase-image">
-                  <div class="img-frame zoomable" onclick="openLightbox(this)">
-                      <img src="charmedflower.png" alt="Charmed Flower Web Design">
-                  </div>
+            <div class="showcase-image">
+              <div class="img-frame zoomable" onclick="openLightbox(this)">
+                <img
+                  src="image/charmedflower.png"
+                  alt="Charmed Flower Web Design"
+                />
               </div>
-              <div class="showcase-info">
-                  <span class="web-tag">04 / VISUAL IDENTITY & WEB</span>
-                  <h3>Charmed Flower</h3>
-                  <p>A comprehensive visual identity and website redesign for a local boutique florist, focusing on organic aesthetics.</p>
-                  <a href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582" target="_blank" rel="noopener noreferrer" class="project-link-btn">VIEW PROTOTYPE <span class="btn-arrow">→</span></a>
-              </div>
+            </div>
+            <div class="showcase-info">
+              <span class="web-tag">04 / VISUAL IDENTITY & WEB</span>
+              <h3>Charmed Flower</h3>
+              <p>
+                A comprehensive visual identity and website redesign for a local
+                boutique florist, focusing on organic aesthetics.
+              </p>
+              <a
+                href="https://www.figma.com/proto/eQbrevHoKmtxrkejQVfTfY/Nicole-Wu-A2-MockUps?node-id=32-583&p=f&t=I1a1fuDUkTQNAHez-1&scaling=scale-down&content-scaling=fixed&page-id=32%3A582"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+                >VIEW PROTOTYPE <span class="btn-arrow">→</span></a
+              >
+            </div>
           </div>
 
+          <!-- PROJECT 05: INTERACTIVE WEB GAME (OCTOPUS BARISTA) -->
+          <div class="showcase-item">
+            <div class="showcase-image">
+              <div
+                class="video-responsive-wrapper"
+                style="
+                  position: relative;
+                  padding-bottom: 56.25%;
+                  height: 0;
+                  overflow: hidden;
+                  width: 100%;
+                  border: 1px solid #c9c5c2;
+                  background: transparent;
+                  border-radius: 2px;
+                "
+              >
+                <iframe
+                  src="https://e28he.github.io/A3_Group15B_FinalGame/"
+                  title="Octopus Barista Web Game Simulation Canvas"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                  "
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </div>
+            <div class="showcase-info">
+              <span class="web-tag">05 / GAME LOGIC & p5.js DEV</span>
+              <h3>Octopus Barista</h3>
+              <p>
+                An interactive, single-screen coffee counter simulation designed
+                to model the physical and cognitive planning challenges
+                associated with dyspraxia. This experience reframes coordination
+                constraints into structured, manageable strategic decisions
+                rather than unpredictable roadblocks.
+              </p>
+
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  margin: 0 0 25px 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 12px;
+                  font-family: &quot;Inconsolata&quot;, monospace;
+                  font-size: 13px;
+                  color: #5f5f60;
+                "
+              >
+                <li style="position: relative; padding-left: 18px">
+                  <span style="color: #cf9d7b !important; font-weight: bold"
+                    >✦ Tangled Arms System:</span
+                  >
+                  Rapidly jumping between operational stations or mismanaging
+                  orders accelerates a Tangle Meter (0-100). Higher metrics
+                  introduce execution lags and can freeze single limbs, forcing
+                  users to strategically pause or execute an active 'Untangle'
+                  action (R).
+                </li>
+                <li style="position: relative; padding-left: 18px">
+                  <span style="color: #cf9d7b !important; font-weight: bold"
+                    >✦ Action Queue Mechanics:</span
+                  >
+                  User inputs buffer into a 3-step pipeline. Chaotic or reactive
+                  inputs prompt execution errors and 'Queue Slips' that invert
+                  intended ingredient paths (e.g., Ice → Espresso → Milk slips
+                  into Ice → Milk → Espresso), demanding cognitive rhythm over
+                  frantic button-mashing.
+                </li>
+              </ul>
+
+              <a
+                href="https://e28he.github.io/A3_Group15B_FinalGame/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+                >PLAY FULL GAME <span class="btn-arrow">→</span></a
+              >
+            </div>
+          </div>
         </div>
+      </div>
 
       <div class="section-divider"></div>
 
+      <!-- WORK EXPERIENCE SECTION -->
       <div class="design-block">
         <h3 class="block-title">02 / Work Experience</h3>
         <div class="work-showcase">
           <div class="work-info">
-            <h3>Silkyo Website</h3>
+            <h3 style="color: #cf9d7b !important">Silkyo Website</h3>
             <p>
               The official website for Silkyo. I led the front-end development
               and UI design, focusing on creating a seamless e-commerce
@@ -242,7 +440,7 @@
           <div class="work-preview">
             <div class="img-frame zoomable" onclick="openLightbox(this)">
               <img
-                src="silkyopreview.png"
+                src="image/silkyopreview.png"
                 alt="Preview of Silkyo.ca Website Homepage"
               />
             </div>
@@ -251,39 +449,92 @@
       </div>
     </section>
 
+    <!-- LIGHTBOX STRUCTURAL MODAL LAYER -->
     <div id="lightbox-modal" class="lightbox" onclick="closeLightbox(event)">
       <span class="close-btn">&times;</span>
       <img class="lightbox-content" id="lightbox-img" />
       <div id="lightbox-caption"></div>
     </div>
 
-    <nav class="project-nav-container">
-      <div class="nav-title">VIEW MORE PROJECTS</div>
+    <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
+    <nav
+      class="project-nav-container"
+      style="
+        max-width: 1200px;
+        margin: 120px auto 60px auto;
+        padding: 60px 20px 0 20px;
+        border-top: 1px solid #c9c5c2;
+        text-align: center;
+      "
+    >
+      <div
+        class="nav-title"
+        style="
+          font-family: &quot;Inconsolata&quot;, monospace;
+          font-size: 13px;
+          color: #abacad;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          margin-bottom: 50px;
+          position: relative;
+          display: inline-block;
+        "
+      >
+        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
+        <span style="opacity: 0.4; margin: 0 10px">—</span>
+      </div>
 
-      <div class="nav-links-grid">
-        <a href="graphic design.html" class="nav-item">
-          <span class="nav-label">01</span>
-          <span class="nav-text">Graphic Design</span>
+      <div
+        class="nav-links-editorial-flex"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          row-gap: 20px;
+        "
+      >
+        <!-- Link 01: Visual Design -->
+        <a
+          href="graphic design.html"
+          class="editorial-nav-item"
+          id="foot-nav-visual"
+        >
+          <span class="edit-num">01</span
+          ><span class="edit-text">Visual Design</span>
         </a>
 
-        <a href="ux design.html" class="nav-item">
-          <span class="nav-label">02</span>
-          <span class="nav-text">Product Design</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 02: Product Design -->
+        <a
+          href="ux design.html"
+          class="editorial-nav-item active-page"
+          id="foot-nav-ux"
+        >
+          <span class="edit-num">02</span
+          ><span class="edit-text">Product Design</span>
         </a>
 
-        <a href="media.html" class="nav-item">
-          <span class="nav-label">03</span>
-          <span class="nav-text">Media Production</span>
+        <span class="editorial-nav-divider">/</span>
+
+        <!-- Link 03: Media Production -->
+        <a href="media.html" class="editorial-nav-item" id="foot-nav-media">
+          <span class="edit-num">03</span
+          ><span class="edit-text">Media Production</span>
         </a>
 
-        <a href="jewelry design.html" class="nav-item">
-          <span class="nav-label">04</span>
-          <span class="nav-text">Jewelry Design</span>
-        </a>
+        <span class="editorial-nav-divider">/</span>
 
-        <a href="marketing.html" class="nav-item">
-          <span class="nav-label">05</span>
-          <span class="nav-text">Marketing & Content</span>
+        <!-- Link 04: Marketing & Content -->
+        <a
+          href="marketing.html"
+          class="editorial-nav-item"
+          id="foot-nav-market"
+        >
+          <span class="edit-num">04</span
+          ><span class="edit-text">Marketing & Content</span>
         </a>
       </div>
     </nav>
@@ -301,26 +552,23 @@
             href="https://www.instagram.com/nicoc0.0"
             target="_blank"
             aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+            ><i class="fab fa-instagram"></i
+          ></a>
           <a
             href="https://www.youtube.com/@nicolew7543"
             target="_blank"
             aria-label="YouTube"
-          >
-            <i class="fab fa-youtube"></i>
-          </a>
+            ><i class="fab fa-youtube"></i
+          ></a>
           <a
             href="https://www.linkedin.com/in/nicole-wu-4948b8252"
             target="_blank"
             aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook">
-            <i class="fas fa-envelope"></i>
-          </a>
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:n9wu@uwaterloo.ca" aria-label="Outlook"
+            ><i class="fas fa-envelope"></i
+          ></a>
         </div>
 
         <p class="get-in-touch-text">GET IN TOUCH</p>
@@ -328,7 +576,7 @@
     </footer>
 
     <script>
-      /* --- Scroll Progress Logic --- */
+      /* --- Scroll Progress Line Indicator Logic --- */
       window.addEventListener("scroll", () => {
         const scrollTop =
           document.documentElement.scrollTop || document.body.scrollTop;
@@ -336,34 +584,26 @@
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
         const scrolled = (scrollTop / scrollHeight) * 100;
-
         document.getElementById("progress-bar").style.width = scrolled + "%";
       });
 
-      // --- Custom Cursor Logic ---
+      /* --- Custom Dual-Pointer Tracking Loop --- */
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
 
-      // 鼠标移动跟随
       window.addEventListener("mousemove", function (e) {
         const posX = e.clientX;
         const posY = e.clientY;
 
-        // 小点直接跟随
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // 大圆圈稍微延迟一点动画 (更有质感)
         cursorOutline.animate(
-          {
-            left: `${posX}px`,
-            top: `${posY}px`,
-          },
+          { left: `${posX}px`, top: `${posY}px` },
           { duration: 500, fill: "forwards" },
         );
       });
 
-      // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
         "a, button, .zoomable, .faq-item, .bento-item, .project-link-btn",
       );
@@ -376,7 +616,7 @@
         );
       });
 
-      /* --- Lightbox Logic --- */
+      /* --- Lightbox Photo Zoom Layer Logic --- */
       function openLightbox(element) {
         const modal = document.getElementById("lightbox-modal");
         const modalImg = document.getElementById("lightbox-img");
@@ -396,7 +636,7 @@
         document.body.style.overflow = "auto";
       }
 
-      /* --- Scroll to Top --- */
+      /* --- Back to Top Smooth Trigger --- */
       const btn = document.getElementById("back-to-top");
       window.addEventListener("scroll", () => {
         btn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -406,22 +646,18 @@
       });
     </script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
     <script>
-      // 初始化平滑滚动
+      /* --- Smooth Lenis Inertial Scroll Frame Engine --- */
       const lenis = new Lenis({
-        duration: 1.2, // 滚动持续时间，越长越滑
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 缓动曲线
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smooth: true,
       });
-
       function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
       }
-
       requestAnimationFrame(raf);
     </script>
   </body>
 </html>
-
