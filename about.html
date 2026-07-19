@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - About</title>
-    <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -58,7 +57,7 @@
         z-index: var(--z);
         opacity: 0.8;
         filter: grayscale(80%) contrast(100%);
-        background-color: #1a1615;
+        background-color: #162127 !important;
       }
 
       /* 4. 激活的那张照片（彩色、置顶） */
@@ -94,14 +93,14 @@
         animation: rotateBadge 15s linear infinite;
       }
       .badge-text {
-        fill: #c1a481;
+        fill: #abacad;
         font-family: "Inconsolata", monospace;
         font-size: 13px;
         letter-spacing: 2px;
         font-weight: bold;
       }
       .badge-star {
-        fill: #c1a481;
+        fill: #abacad;
         font-size: 24px;
         dominant-baseline: middle;
         text-anchor: middle;
@@ -114,14 +113,199 @@
           transform: rotate(360deg);
         }
       }
+
+      /* ================= EDITORIAL CREATIVE COMPASS STYLE UPDATES ================= */
+      .radar-interactive-container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
+        align-items: center;
+        margin-top: 60px;
+        border-top: 1px solid #c9c5c2;
+        border-bottom: 1px solid #c9c5c2;
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .radar-visualization {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      /* Editorial Minimal Radar Styling (No sci-fi glow, clean fine-lines) */
+      #radar-interactive-poly {
+        transition: d 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        fill: rgba(171, 172, 173, 0.2); /* Soft, low opacity elegant layout */
+        stroke: #abacad;
+        stroke-width: 1.5px;
+      }
+
+      .radar-axis-line {
+        stroke: rgba(193, 164, 129, 0.15); /* Clean solid thin line */
+        stroke-width: 1px;
+      }
+
+      .radar-web-ring {
+        fill: none;
+        stroke: rgba(201, 197, 194, 0.5);
+        stroke-width: 1px;
+      }
+
+      /* Interactive Nodes */
+      .radar-node-anchor {
+        cursor: pointer;
+      }
+      .radar-node-circle {
+        fill: #f1efe9;
+        stroke: #abacad;
+        stroke-width: 1.5px;
+        transition:
+          r 0.3s ease,
+          fill 0.3s ease;
+      }
+      .radar-node-anchor:hover .radar-node-circle,
+      .radar-node-anchor.active .radar-node-circle {
+        r: 6px;
+        fill: #162127;
+      }
+
+      .radar-node-label {
+        font-family: "Inconsolata", monospace;
+        font-size: 11px;
+        fill: #5f5f60;
+        letter-spacing: 2px;
+        transition: fill 0.3s ease;
+      }
+      .radar-node-anchor:hover .radar-node-label,
+      .radar-node-anchor.active .radar-node-label {
+        fill: #1a1615;
+      }
+
+      /* Editorial Panel Transitions */
+      .radar-details-panel {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .radar-skill-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .radar-skill-card.active {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .radar-skill-card h3 {
+        font-family: "Cormorant", serif;
+        font-size: 32px;
+        color: #cf9d7b !important;
+        margin-bottom: 12px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+
+      .radar-skill-card p {
+        font-family: "Cormorant", serif;
+        font-style: italic;
+        color: #8a8c8d !important;
+        line-height: 1.5;
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+
+      .card-meta-title {
+        font-family: "Inconsolata", monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #abacad;
+        margin-bottom: 8px;
+        margin-top: 5px;
+      }
+
+      .radar-tool-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .radar-tag {
+        font-family: "Inconsolata", monospace;
+        font-size: 12px;
+        color: #8a8c8d !important;
+        border: 1px solid #c9c5c2;
+        padding: 4px 10px;
+        border-radius: 1px;
+      }
+
+      .radar-featured-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .radar-featured-list li {
+        font-family: "Inconsolata", monospace;
+        font-size: 14px;
+        color: #8a8c8d !important;
+        margin-bottom: 6px;
+        position: relative;
+        padding-left: 15px;
+      }
+      .radar-featured-list li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        font-size: 10px;
+        top: 1px;
+        color: #abacad;
+      }
+
       @media (max-width: 768px) {
         .rotating-badge {
           display: none;
         }
+        .radar-interactive-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 30px 0;
+        }
+        .radar-details-panel {
+          min-height: auto;
+        }
+        .radar-skill-card {
+          position: relative;
+          display: none;
+        }
+        .radar-skill-card.active {
+          display: flex;
+        }
       }
     </style>
   </head>
-  <body style="background-color: #1a1615">
+  <body style="background-color: #0c1519 !important">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -129,13 +313,12 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -156,21 +339,21 @@
             onclick="cycleStack()"
           >
             <img
-              src="selfie.jpg"
+              src="image/selfie.jpg"
               alt="Portrait 3"
               class="stack-item"
               style="--rotate: -6deg; --z: 1"
             />
 
             <img
-              src="selfie2.jpg"
+              src="image/selfie2.jpg"
               alt="Portrait 2"
               class="stack-item"
               style="--rotate: 4deg; --z: 2"
             />
 
             <img
-              src="selfie3.jpg"
+              src="image/selfie3.jpg"
               alt="Portrait 1"
               class="stack-item active"
               style="--rotate: 0deg; --z: 3"
@@ -189,7 +372,7 @@
               </defs>
               <text class="badge-text">
                 <textPath xlink:href="#circlePath">
-                  NICOLE • PORTFOLIO • 2026 •
+                  NICOLE WU • PORTFOLIO • 2026 •
                 </textPath>
               </text>
               <text x="50" y="52" class="badge-star">✦</text>
@@ -201,9 +384,9 @@
             I am a student at the University of Waterloo, currently pursuing a
             degree in Global Business and Digital Arts.
             <br /><br />
-            Passionate about the intersection of design and technology, I am
-            constantly seeking opportunities to learn, grow, and translate
-            complex ideas into intuitive visual narratives.
+            I explore the intersection of visual design, technology, and
+            storytelling — creating digital experiences that balance creativity,
+            usability, and strategic thinking.
           </p>
         </div>
       </div>
@@ -258,13 +441,337 @@
     <section class="language-section">
       <div class="lang-container">
         <div class="lang-block">
-          <h3>SPOKEN</h3>
+          <h3>Fluent</h3>
           <p>English / Mandarin / Cantonese</p>
         </div>
         <div class="lang-divider"></div>
         <div class="lang-block">
-          <h3>LEARNING</h3>
-          <p>Korean / Japanese / French</p>
+          <h3>Currently Exploring</h3>
+          <p>Japanese / French</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRAND NEW: THE EDITORIAL CREATIVE COMPASS SECTION ================= -->
+    <section
+      class="skills-section"
+      id="skills"
+      style="max-width: 1200px; margin: 0 auto; padding: 100px 20px"
+    >
+      <div class="skills-header">
+        <h2
+          class="skills-title"
+          style="
+            font-family: &quot;Cormorant&quot;, serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #cf9d7b !important;
+            line-height: 1.1;
+            font-weight: 300;
+          "
+        >
+          Creative Compass
+        </h2>
+        <p
+          class="skills-subtitle"
+          style="
+            font-family: &quot;Inconsolata&quot;, monospace;
+            color: #8a8c8d !important;
+            font-size: 16px;
+            margin-top: 15px;
+            max-width: 540px;
+            letter-spacing: 0.5px;
+          "
+        >
+          A visual map of the disciplines, tools, and processes that shape my
+          design practice. Hover over coordinates to discover my methodology.
+        </p>
+      </div>
+
+      <div class="radar-interactive-container">
+        <!-- Left Column: Fine-Line Vector Map Visualization -->
+        <div class="radar-visualization">
+          <svg
+            viewBox="0 0 400 400"
+            width="100%"
+            height="100%"
+            style="max-width: 380px"
+          >
+            <!-- Background Web Ring Concentric Scales -->
+            <circle cx="200" cy="200" r="150" class="radar-web-ring" />
+            <circle cx="200" cy="200" r="112.5" class="radar-web-ring" />
+            <circle cx="200" cy="200" r="75" class="radar-web-ring" />
+            <circle cx="200" cy="200" r="37.5" class="radar-web-ring" />
+
+            <!-- Clean, Solid Axis Rays -->
+            <!-- 1. Visual Design (Top Center) -->
+            <line x1="200" y1="200" x2="200" y2="50" class="radar-axis-line" />
+            <!-- 2. UX / Experience (Top Right) -->
+            <line
+              x1="200"
+              y1="200"
+              x2="342.6"
+              y2="153.6"
+              class="radar-axis-line"
+            />
+            <!-- 3. Web Development (Bottom Right) -->
+            <line
+              x1="200"
+              y1="200"
+              x2="288.1"
+              y2="321.4"
+              class="radar-axis-line"
+            />
+            <!-- 4. Content & Media (Bottom Left) -->
+            <line
+              x1="200"
+              y1="200"
+              x2="111.8"
+              y2="321.4"
+              class="radar-axis-line"
+            />
+            <!-- 5. Strategy (Top Left) -->
+            <line
+              x1="200"
+              y1="200"
+              x2="57.3"
+              y2="153.6"
+              class="radar-axis-line"
+            />
+
+            <!-- The Fine-Line Discipline Area Polygon -->
+            <polygon
+              id="radar-interactive-poly"
+              points="200,80 314,162 270,297 129,297 85,162"
+            />
+
+            <!-- Map Target Coordinates -->
+            <!-- Node 1: Visual Design -->
+            <g
+              class="radar-node-anchor active"
+              data-index="0"
+              onmouseenter="updateRadar(0)"
+            >
+              <circle
+                cx="200"
+                cy="80"
+                r="3.5"
+                class="radar-node-circle"
+                id="node-0"
+              />
+              <text
+                x="200"
+                y="38"
+                text-anchor="middle"
+                class="radar-node-label"
+              >
+                VISUAL DESIGN
+              </text>
+            </g>
+            <!-- Node 2: UX / Experience -->
+            <g
+              class="radar-node-anchor"
+              data-index="1"
+              onmouseenter="updateRadar(1)"
+            >
+              <circle
+                cx="314"
+                cy="162"
+                r="3.5"
+                class="radar-node-circle"
+                id="node-1"
+              />
+              <text
+                x="325"
+                y="142"
+                text-anchor="start"
+                class="radar-node-label"
+              >
+                UX / EXPERIENCE
+              </text>
+            </g>
+            <!-- Node 3: Web Development -->
+            <g
+              class="radar-node-anchor"
+              data-index="2"
+              onmouseenter="updateRadar(2)"
+            >
+              <circle
+                cx="270"
+                cy="297"
+                r="3.5"
+                class="radar-node-circle"
+                id="node-2"
+              />
+              <text
+                x="282"
+                y="315"
+                text-anchor="start"
+                class="radar-node-label"
+              >
+                WEB DEV
+              </text>
+            </g>
+            <!-- Node 4: Content & Media -->
+            <g
+              class="radar-node-anchor"
+              data-index="3"
+              onmouseenter="updateRadar(3)"
+            >
+              <circle
+                cx="129"
+                cy="297"
+                r="3.5"
+                class="radar-node-circle"
+                id="node-3"
+              />
+              <text x="118" y="315" text-anchor="end" class="radar-node-label">
+                CONTENT & MEDIA
+              </text>
+            </g>
+            <!-- Node 5: Strategy -->
+            <g
+              class="radar-node-anchor"
+              data-index="4"
+              onmouseenter="updateRadar(4)"
+            >
+              <circle
+                cx="85"
+                cy="162"
+                r="3.5"
+                class="radar-node-circle"
+                id="node-4"
+              />
+              <text x="75" y="142" text-anchor="end" class="radar-node-label">
+                STRATEGY
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Right Column: Editorial, Project-Connected Content Cards -->
+        <div class="radar-details-panel">
+          <!-- Card 1: Visual Design -->
+          <div class="radar-skill-card active" id="card-0">
+            <h3>Visual Design</h3>
+            <p>
+              Creating comprehensive visual languages, editorial typography
+              structures, and identity frameworks across digital canvases.
+            </p>
+
+            <div class="card-meta-title">Core Tools</div>
+            <div class="radar-tool-tags">
+              <span class="radar-tag">Adobe Creative Suite</span>
+              <span class="radar-tag">Figma</span>
+              <span class="radar-tag">Procreate</span>
+              <span class="radar-tag">Typography Systems</span>
+              <span class="radar-tag">Layout Composition</span>
+            </div>
+
+            <div class="card-meta-title">Main Featured Case Studies</div>
+            <ul class="radar-featured-list">
+              <li>Premier Protein Rebrand</li>
+              <li>Bur Oak Yearbook</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: UX / Experience -->
+          <div class="radar-skill-card" id="card-1">
+            <h3>UX / Experience</h3>
+            <p>
+              Architecting user journeys, analyzing system accessibility
+              behaviors, and prototyping interaction patterns rooted in design
+              heuristics.
+            </p>
+
+            <div class="card-meta-title">Core Focus</div>
+            <div class="radar-tool-tags">
+              <span class="radar-tag">Figma Advanced Prototyping</span>
+              <span class="radar-tag">User Research & Personas</span>
+              <span class="radar-tag">Heuristic Evaluation</span>
+              <span class="radar-tag">Service Blueprints</span>
+              <span class="radar-tag">Wireframing</span>
+            </div>
+
+            <div class="card-meta-title">Main Featured Case Studies</div>
+            <ul class="radar-featured-list">
+              <li>ER to Home</li>
+              <li>CanTalk Mobile App Design</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Web Development -->
+          <div class="radar-skill-card" id="card-2">
+            <h3>Web Development</h3>
+            <p>
+              Bridging creative assets with crisp front-end layouts and
+              micro-interactions using flexible, semantic frameworks.
+            </p>
+
+            <div class="card-meta-title">Core Stack</div>
+            <div class="radar-tool-tags">
+              <span class="radar-tag">HTML5 / CSS3</span>
+              <span class="radar-tag">JavaScript ES6</span>
+              <span class="radar-tag">Framer Interaction</span>
+              <span class="radar-tag">Squarespace Architecture</span>
+              <span class="radar-tag">HTML Canvas & p5.js</span>
+              <span class="radar-tag">Responsive Heuristics</span>
+            </div>
+
+            <div class="card-meta-title">Main Featured Deliverables</div>
+            <ul class="radar-featured-list">
+              <li>Pixel-Style Interactive Web Game (TBC)</li>
+              <li>Personal Portfolio Space Engine</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Content & Media -->
+          <div class="radar-skill-card" id="card-3">
+            <h3>Content & Media</h3>
+            <p>
+              Orchestrating story-driven creative paths, capturing movement, and
+              managing tone production timelines from concept to
+              post-production.
+            </p>
+
+            <div class="card-meta-title">Core Capabilities</div>
+            <div class="radar-tool-tags">
+              <span class="radar-tag">Cinematic Shoots</span>
+              <span class="radar-tag">Storyboarding</span>
+              <span class="radar-tag">Premiere Pro & After Effects</span>
+              <span class="radar-tag">Sound Design & Color Grading</span>
+              <span class="radar-tag">Midjourney & Firefly Workflows</span>
+            </div>
+
+            <div class="card-meta-title">MainFeatured Work</div>
+            <ul class="radar-featured-list">
+              <li>Antique in Times (Documentary Film)</li>
+              <li>A Silent Portrait (Narrative Short Film)</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Strategy -->
+          <div class="radar-skill-card" id="card-4">
+            <h3>Strategy & Operations</h3>
+            <p>
+              Aligning creative decisions with commercial environments, managing
+              live marketing loops, and tracking agile campaign metrics.
+            </p>
+
+            <div class="card-meta-title">Core Competencies</div>
+            <div class="radar-tool-tags">
+              <span class="radar-tag">E-Commerce Management</span>
+              <span class="radar-tag">Live Broadcast Marketing</span>
+              <span class="radar-tag">Agile Team Collaboration</span>
+              <span class="radar-tag">Market Repositioning (SWOT)</span>
+              <span class="radar-tag">Client Workflow Optimization</span>
+            </div>
+
+            <div class="card-meta-title">Professional Practice</div>
+            <ul class="radar-featured-list">
+              <li>SILKYO Core Operations</li>
+              <li>iDIG Marketing Client Campaigns</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -273,7 +780,29 @@
       <h2 class="section-heading">Work Experiences</h2>
       <div class="timeline-minimal">
         <div class="timeline-row">
-          <div class="timeline-date">SEPT 2024 - PRESENT</div>
+          <div class="timeline-date">JUN 2026 - SEPT 2026</div>
+          <div class="timeline-detail">
+            <h3>iDIG Marketing</h3>
+            <p class="role">Content Designer & AI Researcher</p>
+            <ul class="timeline-list">
+              <li>
+                Supported content creation for client campaigns by producing
+                visual assets and helping shape digital marketing materials.
+              </li>
+              <li>
+                Assisted with brand-focused social media content and website
+                creative updates to strengthen online presence.
+              </li>
+              <li>
+                Researched emerging AI tools and explored practical ways to
+                streamline creative workflows and content production.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="timeline-date">SEPT 2024 - JUN 2026</div>
           <div class="timeline-detail">
             <h3>SILKYO</h3>
             <p class="role">
@@ -358,13 +887,13 @@
         </div>
       </div>
     </section>
-    
+
     <nav class="next-page-nav">
       <div class="nav-hint">CONTINUE TO</div>
-      <a href="skills.html" class="next-page-box">
+      <a href="projects.html" class="next-page-box">
         <div class="next-content">
           <span class="next-num">03</span>
-          <span class="next-title">My Skills</span>
+          <span class="next-title">Portfolio Projects</span>
         </div>
         <div class="next-arrow">NEXT PAGE →</div>
       </a>
@@ -396,27 +925,20 @@
     </footer>
 
     <script>
-      /* --- 1. Photo Stack Logic (点击洗牌) --- */
+      /* --- 1. Photo Stack Logic --- */
       function cycleStack() {
         const container = document.getElementById("stack-container");
         const images = Array.from(container.querySelectorAll(".stack-item"));
-
-        // 找到当前最上面的那张 (active)
         const currentActive = container.querySelector(".active");
         const currentIndex = images.indexOf(currentActive);
-
-        // 计算下一张
         const nextIndex = (currentIndex + 1) % images.length;
         const nextActive = images[nextIndex];
 
-        // 重置所有状态
         images.forEach((img) => img.classList.remove("active"));
-
-        // 激活下一张
         nextActive.classList.add("active");
       }
 
-      /* --- 2. Parallax Effect (视差悬浮) --- */
+      /* --- 2. Parallax Effect --- */
       if (window.innerWidth > 768) {
         const aboutSection = document.querySelector(".about-hero-section");
         const stackContainer = document.getElementById("stack-container");
@@ -458,20 +980,19 @@
         cursorDot.style.top = `${posY}px`;
         cursorOutline.animate(
           { left: `${posX}px`, top: `${posY}px` },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
-      // Hover effects
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item, .resume-preview-image, .stack-item, .about-image-wrapper"
+        "a, button, .zoomable, .faq-item, .bento-item, .skill-bento-card, .next-page-box, .resume-preview-image, .stack-item, .about-image-wrapper, .radar-node-anchor",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -483,10 +1004,55 @@
       btn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+
+      /* --- 5. Creative Compass Core Matrix Engine --- */
+      // Coordinate presets mapping out range shapes for each discipline
+      const radarShapes = [
+        "200,55 271,177 242,258 157,258 128,177", // Focus 0: Visual Design Range
+        "200,110 342,153 242,258 157,258 128,177", // Focus 1: UX / Experience Range
+        "200,110 271,177 288,321 157,258 128,177", // Focus 2: Web Development Range
+        "200,110 271,177 242,258 111,321 128,177", // Focus 3: Content & Media Range
+        "200,110 271,177 242,258 157,258 57,153", // Focus 4: Strategy Range
+      ];
+
+      function updateRadar(index) {
+        const anchors = document.querySelectorAll(".radar-node-anchor");
+        anchors.forEach((anchor) => anchor.classList.remove("active"));
+        anchors[index].classList.add("active");
+
+        const poly = document.getElementById("radar-interactive-poly");
+        if (poly) poly.setAttribute("points", radarShapes[index]);
+
+        const cards = document.querySelectorAll(".radar-skill-card");
+        cards.forEach((card) => card.classList.remove("active"));
+
+        const activeCard = document.getElementById(`card-${index}`);
+        if (activeCard) activeCard.classList.add("active");
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(
+        document.querySelectorAll(
+          ".bento-item, .next-page-box, .radar-interactive-container",
+        ),
+        { max: 2, speed: 400, glare: true, "max-glare": 0.05, scale: 1.005 },
+      );
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
     </script>
   </body>
 </html>
-
-
-
-
