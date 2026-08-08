@@ -15,106 +15,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
-    <style>
-      /* New Minimal Editorial Footer Styles */
-      .editorial-nav-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        position: relative;
-        padding: 8px 0;
-        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-item .edit-num {
-        font-family: "Inconsolata", monospace;
-        font-size: 12px;
-        color: #abacad;
-        letter-spacing: 1px;
-        transition: color 0.4s ease;
-      }
-
-      .editorial-nav-item .edit-text {
-        font-family: "Cormorant", serif;
-        font-size: 24px;
-        color: #5f5f60;
-        font-weight: 300;
-        position: relative;
-      }
-
-      .editorial-nav-item .edit-text::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: #abacad;
-        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-divider {
-        font-family: "Cormorant", serif;
-        font-size: 20px;
-        color: #c9c5c2;
-        pointer-events: none;
-        user-select: none;
-      }
-
-      .editorial-nav-item:hover .edit-text,
-      .editorial-nav-item.active-page .edit-text {
-        color: #cf9d7b !important;
-      }
-
-      .editorial-nav-item:hover .edit-num,
-      .editorial-nav-item.active-page .edit-num {
-        color: #cf9d7b !important;
-      }
-
-      .editorial-nav-item:hover .edit-text::after,
-      .editorial-nav-item.active-page .edit-text::after {
-        width: 100%;
-      }
-
-      .editorial-nav-item:hover .edit-text::after,
-      .editorial-nav-item.active-page .edit-text::after {
-        background-color: #cf9d7b;
-      } /* Custom Layout Styles for Horizontal Jewelry Artifact Proportions */
-      .phase-img {
-        cursor: zoom-in;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        height: 250px; /* Fixed vertical bound maintaining perfect row grids */
-      }
-      .phase-img img {
-        width: auto !important;
-        height: auto !important;
-        max-width: 100% !important;
-        max-height: 100% !important;
-        object-fit: contain !important;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links-editorial-flex {
-          flex-direction: column;
-          gap: 15px !important;
-        }
-        .editorial-nav-divider {
-          display: none;
-        }
-        .editorial-nav-item .edit-text {
-          font-size: 20px;
-        }
-        .phase-img {
-          height: auto;
-        }
-      }
-    </style>
   </head>
-  <body style="background-color: #0c1519 !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -137,6 +39,7 @@
       <div class="header-cta">
         <a href="projects.html">← Back to Projects</a>
       </div>
+      <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </header>
 
     <section id="graphic-design" class="graphic-design-section">
@@ -197,31 +100,24 @@
       <div class="design-block">
         <h3 class="block-title">02 / Magazine Design</h3>
 
-        <div class="magazine-grid">
-          <div class="mag-item">
-            <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="image/A4.png" alt="Editorial Layout Page 1" />
-            </div>
-            <p class="mag-label">PAGE 01</p>
+        <div class="slider-wrapper">
+          <button class="slider-btn prev" onclick="changeMagazineSlide(-1)">←</button>
+
+          <div class="slide-frame-container">
+            <img
+              id="magazineSlideImage"
+              src="image/A4.png"
+              alt="Editorial Layout Page 1"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="mag-item">
-            <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="image/A4.1.png" alt="Editorial Layout Page 2" />
-            </div>
-            <p class="mag-label">PAGE 02</p>
-          </div>
-          <div class="mag-item">
-            <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="image/A4.4.png" alt="Editorial Layout Page 3" />
-            </div>
-            <p class="mag-label">PAGE 03</p>
-          </div>
-          <div class="mag-item">
-            <div class="img-frame zoomable" onclick="openLightbox(this)">
-              <img src="image/A4.2.png" alt="Editorial Layout Page 4" />
-            </div>
-            <p class="mag-label">PAGE 04</p>
-          </div>
+
+          <button class="slider-btn next" onclick="changeMagazineSlide(1)">→</button>
+        </div>
+
+        <div class="slide-counter">
+          <span id="magazineCurrentNum">01</span> <span class="divider">/</span> 04
         </div>
 
         <button class="know-more-btn" onclick="toggleDetails('magazine-info')">
@@ -229,144 +125,334 @@
         </button>
 
         <div id="magazine-info" class="collapsible-content">
-          <div class="details-grid">
-            <div class="detail-col">
-              <div class="detail-box">
-                <h4>Assignment Context</h4>
-                <p>
-                  GBDA 101 - Digital Media Production. A layout design project
-                  focusing on typography alignment and core grid structures.
-                </p>
-              </div>
-              <div class="detail-box">
-                <h4>My Role</h4>
-                <p>
-                  Full Production: Responsible for visual asset creation, asset
-                  curation, and executing final multi-page layouts.
-                </p>
-              </div>
+          <div
+            class="bento-grid-accordion"
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+              padding: 25px 0;
+              background: transparent;
+              opacity: 1 !important;
+              visibility: visible !important;
+            "
+          >
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                ASSIGNMENT CONTEXT
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                GBDA 201 - Editorial Layout Systems. An extensive exploration
+                into print typography grid alignments and visual pacing metrics.
+              </p>
             </div>
-            <div class="detail-col">
-              <div class="detail-box">
-                <h4>Problem & Objective</h4>
-                <p>
-                  The challenge was to unify diverse structural fields under a
-                  singular cohesive aesthetic. The objective focused on
-                  mastering <b>grid systems</b> and
-                  <b>typographic hierarchies</b> to guarantee frictionless text
-                  balances.
-                </p>
-              </div>
-              <div class="detail-box">
-                <h4>Impact & Reflection</h4>
-                <p>
-                  Refined structural type rules and optimized cross-page
-                  document mapping inside Adobe InDesign.
-                </p>
-              </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                PROBLEM & OBJECTIVE
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Balancing editorial density with whitespace margins to enhance
+                reading rhythm across consecutive multi-column pages.
+              </p>
+            </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                MY ROLE
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Editorial Designer: Structured typography scale, set baseline
+                grid frameworks, and executed precise color plate testing.
+              </p>
+            </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                IMPACT & REFLECTION
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Mastered modular grid systems, developing advanced control over
+                margins, line lengths, and paragraph hierarchies.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="section-divider"></div>
+      <div class="section-divider section-divider-full"></div>
 
       <!-- BLOCK 03: POSTER ZINE -->
       <div class="design-block">
         <h3 class="block-title">03 / Poster Zine</h3>
 
-        <div class="zine-container">
-          <div class="zine-display">
-            <div class="zine-page active" id="zine1">
-              <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img
-                  src="image/Nicole_Wu_Project1-1.png"
-                  alt="Experimental Poster Sheet 1"
-                />
+        <div class="zine-carousel-wrapper">
+          <button class="carousel-arrow prev" id="prev-zine">←</button>
+          <div class="zine-container">
+            <div class="zine-display">
+              <div class="zine-page active" id="zine1">
+                <div class="img-frame zoomable" onclick="openLightbox(this)">
+                  <img src="image/Nicole_Wu_Project1-1.png" alt="Experimental Poster Sheet 1" />
+                </div>
               </div>
-            </div>
-            <div class="zine-page" id="zine2">
-              <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img
-                  src="image/Nicole_Wu_Project1-2.png"
-                  alt="Experimental Poster Sheet 2"
-                />
+              <div class="zine-page" id="zine2">
+                <div class="img-frame zoomable" onclick="openLightbox(this)">
+                  <img src="image/Nicole_Wu_Project1-2.png" alt="Experimental Poster Sheet 2" />
+                </div>
               </div>
-            </div>
-            <div class="zine-page" id="zine3">
-              <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img
-                  src="image/Nicole_Wu_Project1-3.png"
-                  alt="Experimental Poster Sheet 3"
-                />
+              <div class="zine-page" id="zine3">
+                <div class="img-frame zoomable" onclick="openLightbox(this)">
+                  <img src="image/Nicole_Wu_Project1-3.png" alt="Experimental Poster Sheet 3" />
+                </div>
               </div>
-            </div>
-            <div class="zine-page" id="zine4">
-              <div class="img-frame zoomable" onclick="openLightbox(this)">
-                <img
-                  src="image/Nicole_Wu_Project1-4.png"
-                  alt="Experimental Poster Sheet 4"
-                />
+              <div class="zine-page" id="zine4">
+                <div class="img-frame zoomable" onclick="openLightbox(this)">
+                  <img src="image/Nicole_Wu_Project1-4.png" alt="Experimental Poster Sheet 4" />
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="zine-controls">
-            <button class="nav-btn prev-btn" id="prev-zine">← PREV</button>
-            <div class="zine-indicators">
-              <span class="dot active"></span><span class="dot"></span
-              ><span class="dot"></span><span class="dot"></span>
-            </div>
-            <button class="nav-btn next-btn" id="next-zine">NEXT →</button>
-          </div>
+          <button class="carousel-arrow next" id="next-zine">→</button>
         </div>
+
+        <div class="slide-counter">
+          <span id="zineCurrentNum">01</span> <span class="divider">/</span>
+          <span id="zineTotalNum">04</span>
+        </div>
+      </div>
 
         <button class="know-more-btn" onclick="toggleDetails('zine-info')">
           PROJECT DETAILS <span class="btn-arrow">↓</span>
         </button>
 
         <div id="zine-info" class="collapsible-content">
-          <div class="details-grid">
-            <div class="detail-col">
-              <div class="detail-box">
-                <h4>Assignment Context</h4>
-                <p>
-                  GBDA 201 - Digital Media Project 1. An experimental zine
-                  project combining poster aesthetics with nonlinear visual
-                  narratives.
-                </p>
-              </div>
-              <div class="detail-box">
-                <h4>My Role</h4>
-                <p>
-                  Full Production: Managed visual configuration, abstract
-                  digital illustration pipelines, and physical print output
-                  formatting.
-                </p>
-              </div>
+          <div
+            class="bento-grid-accordion"
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+              padding: 25px 0;
+              background: transparent;
+              opacity: 1 !important;
+              visibility: visible !important;
+            "
+          >
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                ASSIGNMENT CONTEXT
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                GBDA 201 - Digital Media Project 1. An experimental zine project
+                combining poster aesthetics with nonlinear visual narratives.
+              </p>
             </div>
-            <div class="detail-col">
-              <div class="detail-box">
-                <h4>Problem & Objective</h4>
-                <p>
-                  Testing unconventional fluid layout systems while maintaining
-                  strict legibility cross-points across multi-panel print fold
-                  layers.
-                </p>
-              </div>
-              <div class="detail-box">
-                <h4>Impact & Reflection</h4>
-                <p>
-                  Gained actionable expertise bridging digital design canvases
-                  with physical dimensional printed outputs.
-                </p>
-              </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                PROBLEM & OBJECTIVE
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Testing unconventional fluid layout systems while maintaining
+                strict legibility cross-points across multi-panel print fold
+                layers.
+              </p>
+            </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                MY ROLE
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Full Production: Managed visual configuration, abstract digital
+                illustration pipelines, and physical print output formatting.
+              </p>
+            </div>
+            <div
+              class="bento-card"
+              style="
+                background-color: #e5e1d8 !important;
+                padding: 20px;
+                border-radius: 4px;
+              "
+            >
+              <h4
+                style="
+                  color: #524d4b !important;
+                  margin: 0 0 10px 0;
+                  font-family: monospace;
+                  font-size: 13px;
+                  letter-spacing: 0.05em;
+                "
+              >
+                IMPACT & REFLECTION
+              </h4>
+              <p
+                style="
+                  color: #5f5f60 !important;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+                Gained actionable expertise bridging digital design canvases
+                with physical dimensional printed outputs.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="section-divider"></div>
+      <div class="section-divider section-divider-full"></div>
 
       <!-- BLOCK 04: LOGO DESIGN -->
       <div class="design-block">
@@ -411,85 +497,26 @@
         </div>
       </div>
 
-      <div class="section-divider"></div>
+      <div class="section-divider section-divider-full"></div>
 
       <!-- BLOCK 05: INTEGRATED JEWELRY & MATERIAL CRAFTSMANSHIP SECTOR -->
       <div class="design-block" id="jewelry-craftsmanship">
         <h3 class="block-title">05 / Jewelry & Dimensional Craftsmanship</h3>
 
         <!-- PROJECT 01: TULIP PENDANT -->
-        <div class="jewelry-work-block" style="margin-top: 40px">
-          <div class="work-header" style="margin-bottom: 25px">
-            <span
-              class="work-number"
-              style="
-                font-family: &quot;Inconsolata&quot;, monospace;
-                font-size: 11px;
-                color: #abacad;
-                letter-spacing: 1.5px;
-              "
-              >PROJECT 01</span
-            >
-            <h4
-              style="
-                font-family: &quot;Cormorant&quot;, serif;
-                font-size: 26px;
-                color: #cf9d7b !important;
-                font-weight: 400;
-                margin-top: 5px;
-              "
-            >
-              18K White Gold Tahiti Keshi Tulip Pendant
-            </h4>
+        <div class="jewelry-work-block">
+          <div class="work-header">
+            <span class="work-number">PROJECT 01</span>
+            <h4>18K White Gold Tahiti Keshi Tulip Pendant</h4>
           </div>
-          <div
-            class="phase-container"
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 30px;
-            "
-          >
+          <div class="phase-container">
             <div
               class="phase-card my-work zoomable"
               onclick="openLightbox(this)"
-              style="
-                background: #e5e1d8;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
             >
-              <div
-                class="phase-header"
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  margin-bottom: 15px;
-                "
-              >
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 01: SKETCH</span
-                >
-                <span
-                  class="my-role-tag"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 10px;
-                    background: #1a1615;
-                    color: #f1efe9;
-                    padding: 2px 8px;
-                    border-radius: 1px;
-                  "
-                  >MY ROLE</span
-                >
+              <div class="phase-header">
+                <span class="phase-badge">STEP 01: SKETCH</span>
+                <span class="my-role-tag">MY ROLE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -497,39 +524,13 @@
                   alt="Tahiti Keshi Tulip Pendant - Organic Concept Sketch Phase"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Initial hand-drawn concepts focusing on organic curves.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 02: 3D MODEL</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 02: 3D MODEL</span>
               </div>
               <div class="phase-img">
                 <img
@@ -537,39 +538,13 @@
                   alt="Tahiti Keshi Tulip Pendant - Technical 3D CAD Modeling Phase"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Technical 3D modeling for factory casting preparation.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 03: FINAL PIECE</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 03: FINAL PIECE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -577,100 +552,29 @@
                   alt="Tahiti Keshi Tulip Pendant - Manufactured Physical Output Execution"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 The physical manifestation of the original vision.
               </p>
             </div>
           </div>
         </div>
 
-        <div
-          class="section-divider"
-          style="margin: 60px auto; width: 100%; opacity: 0.5"
-        ></div>
+        <div class="section-divider"></div>
 
         <!-- PROJECT 02: NOODLE PENDANT -->
         <div class="jewelry-work-block">
-          <div class="work-header" style="margin-bottom: 25px">
-            <span
-              class="work-number"
-              style="
-                font-family: &quot;Inconsolata&quot;, monospace;
-                font-size: 11px;
-                color: #abacad;
-                letter-spacing: 1.5px;
-              "
-              >PROJECT 02</span
-            >
-            <h4
-              style="
-                font-family: &quot;Cormorant&quot;, serif;
-                font-size: 26px;
-                color: #cf9d7b !important;
-                font-weight: 400;
-                margin-top: 5px;
-              "
-            >
-              18K White Gold Tahiti Keshi Noodle Pendant
-            </h4>
+          <div class="work-header">
+            <span class="work-number">PROJECT 02</span>
+            <h4>18K White Gold Tahiti Keshi Noodle Pendant</h4>
           </div>
-          <div
-            class="phase-container"
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 30px;
-            "
-          >
+          <div class="phase-container">
             <div
               class="phase-card my-work zoomable"
               onclick="openLightbox(this)"
-              style="
-                background: #e5e1d8;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
             >
-              <div
-                class="phase-header"
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  margin-bottom: 15px;
-                "
-              >
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 01: SKETCH</span
-                >
-                <span
-                  class="my-role-tag"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 10px;
-                    background: #1a1615;
-                    color: #f1efe9;
-                    padding: 2px 8px;
-                    border-radius: 1px;
-                  "
-                  >MY ROLE</span
-                >
+              <div class="phase-header">
+                <span class="phase-badge">STEP 01: SKETCH</span>
+                <span class="my-role-tag">MY ROLE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -678,39 +582,13 @@
                   alt="Tahiti Keshi Noodle Pendant - Structural Proportions Hand Draft"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Initial hand-drawn concepts focusing on organic curves.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 02: 3D MODEL</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 02: 3D MODEL</span>
               </div>
               <div class="phase-img">
                 <img
@@ -718,39 +596,13 @@
                   alt="Tahiti Keshi Noodle Pendant - 3D Volume Casting Mesh"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Technical 3D modeling for factory casting preparation.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 03: FINAL PIECE</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 03: FINAL PIECE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -758,100 +610,29 @@
                   alt="Tahiti Keshi Noodle Pendant - Polished Fine Metamaterial Object"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 The physical manifestation of the original vision.
               </p>
             </div>
           </div>
         </div>
 
-        <div
-          class="section-divider"
-          style="margin: 60px auto; width: 100%; opacity: 0.5"
-        ></div>
+        <div class="section-divider"></div>
 
         <!-- PROJECT 03: LEMON TEA PENDANT -->
         <div class="jewelry-work-block">
-          <div class="work-header" style="margin-bottom: 25px">
-            <span
-              class="work-number"
-              style="
-                font-family: &quot;Inconsolata&quot;, monospace;
-                font-size: 11px;
-                color: #abacad;
-                letter-spacing: 1.5px;
-              "
-              >PROJECT 03</span
-            >
-            <h4
-              style="
-                font-family: &quot;Cormorant&quot;, serif;
-                font-size: 26px;
-                color: #cf9d7b !important;
-                font-weight: 400;
-                margin-top: 5px;
-              "
-            >
-              18K White Gold Tahiti Keshi Lemon Tea Pendant
-            </h4>
+          <div class="work-header">
+            <span class="work-number">PROJECT 03</span>
+            <h4>18K White Gold Tahiti Keshi Lemon Tea Pendant</h4>
           </div>
-          <div
-            class="phase-container"
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 30px;
-            "
-          >
+          <div class="phase-container">
             <div
               class="phase-card my-work zoomable"
               onclick="openLightbox(this)"
-              style="
-                background: #e5e1d8;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
             >
-              <div
-                class="phase-header"
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  margin-bottom: 15px;
-                "
-              >
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 01: SKETCH</span
-                >
-                <span
-                  class="my-role-tag"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 10px;
-                    background: #1a1615;
-                    color: #f1efe9;
-                    padding: 2px 8px;
-                    border-radius: 1px;
-                  "
-                  >MY ROLE</span
-                >
+              <div class="phase-header">
+                <span class="phase-badge">STEP 01: SKETCH</span>
+                <span class="my-role-tag">MY ROLE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -859,39 +640,13 @@
                   alt="Tahiti Keshi Lemon Tea Pendant - Dimensional Balance Blueprint"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Initial hand-drawn concepts focusing on organic curves.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 02: 3D MODEL</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 02: 3D MODEL</span>
               </div>
               <div class="phase-img">
                 <img
@@ -899,39 +654,13 @@
                   alt="Tahiti Keshi Lemon Tea Pendant - Parametric CAD Vector Construction"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 Technical 3D modeling for factory casting preparation.
               </p>
             </div>
-            <div
-              class="phase-card zoomable"
-              onclick="openLightbox(this)"
-              style="
-                background: #ffffff;
-                border: 1px solid #c9c5c2;
-                padding: 20px;
-                border-radius: 2px;
-              "
-            >
-              <div class="phase-header" style="margin-bottom: 15px">
-                <span
-                  class="phase-badge"
-                  style="
-                    font-family: &quot;Inconsolata&quot;, monospace;
-                    font-size: 11px;
-                    color: #abacad;
-                  "
-                  >STEP 03: FINAL PIECE</span
-                >
+            <div class="phase-card zoomable" onclick="openLightbox(this)">
+              <div class="phase-header">
+                <span class="phase-badge">STEP 03: FINAL PIECE</span>
               </div>
               <div class="phase-img">
                 <img
@@ -939,16 +668,7 @@
                   alt="Tahiti Keshi Lemon Tea Pendant - Tactile Material Realization"
                 />
               </div>
-              <p
-                class="phase-desc"
-                style="
-                  font-family: &quot;Cormorant&quot;, serif;
-                  font-size: 15px;
-                  color: #8a8c8d !important;
-                  line-height: 1.4;
-                  margin-top: 15px;
-                "
-              >
+              <p class="phase-desc">
                 The physical manifestation of the original vision.
               </p>
             </div>
@@ -965,44 +685,13 @@
     </div>
 
     <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
-    <nav
-      class="project-nav-container"
-      style="
-        max-width: 1200px;
-        margin: 120px auto 60px auto;
-        padding: 60px 20px 0 20px;
-        border-top: 1px solid #c9c5c2;
-        text-align: center;
-      "
-    >
-      <div
-        class="nav-title"
-        style="
-          font-family: &quot;Inconsolata&quot;, monospace;
-          font-size: 13px;
-          color: #c1a481;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          margin-bottom: 50px;
-          position: relative;
-          display: inline-block;
-        "
-      >
-        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
-        <span style="opacity: 0.4; margin: 0 10px">—</span>
+    <nav class="project-nav-container">
+      <div class="nav-title">
+        <span class="project-nav-divider">—</span> View More Projects
+        <span class="project-nav-divider">—</span>
       </div>
 
-      <div
-        class="nav-links-editorial-flex"
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 30px;
-          row-gap: 20px;
-        "
-      >
+      <div class="nav-links-editorial-flex">
         <!-- Link 01: Visual Design (Active Page Highlight) -->
         <a
           href="graphic design.html"
@@ -1122,29 +811,31 @@
 
       /* --- Zine Carousel System --- */
       const pages = document.querySelectorAll(".zine-page");
-      const dots = document.querySelectorAll(".zine-indicators .dot");
-      let idx = 0;
+      const zineCurrentNum = document.getElementById("zineCurrentNum");
+      const zineTotalNum = document.getElementById("zineTotalNum");
+      let zineIdx = 0;
+
+      if (zineTotalNum) {
+        zineTotalNum.textContent = pages.length.toString().padStart(2, "0");
+      }
 
       function showPage(i) {
         pages.forEach((p, j) => {
-          if (j === i) {
-            p.classList.add("active");
-            p.style.display = "block";
-          } else {
-            p.classList.remove("active");
-            p.style.display = "none";
-          }
+          p.classList.toggle("active", j === i);
+          p.style.display = j === i ? "block" : "none";
         });
-        dots.forEach((d, j) => d.classList.toggle("active", j === i));
+        if (zineCurrentNum) {
+          zineCurrentNum.textContent = (i + 1).toString().padStart(2, "0");
+        }
       }
 
       document.getElementById("prev-zine").onclick = () => {
-        idx = (idx - 1 + pages.length) % pages.length;
-        showPage(idx);
+        zineIdx = (zineIdx - 1 + pages.length) % pages.length;
+        showPage(zineIdx);
       };
       document.getElementById("next-zine").onclick = () => {
-        idx = (idx + 1) % pages.length;
-        showPage(idx);
+        zineIdx = (zineIdx + 1) % pages.length;
+        showPage(zineIdx);
       };
       showPage(0);
 
@@ -1176,6 +867,28 @@
         document.body.style.overflow = "auto";
       }
 
+      /* --- Magazine Design Carousel Slider Logic --- */
+      const magazineSlides = [
+        { src: "image/A4.png", alt: "Editorial Layout Page 1" },
+        { src: "image/A4.1.png", alt: "Editorial Layout Page 2" },
+        { src: "image/A4.4.png", alt: "Editorial Layout Page 3" },
+        { src: "image/A4.2.png", alt: "Editorial Layout Page 4" }
+      ];
+      let currentMagazineSlide = 0;
+
+      function changeMagazineSlide(direction) {
+        currentMagazineSlide += direction;
+        if (currentMagazineSlide > magazineSlides.length - 1) currentMagazineSlide = 0;
+        if (currentMagazineSlide < 0) currentMagazineSlide = magazineSlides.length - 1;
+
+        const slide = magazineSlides[currentMagazineSlide];
+        const slideNum = (currentMagazineSlide + 1).toString().padStart(2, "0");
+         
+        document.getElementById("magazineSlideImage").src = slide.src;
+        document.getElementById("magazineSlideImage").alt = slide.alt;
+        document.getElementById("magazineCurrentNum").innerText = slideNum;
+      }
+
       /* --- Back to Top Return Key --- */
       const btn = document.getElementById("back-to-top");
       window.addEventListener("scroll", () => {
@@ -1198,6 +911,20 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+    </script>
+    <script>
+      /* --- Mobile Nav Toggle --- */
+      document.querySelector(".mobile-toggle").addEventListener("click", function () {
+        const nav = document.querySelector(".header-nav");
+        nav.classList.toggle("active");
+        if (nav.classList.contains("active")) {
+          this.innerHTML = "✕";
+          this.setAttribute("aria-label", "Close menu");
+        } else {
+          this.innerHTML = "☰";
+          this.setAttribute("aria-label", "Open menu");
+        }
+      });
     </script>
   </body>
 </html>

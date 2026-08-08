@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #24292e !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -95,14 +95,22 @@
         Feature Implementation: <br />Search & Filtering
       </h3>
 
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/search bar.png" alt="Search Functionality Demo" />
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changeSikyoSlide(-1)">←</button>
+
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="sikyoSlideImage"
+              src="image/search bar.png"
+              alt="Search Functionality Demo"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="cs-caption">
-            <h3>Advanced Filtering Logic</h3>
-            <p>
+          <div class="carousel-caption">
+            <h3 id="sikyoCaptionTitle">Advanced Filtering Logic</h3>
+            <p id="sikyoCaptionText">
               Implemented a tag-based filtering system allowing users to sort
               products by material, color, and collection, significantly
               reducing "time-to-purchase".
@@ -110,19 +118,11 @@
           </div>
         </div>
 
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/tag.png" alt="Tag Management System" />
-          </div>
-          <div class="cs-caption">
-            <h3>Tag Retrieval System</h3>
-            <p>
-              Structured the product database with semantic tags to ensure the
-              search bar delivers accurate results for broad queries like
-              "Necklace".
-            </p>
-          </div>
-        </div>
+        <button class="slider-btn next" onclick="changeSikyoSlide(1)">→</button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="sikyoCurrentNum">01</span> <span class="divider">/</span> 02
       </div>
     </section>
 
@@ -244,7 +244,39 @@
         document.body.style.overflow = "auto";
       }
 
-      // 2. Lenis Scroll
+      // 2. Silkyo Feature Gallery Carousel
+      const sikyoSlides = [
+        {
+          src: "image/search bar.png",
+          alt: "Search Functionality Demo",
+          title: "Advanced Filtering Logic",
+          text: "Implemented a tag-based filtering system allowing users to sort products by material, color, and collection, significantly reducing 'time-to-purchase'."
+        },
+        {
+          src: "image/tag.png",
+          alt: "Tag Management System",
+          title: "Tag Retrieval System",
+          text: "Structured the product database with semantic tags to ensure the search bar delivers accurate results for broad queries like 'Necklace'."
+        }
+      ];
+      let currentSikyoSlide = 0;
+
+      function changeSikyoSlide(direction) {
+        currentSikyoSlide += direction;
+        if (currentSikyoSlide > sikyoSlides.length - 1) currentSikyoSlide = 0;
+        if (currentSikyoSlide < 0) currentSikyoSlide = sikyoSlides.length - 1;
+
+        const slide = sikyoSlides[currentSikyoSlide];
+        const slideNum = (currentSikyoSlide + 1).toString().padStart(2, "0");
+
+        document.getElementById("sikyoSlideImage").src = slide.src;
+        document.getElementById("sikyoSlideImage").alt = slide.alt;
+        document.getElementById("sikyoCaptionTitle").innerText = slide.title;
+        document.getElementById("sikyoCaptionText").innerText = slide.text;
+        document.getElementById("sikyoCurrentNum").innerText = slideNum;
+      }
+
+      // 3. Lenis Scroll
       const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -288,3 +320,4 @@
     </script>
   </body>
 </html>
+

@@ -16,190 +16,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
-
-    <style>
-      /* --- Alternating Showcase Layout --- */
-      .alternating-showcase {
-        display: flex;
-        flex-direction: column;
-        gap: 150px; /* Generous elite layout spacing */
-        margin-top: 60px;
-      }
-
-      .showcase-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 80px;
-      }
-
-      /* Alternating column grid rules */
-      .showcase-item.reverse {
-        flex-direction: row-reverse;
-      }
-
-      .showcase-image {
-        flex: 1.2;
-      }
-
-      .showcase-image .img-frame img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        display: block;
-      }
-
-      .showcase-info {
-        flex: 0.8;
-        text-align: left;
-      }
-
-      .showcase-info .web-tag {
-        font-family: "Inconsolata", monospace;
-        color: #abacad;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-
-      .showcase-info h3 {
-        font-family: "Cormorant", serif;
-        font-size: 3.5rem;
-        color: #cf9d7b !important;
-        margin: 15px 0 25px 0;
-        line-height: 1;
-      }
-
-      .showcase-info p {
-        font-size: 1.1rem;
-        color: #5f5f60;
-        color: #8a8c8d !important;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        max-width: 450px;
-      }
-
-      .project-link-btn {
-        display: inline-block;
-        padding: 12px 30px;
-        background: transparent;
-        border: 1px solid #cf9d7b;
-        color: #cf9d7b;
-        font-family: "Inconsolata", monospace;
-        font-size: 1rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-
-      .project-link-btn:hover {
-        background: #cf9d7b;
-        color: #3a3534;
-      }
-
-      .btn-arrow {
-        margin-left: 5px;
-        font-family: sans-serif;
-      }
-
-      @media (max-width: 992px) {
-        .showcase-item,
-        .showcase-item.reverse {
-          flex-direction: column;
-          gap: 40px;
-          text-align: center;
-        }
-
-        .showcase-info p {
-          margin: 0 auto 30px auto;
-        }
-
-        .alternating-showcase {
-          gap: 100px;
-        }
-
-        .showcase-info h3 {
-          font-size: 2.5rem;
-        }
-      }
-
-      /* New Minimal Editorial Footer Styles */
-      .editorial-nav-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        position: relative;
-        padding: 8px 0;
-        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-item .edit-num {
-        font-family: "Inconsolata", monospace;
-        font-size: 12px;
-        color: #abacad;
-        letter-spacing: 1px;
-        transition: color 0.4s ease;
-      }
-
-      .editorial-nav-item .edit-text {
-        font-family: "Cormorant", serif;
-        font-size: 24px;
-        color: #5f5f60;
-        font-weight: 300;
-        position: relative;
-      }
-
-      .editorial-nav-item .edit-text::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: #abacad;
-        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-divider {
-        font-family: "Cormorant", serif;
-        font-size: 20px;
-        color: #c9c5c2;
-        pointer-events: none;
-        user-select: none;
-      }
-
-      .editorial-nav-item:hover .edit-text,
-      .editorial-nav-item.active-page .edit-text {
-        color: #cf9d7b !important;
-      }
-
-      .editorial-nav-item:hover .edit-num,
-      .editorial-nav-item.active-page .edit-num {
-        color: #cf9d7b !important;
-      }
-
-      .editorial-nav-item:hover .edit-text::after,
-      .editorial-nav-item.active-page .edit-text::after {
-        width: 100%;
-        background-color: #cf9d7b;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links-editorial-flex {
-          flex-direction: column;
-          gap: 15px !important;
-        }
-        .editorial-nav-divider {
-          display: none;
-        }
-        .editorial-nav-item .edit-text {
-          font-size: 20px;
-        }
-      }
-    </style>
   </head>
-  <body style="background-color: #0c1519 !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -220,6 +38,7 @@
       <div class="header-cta">
         <a href="projects.html">← Back to Projects</a>
       </div>
+      <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </header>
 
     <section class="web-design-section">
@@ -334,30 +153,10 @@
           <!-- PROJECT 05: INTERACTIVE WEB GAME (OCTOPUS BARISTA) -->
           <div class="showcase-item">
             <div class="showcase-image">
-              <div
-                class="video-responsive-wrapper"
-                style="
-                  position: relative;
-                  padding-bottom: 56.25%;
-                  height: 0;
-                  overflow: hidden;
-                  width: 100%;
-                  border: 1px solid #c9c5c2;
-                  background: transparent;
-                  border-radius: 2px;
-                "
-              >
+              <div class="video-responsive-wrapper">
                 <iframe
                   src="https://e28he.github.io/A3_Group15B_FinalGame/"
                   title="Octopus Barista Web Game Simulation Canvas"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: 0;
-                  "
                   allowfullscreen
                 >
                 </iframe>
@@ -374,33 +173,17 @@
                 rather than unpredictable roadblocks.
               </p>
 
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  margin: 0 0 25px 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 12px;
-                  font-family: &quot;Inconsolata&quot;, monospace;
-                  font-size: 13px;
-                  color: #5f5f60;
-                "
-              >
-                <li style="position: relative; padding-left: 18px">
-                  <span style="color: #cf9d7b !important; font-weight: bold"
-                    >✦ Tangled Arms System:</span
-                  >
+              <ul>
+                <li>
+                  <span>✦ Tangled Arms System:</span>
                   Rapidly jumping between operational stations or mismanaging
                   orders accelerates a Tangle Meter (0-100). Higher metrics
                   introduce execution lags and can freeze single limbs, forcing
                   users to strategically pause or execute an active 'Untangle'
                   action (R).
                 </li>
-                <li style="position: relative; padding-left: 18px">
-                  <span style="color: #cf9d7b !important; font-weight: bold"
-                    >✦ Action Queue Mechanics:</span
-                  >
+                <li>
+                  <span>✦ Action Queue Mechanics:</span>
                   User inputs buffer into a 3-step pipeline. Chaotic or reactive
                   inputs prompt execution errors and 'Queue Slips' that invert
                   intended ingredient paths (e.g., Ice → Espresso → Milk slips
@@ -428,7 +211,7 @@
         <h3 class="block-title">02 / Work Experience</h3>
         <div class="work-showcase">
           <div class="work-info">
-            <h3 style="color: #cf9d7b !important">Silkyo Website</h3>
+            <h3>Silkyo Website</h3>
             <p>
               The official website for Silkyo. I led the front-end development
               and UI design, focusing on creating a seamless e-commerce
@@ -457,44 +240,13 @@
     </div>
 
     <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
-    <nav
-      class="project-nav-container"
-      style="
-        max-width: 1200px;
-        margin: 120px auto 60px auto;
-        padding: 60px 20px 0 20px;
-        border-top: 1px solid #c9c5c2;
-        text-align: center;
-      "
-    >
-      <div
-        class="nav-title"
-        style="
-          font-family: &quot;Inconsolata&quot;, monospace;
-          font-size: 13px;
-          color: #abacad;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          margin-bottom: 50px;
-          position: relative;
-          display: inline-block;
-        "
-      >
-        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
-        <span style="opacity: 0.4; margin: 0 10px">—</span>
+    <nav class="project-nav-container">
+      <div class="nav-title">
+        <span>—</span> View More Projects
+        <span>—</span>
       </div>
 
-      <div
-        class="nav-links-editorial-flex"
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 30px;
-          row-gap: 20px;
-        "
-      >
+      <div class="nav-links-editorial-flex">
         <!-- Link 01: Visual Design -->
         <a
           href="graphic design.html"
@@ -658,6 +410,22 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+    </script>
+    <script>
+      /* --- Mobile Nav Toggle --- */
+      document
+        .querySelector(".mobile-toggle")
+        .addEventListener("click", function () {
+          const nav = document.querySelector(".header-nav");
+          nav.classList.toggle("active");
+          if (nav.classList.contains("active")) {
+            this.innerHTML = "✕";
+            this.setAttribute("aria-label", "Close menu");
+          } else {
+            this.innerHTML = "☰";
+            this.setAttribute("aria-label", "Open menu");
+          }
+        });
     </script>
   </body>
 </html>

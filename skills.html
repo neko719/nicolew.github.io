@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Portfolio - Skills</title>
-    <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +16,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #1a1615">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -25,7 +24,7 @@
 
     <header class="main-header">
       <div class="header-logo">
-        <img src="logo.png" alt="Nicole Portfolio Logo" />
+        <img src="image/logo.png" alt="Nicole Portfolio Logo" />
       </div>
       <nav class="header-nav">
         <ul>
@@ -196,20 +195,20 @@
             left: `${posX}px`,
             top: `${posY}px`,
           },
-          { duration: 500, fill: "forwards" }
+          { duration: 500, fill: "forwards" },
         );
       });
 
       // 悬停变大效果
       const hoverTargets = document.querySelectorAll(
-        "a, button, .zoomable, .faq-item, .bento-item"
+        "a, button, .zoomable, .faq-item, .bento-item",
       );
       hoverTargets.forEach((el) => {
         el.addEventListener("mouseenter", () =>
-          document.body.classList.add("hovering")
+          document.body.classList.add("hovering"),
         );
         el.addEventListener("mouseleave", () =>
-          document.body.classList.remove("hovering")
+          document.body.classList.remove("hovering"),
         );
       });
 
@@ -228,7 +227,7 @@
       // 初始化 3D 倾斜效果
       VanillaTilt.init(
         document.querySelectorAll(
-          ".bento-item, .skill-bento-card, .next-page-box"
+          ".bento-item, .skill-bento-card, .next-page-box",
         ),
         {
           max: 5, // 最大倾斜角度，越小越高级 (建议 3-5)
@@ -236,7 +235,7 @@
           glare: true, // 开启反光
           "max-glare": 0.2, // 反光强度 (0-1)，0.2 比较低调
           scale: 1.02, // 悬停时稍微放大一点点
-        }
+        },
       );
     </script>
 

@@ -15,57 +15,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
-
-    <style>
-      /* 限制大图宽度 */
-      .constrained-img {
-        max-width: 700px !important;
-        margin: 0 auto;
-      }
-
-      /* 保证图片显示完整，不被裁切 */
-      .img-frame img {
-        object-fit: contain !important;
-        width: 100%;
-        height: auto;
-      }
-
-      /* Lightbox 样式 */
-      .lightbox {
-        display: none;
-        position: fixed;
-        z-index: 10000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .lightbox-content {
-        max-width: 90%;
-        max-height: 85vh;
-        border: 1px solid #abacad;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-      }
-      .close-btn {
-        position: absolute;
-        top: 30px;
-        right: 50px;
-        color: #abacad;
-        font-size: 50px;
-        cursor: pointer;
-        z-index: 10001;
-      }
-      /* 鼠标放上去显示放大镜，提示可点击 */
-      .zoomable {
-        cursor: zoom-in;
-      }
-    </style>
   </head>
-  <body style="background-color: #24292e !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -147,49 +98,47 @@
 
     <section class="cs-visual-section">
       <h2 class="cs-section-title">Accessible Identification</h2>
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/er-login.png" alt="Tap to Login Interface" />
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changeKioskIdentSlide(-1)">←</button>
+
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="kioskIdentSlideImage"
+              src="image/er-login.png"
+              alt="Tap to Login Interface"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="cs-caption">
-            <h3>Frictionless Login</h3>
-            <p>
+          <div class="carousel-caption">
+            <h3 id="kioskIdentCaptionTitle">Frictionless Login</h3>
+            <p id="kioskIdentCaptionText">
               By allowing patients to tap their hospital wristband or Ontario
               Health Card, the system bypasses complex typing and password
               requirements that frustrate elderly users.
             </p>
           </div>
         </div>
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/er-info.png" alt="Patient Information Overview" />
-          </div>
-          <div class="cs-caption">
-            <h3>Clear Visual Hierarchy</h3>
-            <p>
-              Utilizing large typography, high-contrast text, and simple avatars
-              to ensure readability for aging eyes.
-            </p>
-          </div>
-        </div>
+
+        <button class="slider-btn next" onclick="changeKioskIdentSlide(1)">→</button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="kioskIdentCurrentNum">01</span> <span class="divider">/</span> 02
       </div>
     </section>
 
-    <section class="cs-visual-section" style="padding-top: 0">
+    <section class="cs-visual-section no-top-padding">
       <h2 class="cs-section-title">Visualizing Critical Care</h2>
 
       <div
         class="img-frame zoomable constrained-img"
-        style="margin-bottom: 40px"
         onclick="openLightbox(this)"
       >
         <img src="image/er-warning.png" alt="Color Coded Warning Signs" />
       </div>
-      <p
-        class="cs-subtitle"
-        style="text-align: center; margin: 0 auto; max-width: 800px"
-      >
+      <p class="cs-subtitle centered-subtitle">
         Simplifying complex medical instructions by using an intuitive
         color-coded traffic-light system. It clearly separates absolute
         emergencies (Red: Call 911) from concerning symptoms (Yellow: Call
@@ -199,33 +148,34 @@
 
     <section class="cs-visual-section">
       <h2 class="cs-section-title">Tangible Takeaways</h2>
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/er-print.png" alt="Print Booklet Option" />
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changeKioskTakeawaySlide(-1)">←</button>
+
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="kioskTakeawaySlideImage"
+              src="image/er-print.png"
+              alt="Print Booklet Option"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="cs-caption">
-            <h3>Physical Booklets</h3>
-            <p>
+          <div class="carousel-caption">
+            <h3 id="kioskTakeawayCaptionTitle">Physical Booklets</h3>
+            <p id="kioskTakeawayCaptionText">
               Acknowledging that digital-only solutions often fail during
               stressful recovery periods, the system generates a physical,
               easy-to-read printed booklet for the patient to take home.
             </p>
           </div>
         </div>
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/er-delivery.png" alt="Multiple Delivery Methods" />
-          </div>
-          <div class="cs-caption">
-            <h3>Flexible Delivery</h3>
-            <p>
-              Providing versatile options (Email, SMS, or Booklet) to
-              accommodate the varying digital literacy levels of elderly
-              patients and their caregivers.
-            </p>
-          </div>
-        </div>
+
+        <button class="slider-btn next" onclick="changeKioskTakeawaySlide(1)">→</button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="kioskTakeawayCurrentNum">01</span> <span class="divider">/</span> 02
       </div>
     </section>
 
@@ -338,6 +288,70 @@
         const modal = document.getElementById("lightbox-modal");
         modal.style.display = "none";
         document.body.style.overflow = "auto";
+      }
+
+      /* --- Kiosk Accessible Identification Carousel --- */
+      const kioskIdentSlides = [
+        {
+          src: "image/er-login.png",
+          alt: "Tap to Login Interface",
+          title: "Frictionless Login",
+          text: "By allowing patients to tap their hospital wristband or Ontario Health Card, the system bypasses complex typing and password requirements that frustrate elderly users."
+        },
+        {
+          src: "image/er-info.png",
+          alt: "Patient Information Overview",
+          title: "Clear Visual Hierarchy",
+          text: "Utilizing large typography, high-contrast text, and simple avatars to ensure readability for aging eyes."
+        }
+      ];
+      let currentKioskIdentSlide = 0;
+
+      function changeKioskIdentSlide(direction) {
+        currentKioskIdentSlide += direction;
+        if (currentKioskIdentSlide > kioskIdentSlides.length - 1) currentKioskIdentSlide = 0;
+        if (currentKioskIdentSlide < 0) currentKioskIdentSlide = kioskIdentSlides.length - 1;
+
+        const slide = kioskIdentSlides[currentKioskIdentSlide];
+        const slideNum = (currentKioskIdentSlide + 1).toString().padStart(2, "0");
+
+        document.getElementById("kioskIdentSlideImage").src = slide.src;
+        document.getElementById("kioskIdentSlideImage").alt = slide.alt;
+        document.getElementById("kioskIdentCaptionTitle").innerText = slide.title;
+        document.getElementById("kioskIdentCaptionText").innerText = slide.text;
+        document.getElementById("kioskIdentCurrentNum").innerText = slideNum;
+      }
+
+      /* --- Kiosk Tangible Takeaways Carousel --- */
+      const kioskTakeawaySlides = [
+        {
+          src: "image/er-print.png",
+          alt: "Print Booklet Option",
+          title: "Physical Booklets",
+          text: "Acknowledging that digital-only solutions often fail during stressful recovery periods, the system generates a physical, easy-to-read printed booklet for the patient to take home."
+        },
+        {
+          src: "image/er-delivery.png",
+          alt: "Multiple Delivery Methods",
+          title: "Flexible Delivery",
+          text: "Providing versatile options (Email, SMS, or Booklet) to accommodate the varying digital literacy levels of elderly patients and their caregivers."
+        }
+      ];
+      let currentKioskTakeawaySlide = 0;
+
+      function changeKioskTakeawaySlide(direction) {
+        currentKioskTakeawaySlide += direction;
+        if (currentKioskTakeawaySlide > kioskTakeawaySlides.length - 1) currentKioskTakeawaySlide = 0;
+        if (currentKioskTakeawaySlide < 0) currentKioskTakeawaySlide = kioskTakeawaySlides.length - 1;
+
+        const slide = kioskTakeawaySlides[currentKioskTakeawaySlide];
+        const slideNum = (currentKioskTakeawaySlide + 1).toString().padStart(2, "0");
+
+        document.getElementById("kioskTakeawaySlideImage").src = slide.src;
+        document.getElementById("kioskTakeawaySlideImage").alt = slide.alt;
+        document.getElementById("kioskTakeawayCaptionTitle").innerText = slide.title;
+        document.getElementById("kioskTakeawayCaptionText").innerText = slide.text;
+        document.getElementById("kioskTakeawayCurrentNum").innerText = slideNum;
       }
 
       /* --- Scroll to Top --- */

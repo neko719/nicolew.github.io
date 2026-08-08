@@ -15,65 +15,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
-
-    <style>
-      /* 修复：限制图片最大宽度，防止变得巨大 */
-      .constrained-img {
-        max-width: 600px !important; /* 限制大图宽度 */
-        margin: 0 auto;
-      }
-
-      /* 修复：保证图片显示完整，不被裁切 */
-      .img-frame img {
-        object-fit: contain !important;
-        width: 100%;
-        height: auto;
-      }
-
-      /* 修复：视频容器限制宽度并居中 */
-      .video-container-limited {
-        max-width: 800px; /* 视频最大宽度 */
-        margin: 0 auto 40px auto;
-        border: 1px solid rgba(193, 164, 129, 0.2);
-        padding: 10px;
-      }
-
-      /* Lightbox 样式 */
-      .lightbox {
-        display: none;
-        position: fixed;
-        z-index: 10000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .lightbox-content {
-        max-width: 90%;
-        max-height: 85vh;
-        border: 1px solid #abacad;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-      }
-      .close-btn {
-        position: absolute;
-        top: 30px;
-        right: 50px;
-        color: #abacad;
-        font-size: 50px;
-        cursor: pointer;
-        z-index: 10001;
-      }
-      /* 鼠标放上去显示放大镜，提示可点击 */
-      .zoomable {
-        cursor: zoom-in;
-      }
-    </style>
   </head>
-  <body style="background-color: #24292e !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -102,6 +45,7 @@
       <div class="header-cta">
         <a href="contact.html">Let's Talk</a>
       </div>
+      <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </header>
 
     <section class="cs-hero-section">
@@ -153,7 +97,7 @@
       </div>
     </section>
 
-    <section class="cs-visual-section">
+    <section class="cs-visual-section no-top-padding">
       <h2 class="cs-section-title">Identity Evolution</h2>
 
       <div class="lens-container" id="lens-container">
@@ -198,7 +142,7 @@
         </div>
       </div>
 
-      <p class="cs-subtitle" style="text-align: center; margin: 0 auto">
+      <p class="cs-subtitle centered-subtitle">
         Showcasing the "Energy Anytime" narrative through dynamic cuts and
         lifestyle integration.
       </p>
@@ -206,65 +150,75 @@
 
     <section class="cs-visual-section">
       <h2 class="cs-section-title">Visual System</h2>
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/ppcolor.png" alt="Color Palette" />
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changeProteinVisualSlide(-1)">
+          ←
+        </button>
+
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="proteinVisualSlideImage"
+              src="image/ppcolor.png"
+              alt="Color Palette"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="cs-caption">
-            <h3>Refined Palette</h3>
-            <p>
+          <div class="carousel-caption">
+            <h3 id="proteinVisualCaptionTitle">Refined Palette</h3>
+            <p id="proteinVisualCaptionText">
               Moving away from generic colors to a sophisticated mix of Charcoal
               Gray and Premier Red.
             </p>
           </div>
         </div>
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/pptypo.png" alt="Typography" />
-          </div>
-          <div class="cs-caption">
-            <h3>Bold Typography</h3>
-            <p>Using 'Impact' for headlines to emphasize power and strength.</p>
-          </div>
-        </div>
+
+        <button class="slider-btn next" onclick="changeProteinVisualSlide(1)">
+          →
+        </button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="proteinVisualCurrentNum">01</span>
+        <span class="divider">/</span> 02
       </div>
     </section>
 
-    <section class="cs-visual-section" style="padding-top: 0">
-      <h2 class="cs-section-title">New Packaging</h2>
+    <section class="cs-visual-section">
+      <h2 class="cs-section-title">Packaging & Merch</h2>
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changePackagingMerchSlide(-1)">
+          ←
+        </button>
 
-      <div
-        class="img-frame zoomable constrained-img"
-        style="margin-bottom: 40px"
-        onclick="openLightbox(this)"
-      >
-        <img src="image/ppmockup.png" alt="Packaging Redesign" />
-      </div>
-
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/ppmerch.png" alt="Merchandise" />
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="packagingMerchSlideImage"
+              src="image/ppmockup.png"
+              alt="New Packaging Design"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-        </div>
-        <div class="cs-gallery-item">
-          <div
-            class="cs-caption"
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              height: 100%;
-            "
-          >
-            <h3>Lifestyle Integration</h3>
-            <p>
-              Extending the brand beyond the shelf. The merchandise design
-              integrates the new "P" logo mark into active wear.
+          <div class="carousel-caption">
+            <h3 id="packagingMerchCaptionTitle">Modernized Packaging</h3>
+            <p id="packagingMerchCaptionText">
+              Clean, bold packaging that stands out on the shelf and aligns with
+              the new premium brand identity.
             </p>
           </div>
         </div>
+
+        <button class="slider-btn next" onclick="changePackagingMerchSlide(1)">
+          →
+        </button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="packagingMerchCurrentNum">01</span>
+        <span class="divider">/</span> 02
       </div>
     </section>
 
@@ -440,6 +394,83 @@
         document.body.style.overflow = "auto";
       }
 
+      /* --- Premier Protein Visual System Carousel --- */
+      const proteinVisualSlides = [
+        {
+          src: "image/ppcolor.png",
+          alt: "Color Palette",
+          title: "Refined Palette",
+          text: "Moving away from generic colors to a sophisticated mix of Charcoal Gray and Premier Red.",
+        },
+        {
+          src: "image/pptypo.png",
+          alt: "Typography",
+          title: "Bold Typography",
+          text: "Using 'Impact' for headlines to emphasize power and strength.",
+        },
+      ];
+      let currentProteinVisualSlide = 0;
+
+      function changeProteinVisualSlide(direction) {
+        currentProteinVisualSlide += direction;
+        if (currentProteinVisualSlide > proteinVisualSlides.length - 1)
+          currentProteinVisualSlide = 0;
+        if (currentProteinVisualSlide < 0)
+          currentProteinVisualSlide = proteinVisualSlides.length - 1;
+
+        const slide = proteinVisualSlides[currentProteinVisualSlide];
+        const slideNum = (currentProteinVisualSlide + 1)
+          .toString()
+          .padStart(2, "0");
+
+        document.getElementById("proteinVisualSlideImage").src = slide.src;
+        document.getElementById("proteinVisualSlideImage").alt = slide.alt;
+        document.getElementById("proteinVisualCaptionTitle").innerText =
+          slide.title;
+        document.getElementById("proteinVisualCaptionText").innerText =
+          slide.text;
+        document.getElementById("proteinVisualCurrentNum").innerText = slideNum;
+      }
+
+      /* --- Premier Protein Packaging & Merch Carousel --- */
+      const packagingMerchSlides = [
+        {
+          src: "image/ppmockup.png",
+          alt: "New Packaging Design",
+          title: "Modernized Packaging",
+          text: "Clean, bold packaging that stands out on the shelf and aligns with the new premium brand identity.",
+        },
+        {
+          src: "image/ppmerch.png",
+          alt: "Merchandise",
+          title: "Lifestyle Integration",
+          text: "Extending the brand beyond the shelf. The merchandise design integrates the new 'P' logo mark into active wear.",
+        },
+      ];
+      let currentPackagingMerchSlide = 0;
+
+      function changePackagingMerchSlide(direction) {
+        currentPackagingMerchSlide += direction;
+        if (currentPackagingMerchSlide >= packagingMerchSlides.length)
+          currentPackagingMerchSlide = 0;
+        if (currentPackagingMerchSlide < 0)
+          currentPackagingMerchSlide = packagingMerchSlides.length - 1;
+
+        const slide = packagingMerchSlides[currentPackagingMerchSlide];
+        const slideNum = (currentPackagingMerchSlide + 1)
+          .toString()
+          .padStart(2, "0");
+
+        document.getElementById("packagingMerchSlideImage").src = slide.src;
+        document.getElementById("packagingMerchSlideImage").alt = slide.alt;
+        document.getElementById("packagingMerchCaptionTitle").innerText =
+          slide.title;
+        document.getElementById("packagingMerchCaptionText").innerText =
+          slide.text;
+        document.getElementById("packagingMerchCurrentNum").innerText =
+          slideNum;
+      }
+
       /* --- Scroll to Top --- */
       const btn = document.getElementById("back-to-top");
       window.addEventListener("scroll", () => {
@@ -465,6 +496,21 @@
       }
 
       requestAnimationFrame(raf);
+
+      /* --- Mobile Nav Toggle --- */
+      document
+        .querySelector(".mobile-toggle")
+        .addEventListener("click", function () {
+          const nav = document.querySelector(".header-nav");
+          nav.classList.toggle("active");
+          if (nav.classList.contains("active")) {
+            this.innerHTML = "✕";
+            this.setAttribute("aria-label", "Close menu");
+          } else {
+            this.innerHTML = "☰";
+            this.setAttribute("aria-label", "Open menu");
+          }
+        });
     </script>
   </body>
 </html>

@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #24292e !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -109,32 +109,33 @@
     <section class="cs-visual-section">
       <h3 class="cs-section-title">User Insights & Journey</h3>
 
-      <div class="cs-gallery-grid">
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/Customer Profile-1.png" alt="Customer Profile" />
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" onclick="changeMementoSlide(-1)">←</button>
+
+        <div class="carousel-with-caption">
+          <div class="slide-frame-container">
+            <img
+              id="mementoSlideImage"
+              src="image/Customer Profile-1.png"
+              alt="Customer Profile"
+              onclick="openLightbox(this)"
+              class="zoomable"
+            />
           </div>
-          <div class="cs-caption">
-            <h3>Customer Profile</h3>
-            <p>
+          <div class="carousel-caption">
+            <h3 id="mementoCaptionTitle">Customer Profile</h3>
+            <p id="mementoCaptionText">
               Outlining target users' motivations and behaviors to inform
               empathetic design decisions.
             </p>
           </div>
         </div>
 
-        <div class="cs-gallery-item">
-          <div class="img-frame zoomable" onclick="openLightbox(this)">
-            <img src="image/Customer Journey.png" alt="Customer Journey" />
-          </div>
-          <div class="cs-caption">
-            <h3>Customer Journey</h3>
-            <p>
-              Mapping emotional touchpoints and usability priorities from
-              discovery to long-term engagement.
-            </p>
-          </div>
-        </div>
+        <button class="slider-btn next" onclick="changeMementoSlide(1)">→</button>
+      </div>
+
+      <div class="slide-counter">
+        <span id="mementoCurrentNum">01</span> <span class="divider">/</span> 02
       </div>
     </section>
 
@@ -264,6 +265,38 @@
         document.body.style.overflow = "auto";
       }
 
+      /* --- Memento User Insights Carousel --- */
+      const mementoSlides = [
+        {
+          src: "image/Customer Profile-1.png",
+          alt: "Customer Profile",
+          title: "Customer Profile",
+          text: "Outlining target users' motivations and behaviors to inform empathetic design decisions."
+        },
+        {
+          src: "image/Customer Journey.png",
+          alt: "Customer Journey",
+          title: "Customer Journey",
+          text: "Mapping emotional touchpoints and usability priorities from discovery to long-term engagement."
+        }
+      ];
+      let currentMementoSlide = 0;
+
+      function changeMementoSlide(direction) {
+        currentMementoSlide += direction;
+        if (currentMementoSlide > mementoSlides.length - 1) currentMementoSlide = 0;
+        if (currentMementoSlide < 0) currentMementoSlide = mementoSlides.length - 1;
+
+        const slide = mementoSlides[currentMementoSlide];
+        const slideNum = (currentMementoSlide + 1).toString().padStart(2, "0");
+
+        document.getElementById("mementoSlideImage").src = slide.src;
+        document.getElementById("mementoSlideImage").alt = slide.alt;
+        document.getElementById("mementoCaptionTitle").innerText = slide.title;
+        document.getElementById("mementoCaptionText").innerText = slide.text;
+        document.getElementById("mementoCurrentNum").innerText = slideNum;
+      }
+
       /* --- Scroll to Top --- */
       const btn = document.getElementById("back-to-top");
       window.addEventListener("scroll", () => {
@@ -292,3 +325,5 @@
     </script>
   </body>
 </html>
+
+

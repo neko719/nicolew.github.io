@@ -15,83 +15,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="n.styles.css" />
-    <style>
-      /* New Minimal Editorial Footer Styles */
-      .editorial-nav-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-        position: relative;
-        padding: 8px 0;
-        transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-item .edit-num {
-        font-family: "Inconsolata", monospace;
-        font-size: 12px;
-        color: #abacad;
-        letter-spacing: 1px;
-        transition: color 0.4s ease;
-      }
-
-      .editorial-nav-item .edit-text {
-        font-family: "Cormorant", serif;
-        font-size: 24px;
-        color: #5f5f60;
-        font-weight: 300;
-        position: relative;
-      }
-
-      .editorial-nav-item .edit-text::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: #abacad;
-        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-
-      .editorial-nav-divider {
-        font-family: "Cormorant", serif;
-        font-size: 20px;
-        color: #c9c5c2;
-        pointer-events: none;
-        user-select: none;
-      }
-
-      .editorial-nav-item:hover .edit-text,
-      .editorial-nav-item.active-page .edit-text {
-        color: #1a1615;
-      }
-
-      .editorial-nav-item:hover .edit-num,
-      .editorial-nav-item.active-page .edit-num {
-        color: #1a1615;
-      }
-
-      .editorial-nav-item:hover .edit-text::after,
-      .editorial-nav-item.active-page .edit-text::after {
-        width: 100%;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links-editorial-flex {
-          flex-direction: column;
-          gap: 15px !important;
-        }
-        .editorial-nav-divider {
-          display: none;
-        }
-        .editorial-nav-item .edit-text {
-          font-size: 20px;
-        }
-      }
-    </style>
   </head>
-  <body style="background-color: #24292e !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -489,44 +414,13 @@
     </div>
 
     <!-- ================= EDITORIAL RE-DESIGNED PROJECT FOOTER ================= -->
-    <nav
-      class="project-nav-container"
-      style="
-        max-width: 1200px;
-        margin: 120px auto 60px auto;
-        padding: 60px 20px 0 20px;
-        border-top: 1px solid #c9c5c2;
-        text-align: center;
-      "
-    >
-      <div
-        class="nav-title"
-        style="
-          font-family: &quot;Inconsolata&quot;, monospace;
-          font-size: 13px;
-          color: #abacad;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          margin-bottom: 50px;
-          position: relative;
-          display: inline-block;
-        "
-      >
-        <span style="opacity: 0.4; margin: 0 10px">—</span> View More Projects
-        <span style="opacity: 0.4; margin: 0 10px">—</span>
+    <nav class="project-nav-container">
+      <div class="nav-title">
+        <span class="project-nav-divider">—</span> View More Projects
+        <span class="project-nav-divider">—</span>
       </div>
 
-      <div
-        class="nav-links-editorial-flex"
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 30px;
-          row-gap: 20px;
-        "
-      >
+      <div class="nav-links-editorial-flex">
         <!-- Link 01: Visual Design -->
         <a
           href="graphic design.html"

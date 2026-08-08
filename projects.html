@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="n.styles.css" />
   </head>
-  <body style="background-color: #0c1519 !important">
+  <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="progress-bar"></div>
@@ -40,11 +40,12 @@
       <div class="header-cta">
         <a href="contact.html">Let's Talk</a>
       </div>
+      <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </header>
 
     <section class="projects-bento-section" id="projects">
       <div class="bento-header">
-        <h2>SELECTED<br />WORKS</h2>
+        <h2>SELECTED WORKS</h2>
         <p>
           Exploring the intersection of visual design, technology, storytelling,
           and strategy through different creative disciplines.
@@ -112,7 +113,7 @@
       <div class="nav-hint">CONTINUE TO</div>
       <a href="contact.html" class="next-page-box">
         <div class="next-content">
-          <span class="next-num">05</span>
+          <span class="next-num">04</span>
           <span class="next-title">Contact</span>
         </div>
         <div class="next-arrow">NEXT PAGE →</div>
@@ -206,6 +207,21 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+
+      /* --- Mobile Nav Toggle --- */
+      document
+        .querySelector(".mobile-toggle")
+        .addEventListener("click", function () {
+          const nav = document.querySelector(".header-nav");
+          nav.classList.toggle("active");
+          if (nav.classList.contains("active")) {
+            this.innerHTML = "✕";
+            this.setAttribute("aria-label", "Close menu");
+          } else {
+            this.innerHTML = "☰";
+            this.setAttribute("aria-label", "Open menu");
+          }
+        });
     </script>
   </body>
 </html>
